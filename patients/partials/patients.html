@@ -1,0 +1,23 @@
+  <h3>All Patients</h3>
+  <table class="table patienttable">
+    <tr>
+      <td>Username</td>
+      <td>Gender</td>
+      <td>Name Surname</td>
+      <td>Languages</td>
+      <td>Country</td>
+      <td>Actions</td>
+    </tr>
+    <tr ng-repeat="patient in patients">
+      <td>{{patient.username}}</td>
+      <td>{{patient.gender}}</td>
+      <td>{{patient.name+"  "+patient.surname}}</td>
+      <td><span ng-repeat="language in patient.languages_names" class="label label-info tags">{{language}}</span> </td>
+      <td>{{patient.country_name}}</td>
+      <td>
+        <a class="btn btn-default" ui-sref="viewPatient({id:patient.id})">View</a>
+        <a class="btn btn-danger"  ng-click="deletePatient(patient)">Delete</a>
+      </td>
+    </tr>
+  </table>
+  <a ui-sref="newPatient" class="btn btn-default">Add New Patient</a>

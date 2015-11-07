@@ -1,0 +1,125 @@
+<h4>Great, now let's find out a little about your lifestyle choices.</h4>
+<h5>Fill out as much as you feel comfortable. All the information is confidential.</h5>
+
+
+<div class="form-group">
+  <label>DO YOU SMOKE CIGARETTES?</label>
+    <div class="radio">
+      <label>
+         <input type="radio" ng-model="formCtrl.patient.lifestyle.smokes" value="false" >
+         No
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+          <input type="radio" ng-model="formCtrl.patient.lifestyle.smokes" value="true" >
+          Yes
+      </label>
+    </div>
+</div>
+<div class="form-group" ng-show="formCtrl.patient.lifestyle.smokes == 'true'">
+  <label>How many cigarettes a week? </label>
+  <input type="number" string-to-number class="form-control" ng-model="formCtrl.patient.lifestyle.cigarettes_a_week" >
+</div>
+
+
+<div class="form-group">
+  <label>DO YOU DRINK ALCOHOL?</label>
+    <div class="radio">
+      <label>
+         <input type="radio" ng-model="formCtrl.patient.lifestyle.drinks" value="false">
+         No
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+          <input type="radio" ng-model="formCtrl.patient.lifestyle.drinks" value="true" >
+          Yes
+      </label>
+    </div>
+</div>
+<div class="form-group" ng-show="formCtrl.patient.lifestyle.drinks == 'true'">
+  <label>How many drinks a week? </label>
+  <input type="number" string-to-number class="form-control" ng-model="formCtrl.patient.lifestyle.drinks_a_week" >
+</div>
+
+
+<div class="form-group">
+  <label>DO YOU USE RECREATIONAL DRUGS?</label>
+    <div class="radio">
+      <label>
+         <input type="radio" ng-model="formCtrl.patient.lifestyle.drugs" value="false" >
+         No
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+          <input type="radio" ng-model="formCtrl.patient.lifestyle.drugs" value="true" >
+          Yes
+      </label>
+    </div>
+</div>
+<div class="form-group" ng-show="formCtrl.patient.lifestyle.drugs == 'true'">
+  <label>How many grams a week? </label>
+  <input type="text" class="form-control" ng-model="formCtrl.patient.lifestyle.drug_times_a_week" >
+  <label>Which ones? </label>
+  <input type="text" class="form-control" ng-model="formCtrl.patient.lifestyle.drug_types" >
+</div>
+
+
+
+<div class="form-group">
+  <label>DO YOU EXERCISE?</label>
+    <div class="radio">
+      <label>
+         <input type="radio" ng-model="formCtrl.patient.lifestyle.exercises" value="false" >
+         No
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+          <input type="radio" ng-model="formCtrl.patient.lifestyle.exercises" value="true" >
+          Yes
+      </label>
+    </div>
+</div>
+<div class="form-group row" ng-show="formCtrl.patient.lifestyle.exercises == 'true'">
+  <div class="col-md-12">
+    <label>How active are you a week? </label>
+  </div>
+  <div class="col-md-6" ng-repeat="frequency in formCtrl.metadata.exercise_frequencies">
+      <input type="radio" name="frequencyGroup" ng-model="formCtrl.patient.lifestyle.exercise_frequency" ng-required="true" ng-value="frequency.id"/> <label> {{frequency.name}} </label>
+  </div>
+</div>
+
+<div class="form-group">
+  <label>ARE YOU SEXUALLY ACTIVE?</label>
+  <div class="radio">
+    <label>
+       <input type="radio" ng-model="formCtrl.patient.lifestyle.sexually_active" value="false" >
+       No
+    </label>
+  </div>
+  <div class="radio">
+      <label>
+          <input type="radio" ng-model="formCtrl.patient.lifestyle.sexually_active" value="true" >
+          Yes
+      </label>
+  </div>
+</div>
+<!--<div class="form-group" ng-show="formCtrl.patient.lifestyle.sexually_active == 'true'">
+  <label>Do you use protection?</label>
+  <div class="radio">
+    <label>
+       <input type="radio" ng-model="formCtrl.patient.lifestyle.sexually_active_protection" value="true" >
+       Yes
+    </label>
+  </div>
+  <div class="radio">
+      <label>
+          <input type="radio" ng-model="formCtrl.patient.lifestyle.sexually_active_protection" value="false" >
+          No
+      </label>
+  </div>
+</div>-->
+

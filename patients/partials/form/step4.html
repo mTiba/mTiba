@@ -1,0 +1,149 @@
+<h4>Last one! Now let's find out a little about your family.</h4>
+<h5>Fill out as much as you know. Don't worry about the rest.</h5>
+
+<label>YOUR FATHER IS...</label>
+<div class="row">
+	<div class="form-group col-md-3">
+	  <div class="radio">
+	    <label>
+	      <input type="radio" ng-model="formCtrl.patient.family.parents.father.is_alive" value="true" />
+	       Alive
+	    </label>
+	  </div>
+	</div>
+	<div class="form-group col-md-9" ng-show="formCtrl.patient.family.parents.father.is_alive == 'true'">
+		<div class="row">
+			<div class="col-md-3">
+		  	<label>Year of birth</label>
+		  	<input type="text" class="form-control" ng-model="formCtrl.patient.family.parents.father.year_of_birth" />
+		  </div>
+		  <div class="col-md-9">
+			  <label>His general health</label>
+		    <div class="row">
+  				<div ng-repeat= "state in formCtrl.metadata.states" class="col-md-6">
+					  <div class="radio">
+					    <label>
+					        <input type="radio" ng-model="formCtrl.patient.family.parents.father.general_health_state" value='{{state.id}}' />
+					        {{state.name}}
+					      </label>
+					  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="form-group col-md-3">
+		<div class="radio">
+		  <label>
+		    <input type="radio" ng-model="formCtrl.patient.family.parents.father.is_alive" value="false" />
+		      Deceased
+		  </label>
+		</div>
+	</div>
+	<div class="form-group col-md-9" ng-show="formCtrl.patient.family.parents.father.is_alive == 'false'">
+		<div class="row">
+			<div class="col-md-3">
+			  <label>Age of death</label>
+			  <input type="number" string-to-number class="form-control" ng-model="formCtrl.patient.family.parents.father.reason_of_death" />
+			</div>
+		  <div class="col-md-9">
+			 	<label>Reason of death</label>
+			  <textarea class="form-control" ng-model="formCtrl.patient.family.parents.father.reason_of_death"></textarea>
+			</div>
+		</div>
+	</div>
+</div>
+
+<label>YOUR MOTHER IS...</label>
+<div class="row">
+	<div class="form-group col-md-3">
+	  <div class="radio">
+	    <label>
+	      <input type="radio" ng-model="formCtrl.patient.family.parents.mother.is_alive" value="true" />
+	       Alive
+	    </label>
+	  </div>
+	</div>
+	<div class="form-group col-md-9" ng-show="formCtrl.patient.family.parents.mother.is_alive == 'true'">
+		<div class="row">
+			<div class="col-md-3">
+		  	<label>Year of birth</label>
+		  	<input type="text" class="form-control" ng-model="formCtrl.patient.family.parents.mother.year_of_birth" />
+		  </div>
+		  <div class="col-md-9">
+			  <label>Her general health</label>
+		    <div class="row">
+  				<div ng-repeat= "state in formCtrl.metadata.states" class="col-md-6">
+					  <div class="radio">
+					    <label>
+					        <input type="radio" ng-model="formCtrl.patient.family.parents.mother.general_health_state" value='{{state.id}}' />
+					        {{state.name}}
+					      </label>
+					  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="form-group col-md-3">
+		<div class="radio">
+		  <label>
+		    <input type="radio" ng-model="formCtrl.patient.family.parents.mother.is_alive" value="false" />
+		      Deceased
+		  </label>
+		</div>
+	</div>
+	<div class="form-group col-md-9" ng-show="formCtrl.patient.family.parents.mother.is_alive == 'false'">
+		<div class="row">
+			<div class="col-md-3">
+			  <label>Age of death</label>
+			  <input type="number" string-to-number class="form-control" ng-model="formCtrl.patient.family.parents.mother.age_of_death" />
+			</div>
+		  <div class="col-md-9">
+			 	<label>Reason of death</label>
+			  <textarea class="form-control" ng-model="formCtrl.patient.family.parents.mother.reason_of_death"></textarea>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<label>SIBLINGS</label>
+
+<div class="row">
+  <div class="col-xs-4">
+  	<label>Number of brothers</label>
+    <input type="number" string-to-number class="form-control" ng-model="formCtrl.patient.family.siblings.number_of_brothers">
+  </div>
+  <div class="col-xs-4">
+  	<label>Number of sisters</label>
+    <input type="number" string-to-number class="form-control" ng-model="formCtrl.patient.family.siblings.number_of_sisters">
+  </div>
+  <div class="col-xs-4">
+  	<label>Age range</label>
+    <input type="text" class="form-control" ng-model="formCtrl.patient.family.siblings.age_range" >
+  </div>
+  <div class="col-xs-12">
+    <label>Health problems with any siblings</label>
+  	<textarea class="form-control" ng-model="formCtrl.patient.family.siblings.health_problems"></textarea>	
+  </div>
+</div>
+<br />
+<label>FAMILY DISEASES</label>
+<div class="row">
+  <div class="col-xs-12">
+    <label>Has anyone in your family suffered from any of the following diseases? (Anyone including parents, siblings, aunts, uncles and grandparents)</label>
+
+		<div ng-repeat="disease in formCtrl.metadata.family_diseases">
+		  <input type="checkbox" checklist-model="formCtrl.patient.family.diseases" checklist-value="disease.id"> 
+		  	<label> {{disease.name}} </label>
+		</div>
+  </div>
+</div>
+
+
+
