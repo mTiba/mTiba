@@ -137,11 +137,12 @@
 <div class="row">
   <div class="col-xs-12">
     <label>Has anyone in your family suffered from any of the following diseases? (Anyone including parents, siblings, aunts, uncles and grandparents)</label>
-
-		<div ng-repeat="disease in formCtrl.metadata.family_diseases">
+    <div class="row">
+		<div class="col-md-6" ng-repeat="disease in formCtrl.metadata.familyDiseases">
 		  <input type="checkbox" checklist-model="formCtrl.patient.family.diseases" checklist-value="disease.id"> 
 		  	<label> {{disease.name}} </label>
 		</div>
+	</div>
   </div>
 </div>
 

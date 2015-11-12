@@ -24,6 +24,46 @@ pre                             { margin-bottom:20px; }
 .multiStepTitle{
   
 }
+a{
+  color: #4FD7BD;
+}
+
+input.form-control:focus{
+  border-color: #4FD7BD;
+}
+select.form-control{
+  border-radius: 0px;
+  -webkit-appearance: none;
+}
+select.form-control:focus
+{
+  border-color: #4FD7BD;
+}
+textarea.form-control {
+  resize: none;
+  border-radius: 0px;
+}
+textarea.form-control:focus{
+  border-color: #4FD7BD;
+}
+label{
+  font-size: 14px;
+  font-weight: 300;
+  font-family: 'Helvetica Neue';
+  text-align: left;
+}
+p{
+  color: #A7A7A4;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: 'Helvetica Neue';
+}
+.glyphicon.glyphicon-asterisk{
+  color: #4FD7BD;
+  font-size: 8px;
+}
+
+
 /* TEAM OVERWRITING */
 
 .btn-info {
