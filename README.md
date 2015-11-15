@@ -1,9 +1,13 @@
 # mTiba
 This is a web application for doctors and patients.
 
-Frontend built with angularJS
+Frontend technologies:
+- angularJS
 
-Backend built with ...
 
+Backend technologies:
+- couchbase
+- flask
+- python
 
 More info: http://mtiba.me/
