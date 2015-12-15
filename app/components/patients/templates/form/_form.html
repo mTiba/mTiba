@@ -1,0 +1,20 @@
+<div id="form-container">
+
+  <multi-step-container steps="formCtrl.steps" class="simple-prev-next" search-id="'step'">
+    <header class="multiStepHeader">
+      <button ng-disabled="$isFirst()" type="button" class="btn btn-default" ng-click="$previousStep()">
+          <span class="fa fa-chevron-left"></span>
+          Previous
+      </button>
+      <ul class="nav nav-pills">
+        <li ng-class="$getActiveStep() === step ? 'active' : ''"  ng-repeat="step in $getSteps()" ><a href="">{{step.title}}</a></li>
+      </ul>
+
+      <button ng-disabled="$isLast()" type="button" class="btn btn-default" ng-click="$nextStep()">
+          Next
+          <span class="fa fa-chevron-right"></span>
+      </button>
+    </header>
+    <main step-container></main>
+  </multi-step-container>
+</div>
