@@ -1,4 +1,5 @@
 angular.module('mtiba.doctors')
+
 .controller('DoctorListController', function($scope, $state, popupService, $window, Doctor) {
   
   $scope.doctor = Doctor.query(); //fetch all doctor. Issues a GET to /api/patie

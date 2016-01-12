@@ -87,26 +87,12 @@ angular.module('mtiba.patients')
        //make sure the main data objects are created
       //TODO: find a better way
       patientData.lifestyle = typeof(patientData.lifestyle) === "undefined" ? {} : patientData.lifestyle;
-      patientData.health = typeof(patientData.lifestyle) === "undefined" ? {} : patientData.lifestyle;
+      patientData.health = typeof(patientData.lifestyle) === "undefined" ? {} : patientData.health;
       patientData.family = typeof(patientData.family) === "undefined" ? {} : patientData.family;
       patientData.family.parents = typeof(patientData.family.parents) === "undefined" ? {} : patientData.family.parents;
       patientData.family.parents.father = typeof(patientData.family.parents.father) === "undefined" ? {} : patientData.family.parents.father;
       patientData.family.parents.mother = typeof(patientData.family.parents.father) === "undefined" ? {} : patientData.family.parents.father;
 
-/*
-      patientDataArray[p].languages = typeof(patientDataArray[p].languages) === "undefined" ?  [] : patientDataArray[p].languages;
-      patientDataArray[p].country = typeof(patientDataArray[p].country) === "undefined" ? {} : patientDataArray[p].country;
-      patientDataArray[p].motivation = typeof(patientDataArray[p].motivation) === "undefined" ? {} : patientDataArray[p].motivation;
-      patientDataArray[p].occupation = typeof(patientDataArray[p].occupation) === "undefined" ? {} : patientDataArray[p].occupation;        
-
-lifestyle.exercise_frequency
-health.little_interest
-health.moral_situation
-health.diseases
-health.family.diseases
-family.parents.father.general_health_state
-family.parents.mother.general_health_state
-*/
       $scope.patient.languages_names = [];
       for(var i in metadata.languages)
       {
@@ -226,6 +212,20 @@ family.parents.mother.general_health_state
     };
     return factory;
   })
+
+  .factory('patientMilestonesFactory', ['$resource', function ($resource) {
+    return $resource('app/data/patients_milestones.json', { doctor_id: '@_id'}, {
+        save: { 
+          method: 'POST', 
+          url: 'http://movieapp-sitepointdemos.rhcloud.com/api/movies/:id' //, { id: '@_id' } 
+        },
+        update: { 
+          method: 'PUT', 
+          url: 'http://movieapp-sitepointdemos.rhcloud.com/api/movies/:id'
+        }
+    });
+  }])
+
   .service('popupService',function($window){
     this.showPopup=function(message){
         return $window.confirm(message);

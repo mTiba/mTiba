@@ -30,8 +30,8 @@ angular.module('mtiba.doctors')
         }
     });
   }])
-  .factory('DoctorPatientsData', ['$resource', function ($resource) {
-    return $resource('app/data/doctor_patients_data.json', { doctor_id: '@_id'}, {
+  .factory('DoctorLogs', ['$resource', function ($resource) {
+    return $resource('app/data/doctor_logs.json', { doctor_id: '@_id'}, {
         save: { 
           method: 'POST', 
           url: 'http://movieapp-sitepointdemos.rhcloud.com/api/movies/:id' //, { id: '@_id' } 

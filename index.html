@@ -51,6 +51,9 @@
     <script src="assets/libs/angular-multi-step-form.min.js"></script>
     <script src="assets/libs/ng-file-upload-shim.min.js"></script> <!-- for no html5 browsers support -->
     <script src="assets/libs/ng-file-upload.min.js"></script> 
+
+    <script src="https://code.angularjs.org/1.4.0/angular-cookies.js"></script>
+
     <!-- For FIRECHAT-->
     <!-- jQuery -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
@@ -65,12 +68,24 @@
     <script src="app/app.module.js"></script> 
     <script src="app/shared/footer/footer.js"></script>
 
-    <script src="app/components/login/login.js"></script>
+    <script src="app/shared/header/header.js"></script>
+
+    <script src="app/components/authentication/authentication.js"></script>
+    <script src="app/components/authentication/authentication.service.js"></script>
+    <script src="app/components/authentication/flash.service.js"></script>
+    <!-- Real user service that uses an api -->
+    <!-- <script src="app/components/authentication/user.service.js"></script> -->
+    <!-- Fake user service for demo that uses local storage -->
+    <script src="app/components/authentication/user.service.local-storage.js"></script>
+    <script src="app/components/authentication/users/users.controller.js"></script>
+    <script src="app/components/authentication/login/login.controller.js"></script>
+    <script src="app/components/authentication/register/register.controller.js"></script>
+
+
     <script src="app/components/patients/patients.js"></script>
-    <script src="app/components/doctors/doctors.js"></script>
-    <script src="app/components/login/login.ctrl.js"></script>  
     <script src="app/components/patients/patient.ctrl.js"></script>
     <script src="app/components/patients/patient.services.js"></script>
+    <script src="app/components/doctors/doctors.js"></script>
     <script src="app/components/doctors/doctor.ctrl.js"></script>
     <script src="app/components/doctors/doctor.services.js"></script>
    <!-- <script src="app/components/dashboard/dashboard.js"></script>-->

@@ -2,16 +2,18 @@
 
 /**
  * @ngdoc directive
- * @name izzyposWebApp.directive:adminPosHeader
+ * @name 
  * @description
  * # adminPosHeader
  */
-angular.module('mtiba.dashboard')
+angular.module('mtiba')
 	.directive('header',function(){
 		return {
-        templateUrl:'app/components/dashboard/directives/header/header.html',
+        templateUrl:'app/shared/header/header.html',
         restrict: 'E',
         replace: true,
+        scope: {
+	      }
     	}
 	});
 
