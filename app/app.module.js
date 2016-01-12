@@ -27,7 +27,7 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
     events:true,
   });
 
- // $urlRouterProvider.otherwise('/dashboard/home');
+ $urlRouterProvider.otherwise('/login');
 
 //mtibaApp.config(function($stateProvider, $mdIconProvider) {
   $stateProvider
