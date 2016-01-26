@@ -29,27 +29,23 @@ angular.module('mtiba.patients')
     factory.getSteps = function(){ 
       return [
         {
-          templateUrl: 'app/components/patients/templates/form/step0.html',
-          title: 'Login info'
-        },
-        {
-            templateUrl: 'app/components/patients/templates/form/step1.html',
+            templateUrl: 'app/components/patients/form/partials/step1.html',
             title: 'Basic info'
         },
         {
-            templateUrl: 'app/components/patients/templates/form/step2.html',
+            templateUrl: 'app/components/patients/form/partials/step2.html',
             title: 'Lifestyle'
         },
         {
-            templateUrl: 'app/components/patients/templates/form/step3.html',
+            templateUrl: 'app/components/patients/form/partials/step3.html',
             title: 'Health'
         },
         {
-            templateUrl: 'app/components/patients/templates/form/step4.html',
+            templateUrl: 'app/components/patients/form/partials/step4.html',
             title: 'Family'
         },
         {
-            templateUrl: 'app/components/patients/templates/form/submit.html',
+            templateUrl: 'app/components/patients/form/partials/submit.html',
             title: 'Submit'
         }
       ]
