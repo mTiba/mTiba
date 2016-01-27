@@ -47,19 +47,19 @@ angular.module('mtiba.doctors')
     factory.getSteps = function(){ 
       return [
         {
-            templateUrl: 'app/components/doctors/templates/form/step1.html',
+            templateUrl: 'app/components/doctors/form/partials/step1.html',
             title: 'Basic info'
         },
         {
-            templateUrl: 'app/components/doctors/templates/form/step2.html',
+            templateUrl: 'app/components/doctors/form/partials/step2.html',
             title: 'Background'
         },
         {
-            templateUrl: 'app/components/doctors/templates/form/step3.html',
+            templateUrl: 'app/components/doctors/form/partials/step3.html',
             title: 'Commitment'
         },
         {
-            templateUrl: 'app/components/doctors/templates/form/submit.html',
+            templateUrl: 'app/components/doctors/form/partials/submit.html',
             title: 'Submit'
         }
       ]

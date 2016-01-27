@@ -1,0 +1,43 @@
+-<div ng-controller="PatientAvatarController as avatarCtrl" >
+  <div class="form-group text-center row" >
+  <p>
+    <a ui-sref="profile">Back to profile</a>
+  </p>
+    <h4>Upload a picture</h4>
+    <div class="col-xs-12 col-md-4 col-md-offset-4">
+      <input text-center type="file" ngf-select ng-model="pictureFile" name="file"    
+             accept="image/*" ngf-max-size="2MB" required>
+    </div>
+    <br />
+    <div class="col-xs-12 col-md-4 col-md-offset-4 thumb"> <!--ng-show="patientForm.file.$valid"-->
+      <img  ngf-src="!pictureFile.$error && pictureFile"
+         class="thumb" />
+    </div>
+    <div class="col-xs-12 col-md-4 col-md-offset-4">  
+      <button class="btn btn-block btn-info" ng-click="uploadPicture(pictureFile)">Load</button>
+      <!--<span class="progress" ng-show="pictureFile.progress >= 0">
+          <div style="width:{{pictureFile.progress}}%" ng-bind="pictureFile.progress + '%'"></div>
+      </span>
+      <span ng-show="pictureFile.result">Upload Successful</span>-->
+    </div>
+    <br />
+  </div>
+
+  <div class="form-group text-center" >
+    <h4>Or select an avatar</h4>
+
+    <div class="avatarSelection" >
+      <md-radio-group ng-model="avatarCtrl.patient._avatar_selected_id">
+        <md-radio-button ng-repeat="avatar in avatarCtrl.avatarData" ng-value="avatar.id" aria-label="{{avatar.title}}">
+          <md-icon md-svg-icon="{{avatar.id}}"></md-icon>
+        </md-radio-button>
+      </md-radio-group>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-4 col-md-offset-4">  
+        <button class="btn btn-block btn-info" ng-click="avatarCtrl.selectAvatar()">Select</button>
+      </div> 
+    </div> 
+  </div>
+</div>
+
