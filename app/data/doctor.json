@@ -1,0 +1,44 @@
+{
+    "id": 0,
+    "username": "bubble12",
+    "name": "Aydes",
+    "surname": "Alyan",
+    "date_of_birth": "1986-08-01",
+    "gender": "m",
+    "languages": [
+        "1",
+        "2",
+        "4"
+    ],
+    "phone": "1234567989",
+    "country": "DZ",
+    "town": "Oran",
+    "occupation": "2",
+    "specialty": "8",
+    "license_number" : "AG845738945738475",
+    "license_number_confidential" : "false",
+    "background": {
+        "affiliated_hospitals": "Hospital 1, Hospital 56, Hospital XXX",
+        "board_certifications": "jskdjklasjdlkasdkjasld kjalsdjklasd kjasldj lkasjd",
+        "professional_memberships": "sfdfjskld kjsfkjsdlj ksjksjg",
+        "place_of_medical_degree" : {
+            "country" : "DZ",
+            "affiliation" : "This and that university"
+        },
+        "place_of_residency" : {
+            "country" : "DZ",
+            "affiliation" : "This and that hospital"
+        },
+        "place_of_fellowship" :  {
+            "country" : "DZ",
+            "affiliation" : "This and that fellowship"
+        }
+    },
+    "commitment": {
+        "times" : "3",
+        "patient_count" : "3",
+        "patient_age_groups" : ["0", "2"],
+        "patient_gender" : "f",
+        "patient_countries" : ["0","1","2"]
+    }
+}

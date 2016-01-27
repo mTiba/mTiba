@@ -1,0 +1,275 @@
+<div id="profile_view_container" class="container">
+  <div class="row">
+ 		<div class="col-sm-12 col-md-8 col-md-offset-2"> 
+					<div class="row">
+					<!--<a ui-sref="form.basic" >edit information</a>-->
+		        <div class="col-xs-12 col-sm-8">
+  						  <span><a ui-sref="editPatient({id:viewCtrl.patient.id})">Edit</a></span>		
+		            <p><label>DATE OF BIRTH:  {{viewCtrl.patient.date_of_birth }}</label> </p>
+		            <p><label>COUNTRY:  {{viewCtrl.patient.country_name}} 
+		            	<span ng-show="viewCtrl.patient.town != null || viewCtrl.patient.town != ''">({{viewCtrl.patient.town}})</span>
+		            	</label>
+		            </p>
+		            <p>
+		            	<label> HEALTH INSURANCE:
+			            	<span ng-show="viewCtrl.patient.health_insurance.any == 'true'" class="glyphicon glyphicon-check" style="color:green"></span>
+			            	<span ng-show="viewCtrl.patient.health_insurance.any == 'true'" >{{viewCtrl.patient.health_insurance.company}}</span>
+			            	<span ng-show="viewCtrl.patient.health_insurance.any != 'true'" class="glyphicon glyphicon-remove-circle" style="color:red"></span> 
+ 									</label>
+		            </p>
+		            <p><label>LANGUAGES: </label>
+			               <!-- <span class="label label-info tags">html5</span> 
+			                <span class="label label-info tags">css3</span>
+			                <span class="label label-info tags">jquery</span>
+			                <span class="label label-info tags">bootstrap3</span> -->
+			                <span ng-repeat="language in viewCtrl.patient.languages_names" class="label label-info tags">{{language}}</span>		                
+		            </p>
+		            <p><label>OCCUPATION: {{viewCtrl.patient.occupation }}</label></p>
+		        </div><!--/col-->  
+		        <div class="col-xs-6 col-sm-4 text-center">
+		        	<md-icon md-svg-icon="{{viewCtrl.patient._avatar_selected_id}}" alt="" class="center-block img-circle img-responsive" ng-mouseenter="showPicButton = true" ng-mouseleave="showPicButton= false" ng-click="viewCtrl.openPictureUpload()"></md-icon>
+             <!-- <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="" class="center-block img-circle img-responsive" ng-mouseenter="showPicButton = true" ng-mouseleave="showPicButton= false" ng-click="openPictureUpload()">-->
+              <a ng-show="showPicButton">Click picture to upload new image</a>
+              <ul class="list-inline ratings text-center" title="Ratings">
+                <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+              </ul>
+		        </div><!--/col-->
+
+		        <div class="col-xs-12 col-sm-12 bordered">
+		            <h4>Lifestyle</h4>
+		            <p>	<label>SMOKES: 
+			           			<span ng-show="viewCtrl.patient.lifestyle.smokes == 'false'" class="glyphicon glyphicon-remove-circle" style="color:green"></span>
+			            		<span ng-show="viewCtrl.patient.lifestyle.smokes == 'true'" class="glyphicon glyphicon-check" style="color:red"></span>
+			            		<span ng-show="viewCtrl.patient.lifestyle.smokes == 'true'"> {{viewCtrl.patient.lifestyle.cigarettes_a_week}} cigarettes / week </span>
+			            	</label>
+		            </p>
+		            <p><label>DRINKS ALCOHOL: 
+		            		<span ng-show="viewCtrl.patient.lifestyle.drinks == 'false'" class="glyphicon glyphicon-remove-circle" style="color:green"></span>
+		            		<span ng-show="viewCtrl.patient.lifestyle.drinks == 'true'" class="glyphicon glyphicon-check" style="color:red"></span>
+		            		<span ng-show="viewCtrl.patient.lifestyle.drinks == 'true'">  {{viewCtrl.patient.lifestyle.drinks_a_week}} drinks / week</span>
+		            	</label>
+		            </p>
+		            <p><label>RECREATIONAL DRUGS: 
+		            		<span ng-show="viewCtrl.patient.lifestyle.drugs == 'false'" class="glyphicon glyphicon-remove-circle" style="color:green"></span>
+		            		<span ng-show="viewCtrl.patient.lifestyle.drugs == 'true'" class="glyphicon glyphicon-check" style="color:red"></span>
+		            		<span ng-show="viewCtrl.patient.lifestyle.drugs == 'true'" >  {{viewCtrl.patient.lifestyle.drug_times_a_week}} times / week ( {{viewCtrl.patient.lifestyle.drug_types}} )</span>
+		            	</label>
+		            </p>
+		            <p><label>EXERCISES: 
+		            		<span ng-show="viewCtrl.patient.lifestyle.exercises == 'false'" class="glyphicon glyphicon-remove-circle" style="color:red"></span>
+		            		<span ng-show="viewCtrl.patient.lifestyle.exercises == 'true'" class="glyphicon glyphicon-check" style="color:green"></span>
+		            		<span ng-show="viewCtrl.patient.lifestyle.exercises == 'true'" >  {{viewCtrl.patient.lifestyle.exercise_frequency}} / week</span>
+		            	</label>
+		            </p>
+		            <p>
+		            	<label>SEXUAL ACTIVE: 
+		            		<span ng-show="{{viewCtrl.patient.lifestyle.sexually_active == 'true' }}">Yes</span>
+		            		<span ng-show="{{viewCtrl.patient.lifestyle.sexually_active == 'false' }}">No</span>
+		            	</label>
+		            </p>
+						</div>
+
+		        <div class="col-xs-12 col-sm-12 bordered">
+		            <h4>Health</h4>
+		            <p><label>DISEASES: </label>
+		            	<div class = "offset">
+		                <span ng-repeat="disease in viewCtrl.patient.health.diseases_names" class="label label-warning tags">
+		                	{{disease}}
+		                </span>
+		              </div>
+		            </p>
+		            <p><label>HIV STATUS: </label>
+		            	<div class = "offset">
+			            	<label ng-show="{{viewCtrl.patient.health.hiv_status.positive == 'false' }}"> 			Negative
+			            	</label>
+			            	<label ng-show="{{viewCtrl.patient.health.hiv_status.positive == 'true' }}">				Positive
+			            	</label>	<br />
+										<label>
+											Current treatment:  
+											<span ng-show="{{viewCtrl.patient.health.hiv_status.current_treatment == 'true' }}"> Yes</span>
+											<span ng-show="{{viewCtrl.patient.health.hiv_status.current_treatment == 'false' }}"> False</span>
+			            	</label>			  
+			            </div>          
+		            </p>
+		            <p><label>BLOOD TRANSFUSION:</label> <br />
+		            	<div class = "offset">
+			            	<label ng-show="{{viewCtrl.patient.health.blood_transfusion.any == 'false' }}">No</label>
+			            	<label ng-show="{{viewCtrl.patient.health.blood_transfusion.any == 'true' }}">Yes
+										</label>		<br />
+										<label>
+											Last time: {{viewCtrl.patient.health.blood_transfusion.last_time}}
+										</label><br />
+										<label>
+											Amount: {{viewCtrl.patient.health.blood_transfusion.amount}} ml
+			            	</label>		       
+			            </div>     	
+		            </p>
+		            <p><label>HOSPITALIZATION:</label>
+		           		<div class = "offset">
+			          		<div class = "row" ng-repeat="hospitalization in viewCtrl.patient.health.hospitalized_data">			          			
+			            		<div class="col-xs-12 col-md-3"><label>{{hospitalization.year}}</label></div>
+			            		<div class="col-xs-12 col-md-9"><label>{{hospitalization.reason}}</label></div>
+			            	</div>
+		            	</div>
+		            </p>
+		            <p><label>OTHER ISSUES:</label><br />
+		            	<div class = "offset">
+			           		<label>
+			            	{{viewCtrl.patient.health.other_issues}}
+			            	</label>
+			            </div>
+		            </p>
+		            <p><label>ALLERGIES:</label> <br />
+		            	<div class = "offset">
+			           		<label>
+			            	{{viewCtrl.patient.health.allergies}}
+			            	</label>
+			            </div>
+		            </p>
+		            <p><label>MEDICATIONS:</label> <br />
+		            	<div class = "offset">
+			           		<label>
+			            	{{viewCtrl.patient.health.medications}}
+			            	</label>
+			            </div>
+		            </p>
+		            <p><label>IN THE PAST TWO WEEKS:</label><br />
+		            	<div class = "offset">
+				            <label>
+				            	Little interest in doing things: {{viewCtrl.patient.health.little_interest}}
+				            </label><br />
+				            <label>
+				           		Felt down, depressed, hopeless: {{viewCtrl.patient.health.moral_situation}}
+				           	</label>
+			           	</div>
+		           	</p>
+		            <p><label>REGULAR DOCTOR: </label> 
+		            	<div class = "offset">
+			            	<span ng-show="viewCtrl.patient.health.regular_doctor.any == 'false'" class="glyphicon glyphicon-remove-circle" style="color:red"></span>
+										<span ng-show="viewCtrl.patient.health.regular_doctor.any == 'true'" class="glyphicon glyphicon-check" style="color:green"></span>
+										<div class = "row">										
+				            		<div class="col-md-12"><label>Last visit: {{viewCtrl.patient.health.regular_doctor.last_visit}} </label></div>
+				            		<div class="col-md-12"><label>Visits a year: {{viewCtrl.patient.health.regular_doctor.visits_a_year}}</label></div>
+				            	</label>
+			            	</div>
+			            </div>
+		            </p>
+		            <p>
+		            	<label>DISTANCE TO THE NEAREST DOCTOR OR CLINIC: {{viewCtrl.patient.health.distance_to_clinic}}<span ng show="viewCtrl.patient.health.distance_to_clinic != 'null'">km </span>
+		            	</label>
+		            </p>
+		        </div>
+
+		        <div class="col-xs-12 col-sm-12 bordered">
+           	 	<strong><h4>Family</h4></strong>
+           	 	<p><label>PARENTS: </label></p>
+           	 	<div class = "offset">
+								<div class="row">
+								<div class="col-md-3">
+									<label>Mother: </label>
+								</div>
+								<div class="col-md-9">
+									<div class="row">
+										<div class="col-md-12"> 
+											<label> Alive: </label>
+											<label ng-show="viewCtrl.patient.family.parents.mother.is_alive == 'true'">Yes
+											</label>
+											<label ng-show="viewCtrl.patient.family.parents.mother.is_alive == 'false'">No
+											</label>										
+										</div>		
+										<div class="col-md-12">
+											<label ng-show="viewCtrl.patient.family.parents.mother.is_alive == 'true'">Year of birth: {{viewCtrl.patient.family.parents.mother.year_of_birth}}
+											</label>
+										</div>
+										<div class="col-md-12">	
+											<label ng-show="viewCtrl.patient.family.parents.mother.is_alive == 'true'">General health: {{viewCtrl.patient.family.parents.mother.general_health_state}}
+											</label>
+										</div>
+										<div class="col-md-12">
+											<label ng-show="viewCtrl.patient.family.parents.mother.is_alive == 'false'">Age of death: {{viewCtrl.patient.family.parents.mother.age_of_death}}
+											</label>
+										</div>
+										<div class="col-md-12">
+											<label ng-show="viewCtrl.patient.family.parents.mother.is_alive == 'false'"> Reason of death: {{viewCtrl.patient.family.parents.mother.reason_of_death}}
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<label>Father: </label>
+								</div>
+								<div class="col-md-9">
+									<div class="row">
+										<div class="col-md-12"> 
+										<label> Alive: </label>
+											<label ng-show="viewCtrl.patient.family.parents.father.is_alive == 'true'">Yes
+											</label>
+											<label ng-show="viewCtrl.patient.family.parents.father.is_alive == 'false'">No
+											</label>
+										</div>		
+										<div class="col-md-12">
+											<label ng-show="viewCtrl.patient.family.parents.father.is_alive == 'true'">Year of birth: {{viewCtrl.patient.family.parents.father.year_of_birth}}
+											</label>
+										</div>
+										<div class="col-md-12">	
+											<label ng-show="viewCtrl.patient.family.parents.father.is_alive == 'true'">General health: {{viewCtrl.patient.family.parents.father.general_health_state}}
+											</label>
+										</div>
+										<div class="col-md-12">
+											<label ng-show="viewCtrl.patient.family.parents.father.is_alive == 'false'">Age of death: {{viewCtrl.patient.family.parents.father.age_of_death}}
+											</label>
+										</div>
+										<div class="col-md-12">
+											<label ng-show="viewCtrl.patient.family.parents.father.is_alive == 'false'"> Reason of death: {{viewCtrl.patient.family.parents.father.reason_of_death}}
+											</label>
+										</div>
+									</div>
+								</div>
+								</div>
+							</div>
+           	 	<p><label>SIBLINGS: </label> <br />
+           	 		<div class = "offset">
+									<label>
+										Number of sisters: {{viewCtrl.patient.family.siblings.number_of_sisters}} 
+									</label><br />
+									<label>
+										Number of brothers: {{viewCtrl.patient.family.siblings.number_of_brothers}} 
+									</label><br />
+									<label>
+										Age-range: {{viewCtrl.patient.family.siblings.age_range}}
+									</label> <br />
+									<label>
+										Health problems: {{viewCtrl.patient.family.siblings.health_problems}}
+									</label>
+								</div>
+           	 	</p>
+            	<p><label>DISEASES: </label>
+            		<div class = "offset">
+	                <span ng-repeat="disease in viewCtrl.patient.family.diseases_names" class="label label-warning tags">{{disease}}
+	                </span>
+	              </div>
+            	</p>
+            </div>
+		       <!-- <div class="col-xs-12 col-sm-4">
+		            <h2><label> 20,7K </label></h2>                    
+		            <p><small>Followers</small></p>
+		            <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Follow </button>
+		        </div>
+		        <div class="col-xs-12 col-sm-4">
+		            <h2><label>245</label></h2>                    
+		            <p><small>Following</small></p>
+		            <button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Profile </button>
+		        </div>
+		        <div class="col-xs-12 col-sm-4">
+		            <h2><label>43</label></h2>                    
+		            <p><small>Snippets</small></p>
+		            <button type="button" class="btn btn-primary btn-block"><span class="fa fa-gear"></span> Options </button>  -->
+		        </div><!--/col-->
+					</div><!--/row-->
+		</div>
+	</div>
+</div>
