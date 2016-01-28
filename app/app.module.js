@@ -214,14 +214,14 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
                 $ocLazyLoad.load(
                 {
                    name:'toggle-switch',
-                   files:["../../bower_components/angular-toggle-switch/angular-toggle-switch.min.js",
-                          "../../bower_components/angular-toggle-switch/angular-toggle-switch.css"
+                   files:["bower_components/angular-toggle-switch/angular-toggle-switch.min.js",
+                          "bower_components/angular-toggle-switch/angular-toggle-switch.css"
                       ]
                 }),
                 $ocLazyLoad.load(
                 {
                   name:'ngAnimate',
-                  files:['../../bower_components/angular-animate/angular-animate.js']
+                  files:['bower_components/angular-animate/angular-animate.js']
                 })
                 $ocLazyLoad.load(
                 {
