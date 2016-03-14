@@ -12,5 +12,6 @@ angular.module('mtiba.patients')
         templateUrl:'app/components/patients/profile/milestones/milestones.html',
         restrict: 'E',
         replace: true,
+        scope: { milestones: '=' }
     }
   });

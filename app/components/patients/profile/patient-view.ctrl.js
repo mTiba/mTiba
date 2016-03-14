@@ -1,6 +1,6 @@
 angular.module('mtiba.patients')
 
-  .controller('PatientViewController', function($scope, $state, $stateParams, Patient, patientMetadataFactory, patientMilestonesFactory, $http, $state) {
+  .controller('PatientViewController', function($scope, $http, $state, $stateParams, Patient, patientMetadataFactory, patientMilestonesFactory) {
 
    // var viewCtrl = $scope;
     var viewCtrl = this;
@@ -14,21 +14,9 @@ angular.module('mtiba.patients')
 
 
     viewCtrl.milestones = [];
-    viewCtrl.milestoneData = patientMilestonesFactory.get({doctor_id: $stateParams.id}, function(pm){
+    viewCtrl.milestoneData = patientMilestonesFactory.get({patient_id: $stateParams.id}, function(pm){
       viewCtrl.milestones = pm.milestones;
     });
-
-    // Add a milestone to the patient milestone list
-    viewCtrl.addMilestone = function () {
-      var date = new Date();
-      viewCtrl.milestones.push({
-          date: date,
-          text: viewCtrl.milestoneText
-      });
-      // Clear input fields after push
-      viewCtrl.milestoneText = "";
-    };
-
 
 
     viewCtrl.openPictureUpload = function(){

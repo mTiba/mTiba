@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc directive
- * @name 
+ * @name mtiba.directive:customHeader
  * @description
- * # adminPosHeader
+ * # customHeader
  */
 angular.module('mtiba')
 	.directive('customHeader',function(){

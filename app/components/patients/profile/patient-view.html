@@ -4,5 +4,9 @@
     <h2>{{viewCtrl.patient.name+' '+viewCtrl.patient.surname}}</h2>		
 	</div>
 	<div class="col-md-6" ng-include="'app/components/patients/profile/profile.html'"></div>
-	<div class="col-md-6" ng-include="'app/components/patients/profile/milestones/milestones.html'"></div>
+	<div class="col-md-6">
+		<h3>Medical milestones</h3>
+		<milestones milestones="viewCtrl.milestones"></milestones>
+		<milestone-add milestones="viewCtrl.milestones"></milestone-add>
+	</div>
 </div>

@@ -1,20 +1,19 @@
 <div class="text-center">
 	<h4>TODO.</h4>
 	<h5>Todo.</h5>
-
-	<div ng-show="formCtrl.uiRouterState.current.name == 'newDoctor'">
-		<input type="checkbox" ng-model="formCtrl.termsAndConditions">
-		I HAVE READ AND I ACKNOWLEDGED
-		<!--<a ui-sref="termsAndConditions" target="_blank" >TERMS AND CONDITIONS</a>-->
-			<a href ng-click="formCtrl.openTermsConditions()">TERMS AND CONDITIONSS</a>
-		<button ng-disabled="!formCtrl.termsAndConditions" type="submit" class="btn btn-success btn-lg btn-block">
-    	<span class="glyphicon glyphicon-flash"></span> Submit!
-  	</button>
-	</div>
-
- 	<button ng-show="formCtrl.uiRouterState.current.name == 'editDoctor'" type="submit" class="btn btn-success btn-lg btn-block">
-    <span class="glyphicon glyphicon-flash"></span> Submit!
-  </button>
-
 </div>
+
+<div ng-show="formCtrl.uiRouterState.current.name == 'newDoctor.submit'">
+	<input type="checkbox" ng-model="formCtrl.termsAndConditions">
+	I HAVE READ AND I ACKNOWLEDGED
+		<a href ng-click="formCtrl.openTermsConditions()">TERMS AND CONDITIONS</a>
+	<button ng-disabled="!formCtrl.termsAndConditions" type="submit" class="btn btn-success btn-lg btn-block">
+Submit!
+	</button>
+</div>
+
+<button ng-show="formCtrl.uiRouterState.current.name == 'editDoctor.submit'" type="submit" class="btn btn-success btn-lg btn-block">
+Submit!
+</button>
+
 

@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc directive
- * @name 
+ * @name mtiba.directive:footer
  * @description
- * # 
+ * # footer
  */
 angular.module('mtiba')
 .directive('footer', function () {

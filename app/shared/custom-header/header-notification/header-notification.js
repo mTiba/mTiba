@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc directive
- * @name izzyposWebApp.directive:adminPosHeader
+ * @name mtiba.directive:headerNotification
  * @description
- * # adminPosHeader
+ * # headerNotification
  */
 angular.module('mtiba')
 	.directive('headerNotification',function(){

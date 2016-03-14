@@ -1,12 +1,6 @@
 angular.module('mtiba.patients')
   //"http://bgs-johnlindquist.rhcloud.com"
   .constant("BASE_URL", "http://localhost:8000")
-  /*.service("mtibaPatientService", function ($http, BASE_URL) {
-    this.getPatients = function () {
-      return $http.get(BASE_URL + "/patient")
-    }
-  })*/
-
   .factory('Patient', ['$resource', function ($resource) {
     return $resource('app/data/patient.json', { id: '@_id'}, {
         save: { 
@@ -210,7 +204,7 @@ angular.module('mtiba.patients')
   })
 
   .factory('patientMilestonesFactory', ['$resource', function ($resource) {
-    return $resource('app/data/patients_milestones.json', { doctor_id: '@_id'}, {
+    return $resource('app/data/patients_milestones.json', { patient_id: '@_id'}, {
         save: { 
           method: 'POST', 
           url: 'http://movieapp-sitepointdemos.rhcloud.com/api/movies/:id' //, { id: '@_id' } 

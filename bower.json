@@ -53,7 +53,7 @@
     "angular-multi-step-form": "^1.2.7",
     "ng-file-upload-shim": "^11.2.3",
     "ng-file-upload": "^11.2.3",
-    "bootswatch-dist": "yeti",
+    "bootswatch-dist": "lumen",
     "startbootstrap-sb-admin-2": "^1.0.8",
     "jquery": "^2.2.0"
   },

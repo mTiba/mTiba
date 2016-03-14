@@ -43,14 +43,13 @@
     "Gruntfile.js",
     ".gitignore"
   ],
-  "_release": "72af06b7d7",
+  "_release": "69d0375240",
   "_resolution": {
     "type": "branch",
-    "branch": "yeti",
-    "commit": "72af06b7d723234888e4daae9ecaddf4f1e476f1"
+    "branch": "lumen",
+    "commit": "69d0375240074da8be280752509e3f66c3483e78"
   },
   "_source": "git://github.com/dbtek/bootswatch-dist.git",
-  "_target": "yeti",
-  "_originalSource": "bootswatch-dist",
-  "_direct": true
+  "_target": "lumen",
+  "_originalSource": "bootswatch-dist"
 }

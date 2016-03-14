@@ -1,6 +1,7 @@
-<h4>Great. Now that we've got your basic info, et's find out a little about your background. </h4>
-<h5>Remember, you can fill out as much as you feel comfortable showing to your patients.</h5>
-
+<div class="text-center">
+  <h4>Great. Now that we've got your basic info, let's find out a little about your background. </h4>
+  <h5>Remember, you can fill out as much as you feel comfortable showing to your patients.</h5>
+</div>
 
 <div class="form-group">
   <label for="affiliated_hospitals">­ {{ "List any hospitals you are affiliated with:" | uppercase}} </label>
@@ -106,5 +107,17 @@
           </div>
         </div>
     </div>
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-md-3 col-xs-6">
+      <a ui-sref="newDoctor.basic" class="btn btn-block btn-info">
+      <span class="glyphicon glyphicon-circle-arrow-left"></span> Back 
+      </a>
+  </div>
+  <div class="col-md-3 col-md-offset-6 col-xs-6">
+      <a ui-sref="newDoctor.commitment" class="btn btn-block btn-info">
+      Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
+      </a>
   </div>
 </div>

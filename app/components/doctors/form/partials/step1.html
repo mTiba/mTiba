@@ -1,6 +1,7 @@
-<h4>Welcome to mTiba!</h4>
-<h5>We just need to know a few things about you. Fill out as much as you feel confortable. </h5>
-
+<div class="text-center">
+  <h4>Welcome to mTiba!</h4>
+  <h5>We just need to know a few things about you. Fill out as much as you feel confortable. </h5>
+</div>
 
 <div class="form-group" ng-class="{ 'has-error': doctorForm.name.$touched && doctorForm.name.$invalid }">
   <label for="name">FIRST NAME:* (private, only you can see this.)</label>
@@ -10,19 +11,11 @@
   </div>
 </div>
 
-
-<!--<pre>doctorForm.name.touched {{doctorForm.name.$touched | json}}</pre>
-<pre>doctorForm.name.invalid {{doctorForm.name.$invalid | json}}</pre>
-<pre>doctorForm.country.touched {{doctorForm.country.$touched | json}}</pre>
-<pre>doctorForm.country.invalid {{doctorForm.country.$invalid | json}}</pre>-->
-
-
-
 <div class="form-group" ng-class="{ 'has-error': doctorForm.surname.$touched && doctorForm.surname.$invalid }">
   <label for="surname">LAST NAME:* (private)</label>
   <input type="text" class="form-control" name="surname" input-name="surname_input" ng-model="formCtrl.doctor.surname" ng-minlength="3" required>
   <div class="help-block" ng-messages="doctorForm.surname.$error" ng-if="doctorForm.surname.$touched">
-    <div ng-messages-include="form/messages.html"></div>
+    <div ng-message="required">This field is required</div>
   </div>
 </div>
 
@@ -41,7 +34,7 @@
 
 <div class="form-group" ng-class="{ 'has-error': doctorForm.phone.$touched && doctorForm.phone.$invalid }">
   <label for="phone">PHONE NUMBER:* (private)</label>
-  <input type="text" class="form-control" name="phone" ng-model="formCtrl.doctor.phone" required >
+  <input type="text" class="form-control" id="phone" name="phone" ng-model="formCtrl.doctor.phone" ng-required="true" >
   <div class="help-block has-error" ng-messages="doctorForm.phone.$error" ng-if="doctorForm.phone.$touched" class="col-lg-3">
     <div ng-messages-include="form/messages.html"></div>
     <div ng-message="required">This field is required</div>
@@ -114,7 +107,7 @@
   </label>
   <input type="text" class="form-control" name="license_number" ng-model="formCtrl.doctor.license_number" ng-minlength="3" required >
   <div class="help-block" ng-messages="doctorForm.license_number.$error" ng-if="doctorForm.license_number.$touched && !formCtrl.doctor.license_number_confidential">
-    <div ng-messages-include="form/messages.html"></div>
+    <div ng-message="required">This field is required. But you can tick the chekbox above to omit it.</div>
   </div>
 </div>
 
@@ -140,4 +133,12 @@
   <span ng-show="licenseFile.result">Upload Successful</span>-->
 
   <br />
+</div>
+
+<div class="form-group row">
+  <div class="col-md-3 col-md-offset-9 col-xs-6 col-xs-offset-6">
+      <a ui-sref="newDoctor.background" class="btn btn-block btn-info">
+      Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
+      </a>
+  </div>
 </div>

@@ -1,8 +1,50 @@
 /* BASIC STYLINGS
 ============================================================================= */
-body                            { }
 
-pre                             { margin-bottom:20px; }
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+    padding-bottom: 20px;
+    background-color: #fff;
+    margin-bottom: 60px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+pre { margin-bottom:20px; }
 
 
 
@@ -16,19 +58,16 @@ pre                             { margin-bottom:20px; }
   margin-left: 0px;
 }
 
-.multiStepHeader {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 0 15px;
+
+a{
+ color: gray;
+}
+a:hover, a:active{
+  color: #00BC8C;
 }
 
-.multiStepTitle{
-  
-}
-a{
-  color: #4FD7BD;
+.active > a{
+  color: #00BC8C;
 }
 
 input.form-control:focus{
@@ -52,14 +91,15 @@ textarea.form-control:focus{
 label{
   font-size: 14px;
   font-weight: 300;
-  font-family: 'Helvetica Neue';
   text-align: left;
+}
+.radio label, .checkbox label{
+  font-weight: 300;
 }
 p{
   color: #A7A7A4;
   font-size: 14px;
   font-weight: 300;
-  font-family: 'Helvetica Neue';
 }
 .glyphicon.glyphicon-asterisk{
   color: #4FD7BD;
@@ -69,10 +109,19 @@ p{
 
 /* TEAM OVERWRITING */
 
-.btn-info {
+.btn-info, .btn-info:hover {
 	background: #00BC8C;
+  border-color: #00BC8C;
 }
 
+
+.navbar-brand {
+  line-height: 30px;
+  padding: 12px 15px;
+}
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:visited, .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus{
+  color: gray;
+}
 
 
 
@@ -88,7 +137,6 @@ p{
 
 form .progress {
     line-height: 15px;
-}
 }
 
 .progress {
@@ -157,25 +205,6 @@ form .progress {
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #f5f5f5;
-}
-
 /* custom DASHBOARD styles
 -------------------------------------------------- */
 /* sidebar */
@@ -205,4 +234,75 @@ li.list-title {
 nav-pills>li>a{
   pointer-events:none;
   background-color: transparent;
+}
+
+
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+.nav>li.active>a {
+text-decoration: none;
+background-color: #eee;
+}
+
+/* http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-centered-columns */
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+#form_navigation>li>a {
+    padding: 10px 25px;
 }

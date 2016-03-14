@@ -1,0 +1,43 @@
+{
+  "name": "mtiba",
+  "version": "1.0.0",
+  "description": "application to link doctors with patients",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mTiba/mTiba.git"
+  },
+  "keywords": [
+    "patients",
+    "doctors",
+    "link",
+    "medicine"
+  ],
+  "author": "Igne Degutyte (ridike@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mTiba/mTiba/issues"
+  },
+  "homepage": "https://github.com/mTiba/mTiba#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-connect": "~0.8.0",
+    "grunt-contrib-compress": "~0.9.1",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-html2js": "~0.2.7",
+    "grunt-bower-task": "~0.3.4",
+    "grunt-karma": "~0.8.0",
+    "karma": "~0.12.0",
+    "karma-jasmine": "~0.1.0",
+    "karma-phantomjs-launcher": "~0.1.4",
+    "karma-ng-html2js-preprocessor": "~0.1.0"
+  }
+}
