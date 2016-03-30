@@ -29,21 +29,9 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
   $urlRouterProvider.otherwise('/login');
   
   $stateProvider
-        .state('login', { // login window 
-          url: '/login',
-          templateUrl: 'app/components/login/login.view.html',
-          controller: 'LoginController',
-          resolve: {
-            loadMyDirectives:function($ocLazyLoad){
-                return $ocLazyLoad.load(
-                {
-                    name:'mtiba.login',
-                    files:[
-                      'app/components/login/login.ctrl.js'
-                    ]
-                })
-            }
-          }  
+      .state('login', { // login window 
+        url: '/login',
+        templateUrl: 'app/components/login/login.view.html'
       }).state('patients', { // state for showing all patients
           url: '/patients',
           templateUrl: 'app/components/patients/list/patients-list.html',
@@ -59,6 +47,51 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
                 })
             }
           }  
+      }).state('loginPatient', {
+          url: '/patients/login',
+          templateUrl:'app/components/patients/authentication/login/login.view.html',
+          controller:'PatientLoginController',
+          resolve: {
+            loadMyDirectives:function($ocLazyLoad){
+                return $ocLazyLoad.load(
+                {
+                    name:'mtiba.authentication',
+                    files:[
+                      'app/components/patients/authentication/login/login.ctrl.js'
+                    ]
+                })
+            }
+          } 
+      }).state('registerPatient', {
+          url: '/patients/register',
+          templateUrl:'app/components/patients/authentication/register/register.view.html',
+          controller:'PatientRegisterController',
+          resolve: {
+            loadMyDirectives:function($ocLazyLoad){
+                return $ocLazyLoad.load(
+                {
+                    name:'mtiba.authentication',
+                    files:[
+                      'app/components/patients/authentication/register/register.ctrl.js'
+                    ]
+                })
+            }
+          } 
+      }).state('patientsUsers', {
+          url: '/patients/users',
+          templateUrl:'app/components/patients/authentication/users/users.view.html',
+          controller:'PatientUsersController',
+          resolve: {
+            loadMyDirectives:function($ocLazyLoad){
+                return $ocLazyLoad.load(
+                {
+                    name:'mtiba.authentication',
+                    files:[
+                      'app/components/patients/authentication/users/users.ctrl.js'
+                    ]
+                })
+            }
+          } 
       }).state('viewPatient', { //state for showing single patient
           url: '/patients/:id/view',
           templateUrl: 'app/components/patients/profile/patient-view.html',
@@ -71,38 +104,37 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
                       'app/components/patients/profile/patient-view.ctrl.js',
                       'app/components/patients/profile/milestones/milestones.js',
                       'app/components/patients/profile/milestone-add/milestone-add.js'
-
                     ]
                 })
             }
           }  
-      }).state('editPatient', { //state for updating a patient
-          url: '/patients/:id/edit',
-          templateUrl: 'app/components/patients/form/patient-edit.html',
+      }).state('newPatient', { //state for updating a patient
+          url: '/patients/add',
+          templateUrl: 'app/components/patients/form/patient-add.html',
           resolve: {
             loadMyDirectives:function($ocLazyLoad){
                 return $ocLazyLoad.load(
                 {
                     name:'mtiba.patients',
                     files:[
-                      'app/components/patients/form/patient-edit.ctrl.js',
+                      'app/components/patients/form/patient-add.ctrl.js',
                     ]
                 })
             }
           } 
-      }).state('editPatient.basic', {
+      }).state('newPatient.basic', {
             url: '/basic',
             templateUrl: 'app/components/patients/form/partials/step1.html'
-      }).state('editPatient.lifestyle', {
+      }).state('newPatient.lifestyle', {
             url: '/lifestyle',
             templateUrl: 'app/components/patients/form/partials/step2.html'
-      }).state('editPatient.health', {
+      }).state('newPatient.health', {
           url: '/health',
           templateUrl: 'app/components/patients/form/partials/step3.html'
-      }).state('editPatient.family', {
+      }).state('newPatient.family', {
           url: '/family',
           templateUrl: 'app/components/patients/form/partials/step4.html'
-      }).state('editPatient.submit', {
+      }).state('newPatient.submit', {
           url: '/submit',
           templateUrl: 'app/components/patients/form/partials/submit.html'
       }).state('patientAvatar', { //state for selecting a patient avatar
@@ -134,7 +166,9 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
                     'app/components/patients/dashboard/directives/sidebar/sidebar-search/sidebar-search.js',
                     'app/components/patients/dashboard/directives/timeline/timeline.js',
                     'app/components/patients/dashboard/directives/chat/chat.js',
-                    'app/components/patients/profile/milestones/milestones.js'
+                    'app/components/patients/profile/patient-view.ctrl.js',
+                    'app/components/patients/profile/milestones/milestones.js',
+                    'app/components/patients/authentication/users/users.ctrl.js'
                     ]
                 }),
                 $ocLazyLoad.load(
@@ -171,19 +205,39 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
                 })
             }
         }
+      }).state('patientDashboard.intro',{
+        url:'/intro',
+        templateUrl:'app/components/patients/dashboard/dashboard-intro.html'
       }).state('patientDashboard.home',{
         url:'/home',
         templateUrl:'app/components/patients/dashboard/dashboard-home.html'
-      }).state('patientDashboard.form',{
-        url:'/form',
-        templateUrl:'app/components/patients/form/patient-add.html',
+      }).state('patientDashboard.profile',{
+        url:'/profile',
+        templateUrl:'app/components/patients/dashboard/dashboard-profile.html',
         resolve: {
           loadMyDirectives:function($ocLazyLoad){
               return $ocLazyLoad.load(
               {
                   name:'mtiba.patients',
                   files:[
-                    'app/components/patients/form/patient-add.ctrl.js'
+                    'app/components/patients/profile/patient-profile/patient-profile.js',
+                    'app/components/patients/profile/milestones/milestones.js',
+                    'app/components/patients/profile/milestone-add/milestone-add.js'
+
+                  ]
+              })
+          }
+        }  
+      }).state('patientDashboard.form',{
+        url:'/form',
+        templateUrl:'app/components/patients/form/patient-edit.html',
+        resolve: {
+          loadMyDirectives:function($ocLazyLoad){
+              return $ocLazyLoad.load(
+              {
+                  name:'mtiba.patients',
+                  files:[
+                    'app/components/patients/form/patient-edit.ctrl.js'
                   ]
               })
           }
@@ -199,7 +253,7 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
           templateUrl: 'app/components/patients/form/partials/step3.html'
       }).state('patientDashboard.form.family', {
           url: '/family',
-          templateUrl: 'app/components/patients/form/partials/step3.html'
+          templateUrl: 'app/components/patients/form/partials/step4.html'
       }).state('patientDashboard.form.submit', {
           url: '/submit',
           templateUrl: 'app/components/patients/form/partials/submit.html'
@@ -214,6 +268,51 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
                     name:'mtiba.doctors',
                     files:[
                       'app/components/doctors/list/doctors-list.ctrl.js'
+                    ]
+                })
+            }
+          } 
+      }).state('loginDoctor', {
+          url: '/doctors/login',
+          templateUrl:'app/components/doctors/authentication/login/login.view.html',
+          controller:'LoginController',
+          resolve: {
+            loadMyDirectives:function($ocLazyLoad){
+                return $ocLazyLoad.load(
+                {
+                    name:'mtiba.authentication',
+                    files:[
+                      'app/components/doctors/authentication/login/login.ctrl.js'
+                    ]
+                })
+            }
+          } 
+      }).state('registerDoctor', {
+          url: '/doctors/register',
+          templateUrl:'app/components/doctors/authentication/register/register.view.html',
+          controller:'DoctorRegisterController',
+          resolve: {
+            loadMyDirectives:function($ocLazyLoad){
+                return $ocLazyLoad.load(
+                {
+                    name:'mtiba.authentication',
+                    files:[
+                      'app/components/doctors/authentication/register/register.ctrl.js'
+                    ]
+                })
+            }
+          } 
+      }).state('doctorsUsers', {
+          url: '/doctors/users',
+          templateUrl:'app/components/doctors/authentication/users/users.view.html',
+          controller:'DoctorsUsersController',
+          resolve: {
+            loadMyDirectives:function($ocLazyLoad){
+                return $ocLazyLoad.load(
+                {
+                    name:'mtiba.authentication',
+                    files:[
+                      'app/components/doctors/authentication/users/users.ctrl.js'
                     ]
                 })
             }
@@ -354,18 +453,6 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
                 })
             }
         }
-      }).state('doctorLogin', {
-          url: '/doctors/login',
-          templateUrl:'app/components/doctors/authentication/login/login.view.html',
-          controller:'LoginController'
-      }).state('doctorRegister', {
-          url: '/doctors/register',
-          templateUrl:'app/components/doctors/authentication/register/register.view.html',
-          controller:'RegisterController'
-      }).state('users', {
-          url: '/doctors/users',
-          templateUrl:'app/components/doctors/authentication/users/users.view.html',
-          controller:'UsersController'
       });
 
   $mdIconProvider
@@ -384,11 +471,13 @@ mtibaApp.run(['$state', '$rootScope', '$location', '$cookieStore', '$http', func
 
   $rootScope.$on('$locationChangeStart', function (event, next, current) {
       // redirect to login page if not logged in and trying to access a restricted page
-      //var restrictedPage = $.inArray($location.path(), ['/login', '/patients/login', '/patients/register', '/patients/new', '/doctors/login', '/doctors/register', '/doctors/new']) === -1;
-      //var loggedIn = $rootScope.globals.currentUser;
-      //if (restrictedPage && !loggedIn) {
-      //  $state.go('login');
-      //}
+      var restrictedPage = $.inArray($location.path(), ['/login', '/patients/login', '/patients/register', '/doctors/login', '/doctors/register']) === -1;
+      var loggedIn = $rootScope.globals.currentUser;
+      console.log("logged in: ");
+      console.log(loggedIn);
+      if (restrictedPage && !loggedIn) {
+        $state.go('login');
+      }
   });
 }]);
 

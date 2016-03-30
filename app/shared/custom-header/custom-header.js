@@ -12,8 +12,7 @@ angular.module('mtiba')
         templateUrl:'app/shared/custom-header/custom-header.html',
         restrict: 'E',
         replace: true,
-        scope: {
-	      }
+				scope: { user: '=' }
     	}
 	});
 

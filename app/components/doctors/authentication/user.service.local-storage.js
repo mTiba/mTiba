@@ -3,10 +3,10 @@
 
     angular
         .module('mtiba.authentication')
-        .factory('UserService', UserService);
+        .factory('DoctorUserService', DoctorUserService);
 
-    UserService.$inject = ['$timeout', '$filter', '$q'];
-    function UserService($timeout, $filter, $q) {
+    DoctorUserService.$inject = ['$timeout', '$filter', '$q'];
+    function DoctorUserService($timeout, $filter, $q) {
 
         var service = {};
 
@@ -105,15 +105,15 @@
         // private functions
 
         function getUsers() {
-            if(!localStorage.users){
-                localStorage.users = JSON.stringify([]);
+            if(!localStorage.doctorUsers){
+                localStorage.doctorUsers = JSON.stringify([]);
             }
 
-            return JSON.parse(localStorage.users);
+            return JSON.parse(localStorage.doctorUsers);
         }
 
         function setUsers(users) {
-            localStorage.users = JSON.stringify(users);
+            localStorage.doctorUsers = JSON.stringify(users);
         }
     }
 })();

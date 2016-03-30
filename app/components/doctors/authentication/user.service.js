@@ -3,10 +3,10 @@
 
     angular
         .module('mtiba.authentication')
-        .factory('UserService', UserService);
+        .factory('DoctorUserService', DoctorUserService);
 
-    UserService.$inject = ['$http'];
-    function UserService($http) {
+    DoctorUserService.$inject = ['$http'];
+    function DoctorUserService($http) {
         var service = {};
 
         service.GetAll = GetAll;

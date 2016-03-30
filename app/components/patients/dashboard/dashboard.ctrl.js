@@ -15,5 +15,8 @@ angular.module('mtiba.patients.dashboard')
      // console.log(dashboardCtrl.milestones);
     });
 
+    dashboardCtrl.openPictureUpload = function(){
+      $state.go('patientAvatar');
+    };
 
 	});

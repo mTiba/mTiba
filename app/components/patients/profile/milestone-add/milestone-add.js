@@ -25,8 +25,6 @@ angular.module('mtiba.patients')
 			      // Clear input fields after push
 			      $scope.milestoneText = "";
 			    };
-
-
         }
     }
   });

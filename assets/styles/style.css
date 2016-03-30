@@ -109,7 +109,7 @@ p{
 
 /* TEAM OVERWRITING */
 
-.btn-info, .btn-info:hover {
+.btn-info, .btn-info:hover, .btn-primary, .btn-primary:hover, .btn-success, .btn-success:hover {
 	background: #00BC8C;
   border-color: #00BC8C;
 }
@@ -157,6 +157,13 @@ form .progress {
     width: 80% !important;
 }
 
+#profile_view_container{
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 #profile_view_container .offset{
     margin-left: 15px;
 }
@@ -197,8 +204,9 @@ form .progress {
 
 #profile_view_container md-icon {
   margin: 20px;
-  width: 200px;
-  height: 200px; }
+  width: 140px;
+  height: 140px; 
+}
 
 
 /*For boostrap.js reuired for tooltip https://angular-ui.github.io/bootstrap/ */
@@ -241,7 +249,7 @@ nav-pills>li>a{
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 730px;
+ /*   max-width: 730px; */
   }
 }
 .container-narrow > hr {
@@ -251,10 +259,10 @@ nav-pills>li>a{
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+  background-color: transparent;
+  border: 0;
 }
 .jumbotron .btn {
-  font-size: 21px;
   padding: 14px 24px;
 }
 
@@ -278,10 +286,6 @@ nav-pills>li>a{
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
   }
 }
 

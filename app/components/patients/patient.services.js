@@ -14,11 +14,43 @@ angular.module('mtiba.patients')
         query:  {
           method:'GET',
           url: 'app/data/patients.json',
-          isArray:true
+          isArray: true
         }
     });
   }])
-  .factory('patientFormStepsFactory', function(){
+  .factory('addPatientFormStepsFactory', function(){
+    var factory = {};
+    factory.getSteps = function(){ 
+      return [
+         {
+            templateUrl: 'app/components/patients/form/partials/step0.html',
+            title: 'Login info'
+        },
+        {
+            templateUrl: 'app/components/patients/form/partials/step1.html',
+            title: 'Basic info'
+        },
+        {
+            templateUrl: 'app/components/patients/form/partials/step2.html',
+            title: 'Lifestyle'
+        },
+        {
+            templateUrl: 'app/components/patients/form/partials/step3.html',
+            title: 'Health'
+        },
+        {
+            templateUrl: 'app/components/patients/form/partials/step4.html',
+            title: 'Family'
+        },
+        {
+            templateUrl: 'app/components/patients/form/partials/submit.html',
+            title: 'Submit'
+        }
+      ]
+    };
+    return factory;
+  })  
+  .factory('editPatientFormStepsFactory', function(){
     var factory = {};
     factory.getSteps = function(){ 
       return [
