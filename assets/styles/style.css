@@ -176,6 +176,10 @@ form .progress {
         border-top: 1px solid #dddddd;
 }
 
+/* identical to boostrap's .img-circle, but in this cse should be applied to the svg elment, which is dynamically generated-*/
+.avatar_picture svg {
+  border-radius: 50%;
+}
 
 /*avatar selection*/
 
