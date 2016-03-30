@@ -13,8 +13,6 @@ angular.module('mtiba.doctors.dashboard')
       templateUrl:'app/components/doctors/dashboard/directives/sidebar/sidebar.html',
       restrict: 'E',
       replace: true,
-      //scope: {
-      //},
       scope: { patients: '=', selectedPatient: '=' },
       controller:function($scope){
 

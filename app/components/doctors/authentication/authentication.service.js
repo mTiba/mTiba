@@ -5,8 +5,8 @@
         .module('mtiba.authentication')
         .factory('AuthenticationService', AuthenticationService);
 
-    AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', '$timeout', 'UserService'];
-    function AuthenticationService($http, $cookieStore, $rootScope, $timeout, UserService) {
+    AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', '$timeout', 'DoctorUserService'];
+    function AuthenticationService($http, $cookieStore, $rootScope, $timeout, DoctorUserService) {
         var service = {};
 
         service.Login = Login;
@@ -22,7 +22,7 @@
              ----------------------------------------------*/
             $timeout(function () {
                 var response;
-                UserService.GetByUsername(username)
+                DoctorUserService.GetByUsername(username)
                     .then(function (user) {
                         if (user !== null && user.password === password) {
                             response = { success: true };

@@ -1,0 +1,24 @@
+<div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav in" id="side-menu">
+            <!--<li class="list-title">-->
+            <li ng-class="active">
+                <a ui-sref="patientDashboard.profile">YOUR PROFILE</a>
+                <ul class="nav nav-second-level" collapse="collapseVar!=1">
+                    <li ui-sref-active="active" ui-sref="patientDashboard.form.basic"><a>BASIC INFO</a></li>
+                    <li ui-sref-active="active" ui-sref="patientDashboard.form.lifestyle"><a>LIFESTYLE</a></li>
+                    <li ui-sref-active="active" ui-sref="patientDashboard.form.health"><a>HEALTH</a></li>
+                    <li ui-sref-active="active" ui-sref="patientDashboard.form.family"><a>FAMILY</a></li>
+                    <!-- <li ui-sref-active="active" ui-sref=".submit"><a>Submit</a></li>-->
+                </ul>          
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="patientDashboard.home"><i class="fa fa-wechat fa-fw"></i> Conversation with doctor</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
+</div> 
+
+
+

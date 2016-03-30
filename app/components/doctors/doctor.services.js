@@ -47,6 +47,7 @@ angular.module('mtiba.doctors')
     factory.getSteps = function(){ 
       return [
         {
+            //template: '<input type="text" class="form-control" name="surname" input-name="surname_input" ng-model="formCtrl.doctor.surname" ng-minlength="3" required>',
             templateUrl: 'app/components/doctors/form/partials/step1.html',
             title: 'Basic info'
         },

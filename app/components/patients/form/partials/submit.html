@@ -2,18 +2,17 @@
 	<h4>ALL DONE! Here are some legal things to ensure you get the best care.</h4>
 	<h5>You need to agree you share your records with our doctors. Your data will never be public and always confidential.</h5>
 
-	<div ng-show="formCtrl.uiRouterState.current.name == 'newPatient'">
+	<div ng-show="formCtrl.uiRouterState.current.name == 'patientDashboard.form.submit'">
 		<input type="checkbox" ng-model="formCtrl.termsAndConditions">
 		I HAVE READ AND I ACKNOWLEDGED
 		<!--<a ui-sref="termsAndConditions" target="_blank" >TERMS AND CONDITIONS</a>-->
 			<a href ng-click="formCtrl.openTermsConditions()">TERMS AND CONDITIONSS</a>
-		<button ng-disabled="!formCtrl.termsAndConditions" type="submit" class="btn btn-success btn-lg btn-block">
-    	<span class="glyphicon glyphicon-flash"></span> Submit!
+		<button ng-disabled="!formCtrl.termsAndConditions" type="submit" class="btn btn-success btn-block">
+	Submit!
   	</button>
 	</div>
 
- 	<button ng-show="formCtrl.uiRouterState.current.name == 'editPatient'" type="submit" class="btn btn-success btn-lg btn-block">
-    <span class="glyphicon glyphicon-flash"></span> Submit!
+ 	<button ng-show="formCtrl.uiRouterState.current.name == 'editPatient.submit'" type="submit" class="btn btn-success btn-lg btn-block"> Submit!
   </button>
 
 </div>

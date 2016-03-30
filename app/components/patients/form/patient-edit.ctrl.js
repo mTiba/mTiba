@@ -1,12 +1,12 @@
 angular.module('mtiba.patients')
 
-  .controller('PatientEditController', function($scope, $state, $stateParams, Patient, patientMetadataFactory, patientFormStepsFactory) {
+  .controller('PatientEditController', function($scope, $state, $stateParams, Patient, patientMetadataFactory, editPatientFormStepsFactory) {
 
     var formCtrl = this;
     
     formCtrl.uiRouterState = $state;
 
-    formCtrl.steps = patientFormStepsFactory.getSteps();
+    formCtrl.steps = editPatientFormStepsFactory.getSteps();
 
     formCtrl.metadata = patientMetadataFactory.getData();
 

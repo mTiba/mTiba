@@ -1,12 +1,6 @@
 angular.module('mtiba.patients')
   //"http://bgs-johnlindquist.rhcloud.com"
   .constant("BASE_URL", "http://localhost:8000")
-  /*.service("mtibaPatientService", function ($http, BASE_URL) {
-    this.getPatients = function () {
-      return $http.get(BASE_URL + "/patient")
-    }
-  })*/
-
   .factory('Patient', ['$resource', function ($resource) {
     return $resource('app/data/patient.json', { id: '@_id'}, {
         save: { 
@@ -20,11 +14,43 @@ angular.module('mtiba.patients')
         query:  {
           method:'GET',
           url: 'app/data/patients.json',
-          isArray:true
+          isArray: true
         }
     });
   }])
-  .factory('patientFormStepsFactory', function(){
+  .factory('addPatientFormStepsFactory', function(){
+    var factory = {};
+    factory.getSteps = function(){ 
+      return [
+         {
+            templateUrl: 'app/components/patients/form/partials/step0.html',
+            title: 'Login info'
+        },
+        {
+            templateUrl: 'app/components/patients/form/partials/step1.html',
+            title: 'Basic info'
+        },
+        {
+            templateUrl: 'app/components/patients/form/partials/step2.html',
+            title: 'Lifestyle'
+        },
+        {
+            templateUrl: 'app/components/patients/form/partials/step3.html',
+            title: 'Health'
+        },
+        {
+            templateUrl: 'app/components/patients/form/partials/step4.html',
+            title: 'Family'
+        },
+        {
+            templateUrl: 'app/components/patients/form/partials/submit.html',
+            title: 'Submit'
+        }
+      ]
+    };
+    return factory;
+  })  
+  .factory('editPatientFormStepsFactory', function(){
     var factory = {};
     factory.getSteps = function(){ 
       return [
@@ -210,7 +236,7 @@ angular.module('mtiba.patients')
   })
 
   .factory('patientMilestonesFactory', ['$resource', function ($resource) {
-    return $resource('app/data/patients_milestones.json', { doctor_id: '@_id'}, {
+    return $resource('app/data/patients_milestones.json', { patient_id: '@_id'}, {
         save: { 
           method: 'POST', 
           url: 'http://movieapp-sitepointdemos.rhcloud.com/api/movies/:id' //, { id: '@_id' } 

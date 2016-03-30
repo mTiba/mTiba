@@ -8,8 +8,6 @@ angular.module('mtiba.doctors')
 
 	  formCtrl.doctor = new Doctor();
 
-	  formCtrl.steps = doctorFormStepsFactory.getSteps();
-
 	  formCtrl.metadata = doctorMetadataFactory.getData();
 
 	  formCtrl.doctor.health = {};
@@ -19,17 +17,6 @@ angular.module('mtiba.doctors')
 	      {  year: '', reason: '' },
 	      {  year: '', reason: '' }
 	  ];
-
-
-
-	  /*formCtrl.appendForm = function(){
-	    //document.getElementsByTagName("form")[0].setAttribute("name", "doctorForm");
-	    var newElement = '<form class="form-horizontal" role="form" name="doctorForm" ng-submit="formCtrl.addDoctor()" novalidate>';
-	    var stepElement = document.getElementsByClassName("multi-step-body")[0];
-	    stepElement.innerHTML = newElement + stepElement.innerHTML + '</form>'; ;
-	  };
-	  setTimeout(formCtrl.appendForm, 300);
-	  */
 
 	  // formCtrl.pictureFile = {};
 	  formCtrl.addDoctor = function() { //create a new doctor. Issues a POST to /api/doctors
@@ -41,7 +28,7 @@ angular.module('mtiba.doctors')
 	  formCtrl.openTermsConditions = function (){
 	    $scope.value = true;
 	    ngDialog.open({
-	      template: 'form/_terms_and_conditions.html',
+	      template: 'partials/_terms_and_conditions.html',
 	      className: 'ngdialog-theme-plain',
 	      scope: $scope,
 	      cache: false

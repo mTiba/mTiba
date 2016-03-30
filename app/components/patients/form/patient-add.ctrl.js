@@ -1,6 +1,6 @@
 angular.module('mtiba.patients')
 
-  .controller('PatientCreateController', function($scope, $http, $state, patientMetadataFactory, patientFormStepsFactory, Upload, $timeout, ngDialog, $stateParams, Patient) {
+  .controller('PatientCreateController', function($scope, $http, $state, patientMetadataFactory, addPatientFormStepsFactory, Upload, $timeout, ngDialog, $stateParams, Patient) {
 
     var formCtrl = this;
 
@@ -8,7 +8,7 @@ angular.module('mtiba.patients')
 
     formCtrl.patient = new Patient();
 
-    formCtrl.steps = patientFormStepsFactory.getSteps();
+    formCtrl.steps = addPatientFormStepsFactory.getSteps();
 
     formCtrl.metadata = patientMetadataFactory.getData();
 
@@ -19,11 +19,9 @@ angular.module('mtiba.patients')
         {  year: '', reason: '' }
     ];
 
-      // formCtrl.pictureFile = {};
-
-    formCtrl.addPatient = function() { //create a new patient. Issues a POST to /api/patien
+    formCtrl.addPatient = function() { //create a new patient. Issues a POST to /api/patient
       formCtrl.patient.$save(function() {
-        $state.go('patients'); // on success go back to home i.e. patients state.
+        $state.go('patientDashboard.intro'); // on success go back to home i.e. patients state.
       });
     };
 

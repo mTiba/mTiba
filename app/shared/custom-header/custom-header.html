@@ -15,12 +15,27 @@
     <!-- /.navbar-header -->
 
     <!-- Collect the nav links, forms, and other content for toggling -->
- <!--   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-            <li ng-class="{ active: $state.includes('doctorDashboard') }"><a ui-sref="doctorDashboard">{{dashboardCtrl.doctor.name+' '+dashboardCtrl.doctor.surname}} Dashboard</a></li>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a ui-sref="patientDashboard.profile">
+                <!--    <md-icon md-svg-icon="{{ctrl.patient._avatar_selected_id}}" alt="" class="center-block img-circle img-responsive" ng-mouseenter="showPicButton = true" ng-mouseleave="showPicButton= false" ng-click="ctrl.openPictureUpload()"></md-icon>-->
+                </a>
+            </li>
+            <li class="dropdown" dropdown>
+                <!-- Notice the dropdown-toggle directive -->
+                <a class="dropdown-toggle" data-toggle="dropdown" dropdown-toggle>{{user.firstName + ' ' +  user.lastName}}
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a ui-sref="patientDashboard.profile">See profile</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
--->
+
   </div>
     <!--<header-notification></header-notification>-->
 </nav>
