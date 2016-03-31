@@ -26,8 +26,7 @@
         </div><!--/col-->  
 
         <div class="col-xs-6 col-sm-4 col-md-6 text-center">
-        	<md-icon md-svg-icon="{{ctrl.patient._avatar_selected_id}}" alt="" class="center-block img-circle img-responsive" ng-mouseenter="showPicButton = true" ng-mouseleave="showPicButton= false" ng-click="ctrl.openPictureUpload()"></md-icon>
-         <!-- <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="" class="center-block img-circle img-responsive" ng-mouseenter="showPicButton = true" ng-mouseleave="showPicButton= false" ng-click="openPictureUpload()">-->
+        	<md-icon md-svg-icon="{{ctrl.patient._avatar_selected_id}}" class="avatar_picture" alt="" class="center-block img-responsive" ng-mouseenter="showPicButton = true" ng-mouseleave="showPicButton= false" ng-click="ctrl.openPictureUpload()"></md-icon>
           <a ng-show="showPicButton">Click picture to upload new image</a>
          <!-- <ul class="list-inline ratings text-center" title="Ratings">
             <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
