@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>mTiba</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="assets/img/favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="assets/img/favicon-152.png">
     <!-- CSS -->
@@ -27,7 +29,6 @@
     <div ui-view></div>
     <!-- <footer></footer>-->
     <!-- JS -->
-    <!-- load angular, nganimate, and ui-router -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Angular Material Dependencies -->
@@ -40,7 +41,10 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="bower_components/ui-select/dist/select.min.js"></script>
     <!-- Tooltip-->
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>    
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>  
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> 
+
     <!--Lazyload-->
     <script src="bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
     <script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
@@ -56,10 +60,12 @@
     <script src="app/app.module.js"></script>     
     <script src="app/shared/footer/footer.js"></script>
     <script src="app/shared/custom-header/custom-header.js"></script>
+    <script src="app/shared/pw-check/pw-check.js"></script>
 
     <script src="app/components/doctors/authentication/authentication.js"></script>
     <script src="app/components/doctors/authentication/authentication.service.js"></script>
     <script src="app/components/doctors/authentication/flash.service.js"></script>
+        
     <!-- <script src="app/components/doctors/authentication/user.service.js"></script> -->
     <!-- Fake user service for demo that uses local storage -->
     <script src="app/components/doctors/authentication/user.service.local-storage.js"></script>

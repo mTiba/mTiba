@@ -472,9 +472,8 @@ mtibaApp.run(['$state', '$rootScope', '$location', '$cookieStore', '$http', func
   $rootScope.$on('$locationChangeStart', function (event, next, current) {
       // redirect to login page if not logged in and trying to access a restricted page
       var restrictedPage = $.inArray($location.path(), ['/login', '/patients/login', '/patients/register', '/doctors/login', '/doctors/register']) === -1;
+      //TODO: differentiate between patients and users - allow to access only the related pages (patients - patient pages, doctors - doctor pages)
       var loggedIn = $rootScope.globals.currentUser;
-      console.log("logged in: ");
-      console.log(loggedIn);
       if (restrictedPage && !loggedIn) {
         $state.go('login');
       }

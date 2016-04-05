@@ -227,7 +227,6 @@ form .progress {
 
 li.list-title {
   padding: 15px;
-  color: #fff;
   border-bottom: 0px;
 }
 
@@ -313,4 +312,8 @@ background-color: #eee;
 }
 #form_navigation>li>a {
     padding: 10px 25px;
+}
+
+.msg-error {
+  color: #ff4136;
 }
