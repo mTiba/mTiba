@@ -1,44 +1,14 @@
-<custom-header></custom-header>
-<div id="wrapper" ng-controller="DashboardController as dashboardCtrl">
-
-        <!-- Navigation -->            
-        <!--<header></header>-->
-        <!-- /.navbar-top-links --> 
-        
-        <!-- directive attributes need to be written with '-' (selected-patient) -->
-    		<sidebar patients="dashboardCtrl.patients" selected-patient="dashboardCtrl.selectedPatient" ></sidebar>
-               
-        <!-- /.navbar-static-side -->
-        <div id="page-wrapper" style="min-height: 561px;">
-            <!--div ui-view></div-->
-          <div>					    
-					    <!-- /.panel -->
-				    <div class="row">
-			        <div class="col-lg-6">
-			            <chat></chat>
-			            <!-- /.panel .chat-panel -->
-			        </div><!-- /.col-lg-6 -->
-			        <div class="col-lg-6">
-		            <div class="panel panel-default">
-	                <div class="panel-heading">
-	                   <i class="fa fa-clock-o fa-fw"></i> Doctor's log
-	                </div>
-	                <h4 class="text-center">
-	                	<a ui-sref='viewPatient({ id: dashboardCtrl.selectedPatient.id })'>
-	                	{{ dashboardCtrl.selectedPatient.name+' '+dashboardCtrl.selectedPatient.surname }}
-	                	</a>
-	                	<small>{{ dashboardCtrl.selectedPatient.country_name }}</small>
-	                </h4>
-	                <!-- /.panel-heading -->
-	                <timeline></timeline>
-	                <!-- /.panel-body -->
-		            </div>
-			            <!-- /.panel -->
-			        </div><!-- /.col-lg-6 -->
-				    </div>
-				    <!-- /.row -->
-					</div>
-
-        </div>
-            <!-- /#page-wrapper -->
+<div ng-controller = "DoctorUsersController as usersCtrl">
+	<custom-header user="usersCtrl.user"></custom-header>
 </div>
+
+<div ng-controller="DashboardController as dashboardCtrl">
+
+	<sidebar patients="dashboardCtrl.patients" selected-patient="dashboardCtrl.selectedPatient" ></sidebar>
+
+	<div id="page-wrapper" style="min-height: 561px;">
+	    <div ui-view></div>              
+	</div>
+	
+</div>
+

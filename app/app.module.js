@@ -105,6 +105,14 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
                       'app/components/patients/profile/milestones/milestones.js',
                       'app/components/patients/profile/milestone-add/milestone-add.js'
                     ]
+                }),
+                $ocLazyLoad.load(
+                {
+                    name:'mtiba.authentication',
+                    files:[
+                      'app/components/doctors/authentication/users/users.ctrl.js',
+                      'app/components/doctors/authentication/user.service.local-storage.js'
+                    ]
                 })
             }
           }  
@@ -282,7 +290,9 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
                 {
                     name:'mtiba.authentication',
                     files:[
-                      'app/components/doctors/authentication/login/login.ctrl.js'
+                    'app/components/doctors/authentication/authentication.service.js',
+                    'app/components/doctors/authentication/user.service.local-storage.js',
+                    'app/components/doctors/authentication/login/login.ctrl.js'
                     ]
                 })
             }
@@ -297,6 +307,8 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
                 {
                     name:'mtiba.authentication',
                     files:[
+                      'app/components/doctors/authentication/authentication.service.js',
+                      'app/components/doctors/authentication/user.service.local-storage.js',
                       'app/components/doctors/authentication/register/register.ctrl.js'
                     ]
                 })
@@ -305,7 +317,7 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
       }).state('doctorsUsers', {
           url: '/doctors/users',
           templateUrl:'app/components/doctors/authentication/users/users.view.html',
-          controller:'DoctorsUsersController',
+          controller:'DoctorUsersController',
           resolve: {
             loadMyDirectives:function($ocLazyLoad){
                 return $ocLazyLoad.load(
@@ -369,6 +381,14 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
                   files:[
                     'app/components/doctors/form/doctor-edit.ctrl.js',
                   ]
+              }),
+              $ocLazyLoad.load(
+              {
+                  name:'mtiba.authentication',
+                  files:[
+                    'app/components/doctors/authentication/user.service.local-storage.js',
+                    'app/components/doctors/authentication/users/users.ctrl.js'
+                  ]
               })
             }
           }
@@ -409,14 +429,20 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
             loadMyDirectives:function($ocLazyLoad){
                 return $ocLazyLoad.load(
                 {
+                    name:'mtiba.doctors.authentication',
+                    files:[
+                    'app/components/doctors/authentication/user.service.local-storage.js',
+                    'app/components/doctors/authentication/users/users.ctrl.js'
+                    ]
+                }),
+                $ocLazyLoad.load(
+                {
                     name:'mtiba.doctors.dashboard',
                     files:[
-                    'app/components/doctors/dashboard/dashboard.js',
-                    'app/components/doctors/dashboard/dashboard.ctrl.js',
                     'app/components/doctors/dashboard/directives/sidebar/sidebar.js',
                     'app/components/doctors/dashboard/directives/sidebar/sidebar-search/sidebar-search.js',
                     'app/components/doctors/dashboard/directives/timeline/timeline.js',
-                    'app/components/doctors/dashboard/directives/chat/chat.js'
+                    'app/components/doctors/dashboard/directives/chat/chat.js',
                     ]
                 }),
                 $ocLazyLoad.load(
@@ -453,6 +479,12 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
                 })
             }
         }
+      }).state('doctorDashboard.home',{
+        url:'/home',
+        templateUrl:'app/components/doctors/dashboard/dashboard-home.html'
+      }).state('doctorDashboard.profile',{
+        url:'/profile',
+        templateUrl:'app/components/doctors/dashboard/dashboard-profile.html' 
       });
 
   $mdIconProvider

@@ -22,7 +22,12 @@
              ----------------------------------------------*/
             $timeout(function () {
                 var response;
-                PatientUserService.GetByUsername(username)
+                var data = {
+                        username: username,
+                        password: password
+                    };
+
+                PatientUserService.GetByUsernameAndPassword(data)
                     .then(function (user) {
                         if (user !== null && user.password === password) {
                             response = { success: true };

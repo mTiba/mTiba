@@ -3,10 +3,10 @@
 
     angular
         .module('mtiba.authentication')
-        .controller('PatientUsersController', UsersController);
+        .controller('PatientUsersController', PatientUsersController);
 
-    UsersController.$inject = ['PatientUserService', '$rootScope'];
-    function UsersController(PatientUserService, $rootScope) {
+    PatientUsersController.$inject = ['PatientUserService', '$rootScope'];
+    function PatientUsersController(PatientUserService, $rootScope) {
         var usersCtrl = this;
 
         usersCtrl.user = null;
@@ -21,10 +21,12 @@
             console.log("Loading all patients's users");
         }
 
+        //TODO: do current user global
         function loadCurrentUser() {
             PatientUserService.GetByUsername($rootScope.globals.currentUser.username)
                 .then(function (user) {
                     usersCtrl.user = user;
+                    usersCtrl.user.type = "patient";
                 });
         }
 

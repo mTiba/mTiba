@@ -14,14 +14,15 @@ angular.module('mtiba.doctors.dashboard')
       restrict: 'E',
       replace: true,
       scope: { patients: '=', selectedPatient: '=' },
-      controller:function($scope){
+      controller:function($scope, $state){
 
         $scope.selectedMenu = 'doctorDashboard';
         $scope.collapseVar = 0;
         $scope.multiCollapseVar = 0;
 
         $scope.setPatient = function(patient){
-         $scope.selectedPatient = patient;         
+          $state.go('doctorDashboard.home');
+          $scope.selectedPatient = patient;         
         };
         
         $scope.check = function(x){

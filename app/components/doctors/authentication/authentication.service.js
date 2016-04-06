@@ -3,10 +3,10 @@
 
     angular
         .module('mtiba.authentication')
-        .factory('AuthenticationService', AuthenticationService);
+        .factory('DoctorAuthenticationService', DoctorAuthenticationService);
 
-    AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', '$timeout', 'DoctorUserService'];
-    function AuthenticationService($http, $cookieStore, $rootScope, $timeout, DoctorUserService) {
+    DoctorAuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', '$timeout', 'DoctorUserService'];
+    function DoctorAuthenticationService($http, $cookieStore, $rootScope, $timeout, DoctorUserService) {
         var service = {};
 
         service.Login = Login;
@@ -67,7 +67,7 @@
         }
     }
 
-    // Base64 encoding service used by AuthenticationService
+    // Base64 encoding service used by DoctorAuthenticationService
     var Base64 = {
 
         keyStr: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=',

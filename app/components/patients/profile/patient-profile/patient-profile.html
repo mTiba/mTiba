@@ -2,7 +2,7 @@
   <div class="row">
  		<div class="col-sm-12 "> 
 			<div class="row">
-        <div class="col-xs-12 col-sm-8 col-md-6">	
+        <div class="col-xs-12 col-sm-8 col-md-8">	
             <p><label>DATE OF BIRTH:  {{ctrl.patient.date_of_birth }}</label> </p>
             <p><label>COUNTRY:  {{ctrl.patient.country_name}} 
             	<span ng-show="ctrl.patient.town != null || ctrl.patient.town != ''">({{ctrl.patient.town}})</span>
@@ -25,9 +25,9 @@
             <p><label>OCCUPATION: {{ctrl.patient.occupation }}</label></p>
         </div><!--/col-->  
 
-        <div class="col-xs-6 col-sm-4 col-md-6 text-center">
+        <div class="col-xs-6 col-sm-4 col-md-4 text-center">
         	<md-icon md-svg-icon="{{ctrl.patient._avatar_selected_id}}" class="avatar_picture" alt="" class="center-block img-responsive" ng-mouseenter="showPicButton = true" ng-mouseleave="showPicButton= false" ng-click="ctrl.openPictureUpload()"></md-icon>
-          <a ng-show="showPicButton">Click picture to upload new image</a>
+          <!--<a ng-show="showPicButton">Click picture to upload new image</a>-->
          <!-- <ul class="list-inline ratings text-center" title="Ratings">
             <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
             <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
