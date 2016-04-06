@@ -21,7 +21,7 @@
             DoctorAuthenticationService.Login(loginCtrl.username, loginCtrl.password, function (response) {
                 if (response.success) {
                     DoctorAuthenticationService.SetCredentials(loginCtrl.username, loginCtrl.password);
-                    $state.go('doctorDashboard');
+                    $state.go('doctorDashboard.home');
                 } else {
                     console.log(response.message);
                     FlashService.Error(response.message);

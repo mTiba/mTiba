@@ -89,7 +89,7 @@ textarea.form-control:focus{
   border-color: #4FD7BD;
 }
 label{
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   text-align: left;
 }
@@ -98,7 +98,7 @@ label{
 }
 p, li{
   color: #393938;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
 }
 .glyphicon.glyphicon-asterisk{

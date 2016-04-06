@@ -1,44 +1,44 @@
 {
     "id": 0,
-    "username": "bubble12",
-    "name": "Aydes",
-    "surname": "Alyan",
-    "date_of_birth": "1986-08-01",
-    "gender": "m",
+    "username": "anna12",
+    "name": "Anna",
+    "surname": "Jacobsson",
+    "date_of_birth": "1976-08-01",
+    "gender": "f",
     "languages": [
         "1",
-        "2",
+        "3",
         "4"
     ],
-    "phone": "1234567989",
-    "country": "DZ",
-    "town": "Oran",
-    "occupation": "2",
-    "specialty": "8",
-    "license_number" : "AG845738945738475",
-    "license_number_confidential" : "false",
+    "phone": "8875837765",
+    "country": "SE",
+    "town": "Stockholm",
+    "occupation": "1",
+    "specialty": "7",
+    "license_number": "CL98498598",
+    "license_number_confidential": "false",
     "background": {
-        "affiliated_hospitals": "Hospital 1, Hospital 56, Hospital XXX",
-        "board_certifications": "jskdjklasjdlkasdkjasld kjalsdjklasd kjasldj lkasjd",
-        "professional_memberships": "sfdfjskld kjsfkjsdlj ksjksjg",
-        "place_of_medical_degree" : {
-            "country" : "DZ",
-            "affiliation" : "This and that university"
+        "affiliated_hospitals": "Stockholm Hospital",
+        "board_certifications": "Dermatologist association",
+        "professional_memberships": "Doctors without borders",
+        "place_of_medical_degree": {
+            "country": "DK",
+            "affiliation": "Copenhagen University"
         },
-        "place_of_residency" : {
-            "country" : "DZ",
-            "affiliation" : "This and that hospital"
+        "place_of_residency": {
+            "country": "DK",
+            "affiliation": "Aarhus Hospital"
         },
-        "place_of_fellowship" :  {
-            "country" : "DZ",
-            "affiliation" : "This and that fellowship"
+        "place_of_fellowship": {
+            "country": "SW",
+            "affiliation": "Malmo University"
         }
     },
     "commitment": {
-        "times" : "3",
-        "patient_count" : "3",
-        "patient_age_groups" : ["0", "2"],
-        "patient_gender" : "f",
-        "patient_countries" : ["0","1","2"]
+        "times": "2",
+        "patient_count": "4",
+        "patient_age_groups": ["1", "2"],
+        "patient_gender": "m",
+        "patient_countries": ["1", "2"]
     }
 }
