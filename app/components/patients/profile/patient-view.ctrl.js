@@ -1,6 +1,6 @@
 angular.module('mtiba.patients')
 
-  .controller('PatientViewController', function($scope, $http, $state, $stateParams, Patient, patientMetadataFactory, patientMilestonesFactory) {
+  .controller('PatientViewController', function($scope, $rootScope, $http, $state, $stateParams, Patient, patientMetadataFactory, patientMilestonesFactory, DoctorUserService) {
 
    // var viewCtrl = $scope;
     var viewCtrl = this;
@@ -22,4 +22,14 @@ angular.module('mtiba.patients')
     viewCtrl.openPictureUpload = function(){
       $state.go('patientAvatar');
     };
+
+    viewCtrl.loadCurrentUser = function(){
+      DoctorUserService.GetByUsername($rootScope.globals.currentUser.username)
+          .then(function (user) {
+              viewCtrl.user = user;
+              viewCtrl.user.type = "doctor";
+          });
+    }
+    viewCtrl.loadCurrentUser();
+
   });

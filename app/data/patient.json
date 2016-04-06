@@ -1,102 +1,92 @@
 {
-    "id": 0,
-    "username": "bubble12",
-    "name": "Peter",
-    "surname": "Petrovic",
-    "date_of_birth": "1986-08-01",
+    "name": "Kors",
+    "surname": "Michael",
+    "date_of_birth": "1985-03-12T18:25:43.511Z",
     "gender": "m",
     "languages": [
-        "1",
         "2",
         "4"
     ],
-    "phone": "1234567989",
-    "country": "1",
-    "town": "Kwekwe",
-    "occupation": "2",
+    "phone": "3709889689487",
+    "country": "2",
+    "town": "Dar Es Salaam",
+    "occupation": "3",
     "occupation_other": null,
     "health_insurance": {
         "any": "true",
-        "company": "The Golden Insurance Zimbabwe"
+        "company": "No Insurance"
     },
-    "motivation": "1",
+    "motivation": "3",
     "lifestyle": {
-        "smokes": "false",
-        "cigarettes_a_week": null,
+        "smokes": "true",
+        "cigarettes_a_week": "20",
         "drinks": "true",
-        "drinks_a_week": 3,
+        "drinks_a_week": "3",
         "drugs": "false",
         "drug_times_a_week": null,
         "drug_types": null,
         "exercises": "true",
-        "exercise_frequency": "1",
-        "sexually_active": "false"
+        "exercise_frequency": "3",
+        "sexually_active": "true"
     },
     "health": {
         "diseases": [
-            "1",
-            "6"
+            "1"
         ],
         "hiv_status": {
-            "positive": "true",
-            "current_treatment": "true"
+            "positive": "false",
+            "current_treatment": "false"
         },
         "blood_transfusion": {
-            "any": "true",
-            "last_time": "12/12/2012",
-            "amount": "800"
+            "any": "false",
+            "last_time": "false",
+            "amount": "false"
         },
         "other_issues": null,
-        "hospitalized" : "true",
-        "hospitalized_data": [
-            {
-                "year": "1987",
-                "reason": "tooth operation"
-            },
-            {
-                "year": "2009",
-                "reason": "appendicitis"
-            }
-        ],
-        "allergies": "i do not have allergies",
-        "medications": "aspirin, this and that",
-        "little_interest": "0",
-        "moral_situation": "3",
+        "hospitalized": "true",
+        "hospitalized_data": [{
+            "year": "2014",
+            "reason": "diabetes therapy"
+        }],
+        "allergies": "peanuts",
+        "medications": "migrene pills",
+        "little_interest": "1",
+        "moral_situation": "2",
         "regular_doctor": {
             "any": "true",
-            "last_visit": "17/05/2014",
-            "visits_a_year": "4"
+            "last_visit": "2014-11-30T18:25:43.511Z",
+            "visits_a_year": "1"
         },
-        "distance_to_clinic": "60"
+        "distance_to_clinic": "50"
     },
     "family": {
         "parents": {
             "father": {
                 "is_alive": "true",
-                "year_of_birth": "1950",
+                "year_of_birth": "1962",
                 "age_of_death": null,
                 "reason_of_death": null,
                 "general_health_state": "3"
             },
             "mother": {
-                "is_alive": "false",
-                "year_of_birth": null,
+                "is_alive": "true",
+                "year_of_birth": "1964",
                 "age_of_death": 55,
-                "reason_of_death": "passed away after 4 years of cancer",
+                "reason_of_death": "heart attack",
                 "general_health_state": null
             }
         },
         "siblings": {
-            "number_of_sisters": 3,
-            "number_of_brothers": 3,
+            "number_of_sisters": 2,
+            "number_of_brothers": 2,
             "age_range": "23-40",
-            "health_problems": null
+            "health_problems": "diabetes"
         },
         "diseases": [
-            "1",
-            "8"
+            "2",
+            "7"
         ]
     },
-    "_avatar_selected_id" : "avatars:svg-1",
-    "_avatar_uploaded_id" : null
+    "_avatar_selected_id": "avatars:svg-1",
+    "_avatar_uploaded_id": null
 }

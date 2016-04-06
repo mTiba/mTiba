@@ -3,10 +3,10 @@
 
     angular
         .module('mtiba.authentication')
-        .controller('DoctorsUsersController', UsersController);
+        .controller('DoctorUsersController', DoctorUsersController);
 
-    UsersController.$inject = ['DoctorUserService', '$rootScope'];
-    function UsersController(DoctorUserService, $rootScope) {
+    DoctorUsersController.$inject = ['DoctorUserService', '$rootScope'];
+    function DoctorUsersController(DoctorUserService, $rootScope) {
         var usersCtrl = this;
 
         usersCtrl.user = null;
@@ -14,7 +14,7 @@
         usersCtrl.deleteUser = deleteUser;
 
         initController();
-
+   
         function initController() {
             loadCurrentUser();
             loadAllUsers();
@@ -25,6 +25,8 @@
             DoctorUserService.GetByUsername($rootScope.globals.currentUser.username)
                 .then(function (user) {
                     usersCtrl.user = user;
+                    usersCtrl.user.type = "doctor";
+                    console.log(usersCtrl.user);
                 });
         }
 

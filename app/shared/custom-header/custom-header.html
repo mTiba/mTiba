@@ -18,17 +18,25 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <a ui-sref="patientDashboard.profile">
-                <!--    <md-icon md-svg-icon="{{ctrl.patient._avatar_selected_id}}" alt="" class="center-block img-circle img-responsive" ng-mouseenter="showPicButton = true" ng-mouseleave="showPicButton= false" ng-click="ctrl.openPictureUpload()"></md-icon>-->
-                </a>
+                <!--<a ui-sref="patientDashboard.profile">
+                    <md-icon md-svg-icon="{{ctrl.patient._avatar_selected_id}}" alt="" class="center-block img-circle img-responsive" ng-mouseenter="showPicButton = true" ng-mouseleave="showPicButton= false" ng-click="ctrl.openPictureUpload()"></md-icon>
+                </a>-->
             </li>
             <li class="dropdown" dropdown>
                 <!-- Notice the dropdown-toggle directive -->
-                <a class="dropdown-toggle" data-toggle="dropdown" dropdown-toggle>{{user.firstName + ' ' +  user.lastName}}
+                <a class="dropdown-toggle" data-toggle="dropdown" dropdown-toggle>{{user.username}}
                     <span class="caret"></span>
                 </a>
-                <ul class="dropdown-menu">
+                <ul ng-show = "user.type == 'patient'" class="dropdown-menu" >
                     <li><a ui-sref="patientDashboard.profile">See profile</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+                <ul ng-show = "user.type == 'doctor'" class="dropdown-menu" >
+                    <li><a ui-sref="doctorDashboard.profile">See profile</a></li>
+                    <li><a ui-sref="editDoctor.basic">Edit profile</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a ui-sref = 'doctorDashboard.home'> Dashboard</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="#">Logout</a></li>
                 </ul>
@@ -38,5 +46,6 @@
 
   </div>
     <!--<header-notification></header-notification>-->
+
 </nav>
 

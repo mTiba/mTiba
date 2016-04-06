@@ -3,7 +3,7 @@
 
     angular.module('mtiba.authentication')
 
-    .controller('LoginController', function($state, AuthenticationService, FlashService) {
+    .controller('LoginController', function($state, DoctorAuthenticationService, FlashService) {
 
         var loginCtrl = this;
 
@@ -11,16 +11,16 @@
 
         (function initController() {
             // reset login status
-            AuthenticationService.ClearCredentials();
+            DoctorAuthenticationService.ClearCredentials();
         })();
 
 
 
         function login() {
             loginCtrl.dataLoading = true;
-            AuthenticationService.Login(loginCtrl.username, loginCtrl.password, function (response) {
+            DoctorAuthenticationService.Login(loginCtrl.username, loginCtrl.password, function (response) {
                 if (response.success) {
-                    AuthenticationService.SetCredentials(loginCtrl.username, loginCtrl.password);
+                    DoctorAuthenticationService.SetCredentials(loginCtrl.username, loginCtrl.password);
                     $state.go('doctorDashboard');
                 } else {
                     console.log(response.message);

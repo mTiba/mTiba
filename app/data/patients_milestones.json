@@ -2,24 +2,18 @@
 	"patient_id": "",
 	"milestones": [{
 		"date": "2015-07-09T21:15:10.339Z",
-		"text": "djkaghams djhasjfj asjdghahdf ahgjadbjkdfg",
+		"text": "Has an issue with a blister on right foot middle toe",
 		"doctor_id": "5",
-		"doctor_name": "Petrovich"
+		"doctor_name": "Smith"
 	}, {
 		"date": "2015-07-09T21:15:10.339Z",
-		"text": "djkaghams djhasjfj ",
+		"text": "Blister is becoming bigger, recommendation to apply cream",
 		"doctor_id": "5",
-		"doctor_name": "Petrovich"
-	}, {
-		"date": "2015-07-11T21:15:10.339Z",
-		"text": "djkaghams djhasjfj asjdghahdf ahgjadbjkdfgdjkaghams djhasjfj asjdghahdf ahgjadbjkdfg",
-		"doctor_id": "5",
-		"doctor_name": "Petrovich"
+		"doctor_name": "Smith"
 	}, {
 		"date": "2015-07-31T21:15:10.339Z",
-		"text": "djkaghams djhasjfj asjdghahdf ahgjadbjkdfg djkaghams djhasjfj asjdghahdf ahgjadbjkdfgdjkaghams djhasjfj asjdghahdf ahgjadbjkdfg",
+		"text": "Cream did not help, recommended to go see the dermatologist",
 		"doctor_id": "11",
-		"doctor_name": "Indira G"
+		"doctor_name": "Alyan"
 	}]
-
 }

@@ -7,6 +7,7 @@
 
     DoctorUserService.$inject = ['$http'];
     function DoctorUserService($http) {
+        
         var service = {};
 
         service.GetAll = GetAll;
