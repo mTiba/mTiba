@@ -109,13 +109,17 @@ p, li{
 
 /* TEAM OVERWRITING */
 
+h3 {
+  color: #00BC8C;
+}
+
 .btn-info, .btn-info:hover, .btn-primary, .btn-primary:hover, .btn-success, .btn-success:hover {
 	background: #00BC8C;
   border-color: #00BC8C;
   border:0px;
 }
 
-/*.log-date{
+.log-date{
   color: #00BC8C;
 }
 
@@ -123,7 +127,7 @@ p, li{
   color: #00BC8C;
   font-style: italic;
 }
-*/
+
 
 .label-info {
   background-color: #00BC8C;
