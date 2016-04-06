@@ -235,6 +235,16 @@ angular.module('mtiba.patients')
     return factory;
   })
 
+
+  .factory('patientsDoctorFactory', ['$resource', function ($resource) {
+    return $resource('app/data/patients_doctor.json', { patient_id: '@_id'}, {
+        update: { 
+          method: 'PUT', 
+          url: 'http://movieapp-sitepointdemos.rhcloud.com/api/movies/:id'
+        }
+    });
+  }])
+
   .factory('patientMilestonesFactory', ['$resource', function ($resource) {
     return $resource('app/data/patients_milestones.json', { patient_id: '@_id'}, {
         save: { 

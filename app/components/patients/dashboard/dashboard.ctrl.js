@@ -1,6 +1,6 @@
 angular.module('mtiba.patients.dashboard')
 
-	.controller('DashboardController', function($scope, $state, $stateParams, Patient, patientMetadataFactory, patientMilestonesFactory) {
+	.controller('DashboardController', function($scope, $state, $stateParams, Patient, patientMetadataFactory, patientsDoctorFactory, patientMilestonesFactory) {
 
 	  var dashboardCtrl = this;
 
@@ -9,10 +9,13 @@ angular.module('mtiba.patients.dashboard')
 	    patientMetadataFactory.getDataAndMapNames(p, dashboardCtrl);  
 	  });
 
+		patientsDoctorFactory.get({patient_id: $stateParams.id}, function(pd){
+      dashboardCtrl.doctor = pd.doctor;
+    });
+
 	  dashboardCtrl.milestones = [];
     dashboardCtrl.milestoneData = patientMilestonesFactory.get({patient_id: $stateParams.id}, function(pm){
       dashboardCtrl.milestones = pm.milestones;
-     // console.log(dashboardCtrl.milestones);
     });
 
     dashboardCtrl.openPictureUpload = function(){

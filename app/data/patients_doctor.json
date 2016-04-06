@@ -1,0 +1,11 @@
+{
+  "patient_id": 0,
+  "doctor": {
+    "id": 0,
+    "username": "anna12",
+    "name": "Anna",
+    "surname": "Jacobsson",
+    "_avatar_selected_id": "avatars:svg-13",
+    "_avatar_uploaded_id": null
+  }
+}
