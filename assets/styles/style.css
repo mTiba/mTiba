@@ -170,12 +170,12 @@ form .progress {
     width: 80% !important;
 }
 
-#profile_view_container{
+/*#profile_view_container{
     margin-right: auto;
     margin-left: auto;
     padding-left: 15px;
     padding-right: 15px;
-}
+}*/
 
 #profile_view_container .offset{
     margin-left: 15px;
@@ -260,8 +260,8 @@ nav-pills>li>a{
 
 /* Customize container */
 @media (min-width: 768px) {
-  .container {
- /*   max-width: 730px; */
+  #profile_view_container {
+    max-width: 730px; 
   }
 }
 .container-narrow > hr {

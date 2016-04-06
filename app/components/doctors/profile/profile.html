@@ -1,8 +1,7 @@
-<div id="profile_view_container" class="container">
-  <div class="row">
- 		<div class="col-sm-12 col-md-8 col-md-offset-2">  
-			<div class="row">
-        <div class="col-xs-12 col-sm-8">
+<div id="profile_view_container" >
+	<div class="col-sm-12 col-md-8">  
+	   <div class="row">
+            <div class="col-xs-12 col-sm-8">
             <h2>{{ctrl.doctor.name+' '+ctrl.doctor.surname}}</h2>	            
             <p><label>DATE OF BIRTH:  {{ctrl.doctor.date_of_birth }}</label> </p>
             <p><label>COUNTRY:  {{ctrl.doctor.country_name}} 
@@ -10,40 +9,39 @@
             	</label>
             </p>
             <p><label>LANGUAGES: </label>
-	            <span ng-repeat="language in ctrl.doctor.languages_names" class="label label-info tags">{{language}}</span>		                
+                <span ng-repeat="language in ctrl.doctor.languages_names" class="label label-info tags">{{language}}</span>		                
             </p>
             <p><label>PHONE NUMBER: {{ctrl.doctor.phone }}</label></p>
             <p><label>GENDER: {{ctrl.doctor.gender_name}}</label></p>
             <p><label>OCCUPATION: {{ctrl.doctor.occupation_name }}</label></p>
             <p><label>SPECIALTY: {{ctrl.doctor.specialty_name }}</label></p>
             <p><label>LICENSE NUMBER: {{ctrl.doctor.license_number }}</label></p>
-        </div><!--/col-->  
-        <div class="col-xs-12 col-sm-12 bordered">
+            </div><!--/col-->  
+            <div class="col-xs-12 col-sm-12 bordered">
             <h4>Background</h4>
-						<p><label>AFFILIATED HOSPITALS: {{ctrl.doctor.background.affiliated_hospitals }}</label></p>
-						<p><label>BOARD CERTIFICATIONS: {{ctrl.doctor.background.board_certifications }}</label></p>
-						<p><label>PROFESSIONAL MEMBERSHIPS: {{ctrl.doctor.background.professional_memberships }}</label></p>
-						<p><label>MEDICAL DEGREE: {{ctrl.doctor.background.place_of_medical_degree.country_name }} - {{ctrl.doctor.background.place_of_medical_degree.affiliation}}</label></p>
-						<p><label>PLACE OF RESIDENCY: {{ctrl.doctor.background.place_of_residency.country_name }} - {{ctrl.doctor.background.place_of_residency.affiliation}}</label></p>
-						<p><label>PLACE OF FELLOWSHIP: {{ctrl.doctor.background.place_of_fellowship.country_name }} - {{ctrl.doctor.background.place_of_fellowship.affiliation}}</label></p>
-        </div><!--/col-->
-        <div class="col-xs-12 col-sm-12 bordered">
+    					<p><label>AFFILIATED HOSPITALS: {{ctrl.doctor.background.affiliated_hospitals }}</label></p>
+    					<p><label>BOARD CERTIFICATIONS: {{ctrl.doctor.background.board_certifications }}</label></p>
+    					<p><label>PROFESSIONAL MEMBERSHIPS: {{ctrl.doctor.background.professional_memberships }}</label></p>
+    					<p><label>MEDICAL DEGREE: {{ctrl.doctor.background.place_of_medical_degree.country_name }} - {{ctrl.doctor.background.place_of_medical_degree.affiliation}}</label></p>
+    					<p><label>PLACE OF RESIDENCY: {{ctrl.doctor.background.place_of_residency.country_name }} - {{ctrl.doctor.background.place_of_residency.affiliation}}</label></p>
+    					<p><label>PLACE OF FELLOWSHIP: {{ctrl.doctor.background.place_of_fellowship.country_name }} - {{ctrl.doctor.background.place_of_fellowship.affiliation}}</label></p>
+            </div><!--/col-->
+            <div class="col-xs-12 col-sm-12 bordered">
             <h4>Commitment</h4>
-						<p><label>TIMES A WEEK: {{ctrl.doctor.commitment.times }}</label></p>
-						<p><label>PATIENT COUNT TO FOLLOW: {{ctrl.doctor.commitment.patient_count }}</label></p>
+    					<p><label>TIMES A WEEK: {{ctrl.doctor.commitment.times }}</label></p>
+    					<p><label>PATIENT COUNT TO FOLLOW: {{ctrl.doctor.commitment.patient_count }}</label></p>
             <p><label>PREFFERED PATIENT AGE GROUPS: </label>
-	            <div ng-repeat="group in ctrl.doctor.commitment.patient_age_groups_names">
-	            	<label>{{group}} </label>
-	            </div>		                
+                <div ng-repeat="group in ctrl.doctor.commitment.patient_age_groups_names">
+                	<label>{{group}} </label>
+                </div>		                
             </p>
-						<p><label>PREFFERED PATIENT GENDER: {{ctrl.doctor.commitment.patient_gender_name }}</label></p>
-						<p><label>PREFFERED PATIENT COUNTRIES: </label>
-	            <div ng-repeat="country in ctrl.doctor.commitment.patient_countries_names">
-	            	<label>{{country}} </label>
-	            </div>		                
+    					<p><label>PREFFERED PATIENT GENDER: {{ctrl.doctor.commitment.patient_gender_name }}</label></p>
+    					<p><label>PREFFERED PATIENT COUNTRIES: </label>
+                <div ng-repeat="country in ctrl.doctor.commitment.patient_countries_names">
+                	<label>{{country}} </label>
+                </div>		                
             </p>
-        </div><!--/col-->
-			</div><!--/row-->
-		</div>
-	</div>
+            </div><!--/col-->
+        </div>
+    </div>
 </div>
