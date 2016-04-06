@@ -115,7 +115,7 @@ p, li{
   border:0px;
 }
 
-.log-date{
+/*.log-date{
   color: #00BC8C;
 }
 
@@ -123,9 +123,14 @@ p, li{
   color: #00BC8C;
   font-style: italic;
 }
+*/
 
 .label-info {
   background-color: #00BC8C;
+}
+
+.navbar {
+     border-width: 0 0 1px 0; 
 }
 
 .navbar-brand {
@@ -325,4 +330,9 @@ background-color: #eee;
 
 .msg-error {
   color: #ff4136;
+}
+
+/* overwriting sb-admin-2 styling*/
+.chat-panel .panel-body {
+    max-height: 700px;
 }

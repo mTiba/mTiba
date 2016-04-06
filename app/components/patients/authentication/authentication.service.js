@@ -26,8 +26,8 @@
                         username: username,
                         password: password
                     };
-
-                PatientUserService.GetByUsernameAndPassword(data)
+                PatientUserService.GetByUsername(username)
+               // PatientUserService.GetByUsernameAndPassword(data)
                     .then(function (user) {
                         if (user !== null && user.password === password) {
                             response = { success: true };
