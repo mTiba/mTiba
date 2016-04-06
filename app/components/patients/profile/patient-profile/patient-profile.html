@@ -2,8 +2,11 @@
   <div class="row">
  		<div class="col-sm-12 "> 
 			<div class="row">
+				<div class="col-xs-12 col-sm-8 col-md-8">	
+			    <h2>{{ctrl.patient.name+' '+ctrl.patient.surname}}</h2> 
+			  </div>
         <div class="col-xs-12 col-sm-8 col-md-8">	
-            <p><label>DATE OF BIRTH:  {{ctrl.patient.date_of_birth }}</label> </p>
+            <p><label>DATE OF BIRTH:  {{ctrl.patient.date_of_birth | date }}</label> </p>
             <p><label>COUNTRY:  {{ctrl.patient.country_name}} 
             	<span ng-show="ctrl.patient.town != null || ctrl.patient.town != ''">({{ctrl.patient.town}})</span>
             	</label>
@@ -86,7 +89,7 @@
 	            	</label>
 	            	<label ng-show="{{ctrl.patient.health.hiv_status.positive == 'true' }}">				Positive
 	            	</label>	<br />
-								<label>
+								<label ng-show="{{ctrl.patient.health.hiv_status.positive == 'true' }}">
 									Current treatment:  
 									<span ng-show="{{ctrl.patient.health.hiv_status.current_treatment == 'true' }}"> Yes</span>
 									<span ng-show="{{ctrl.patient.health.hiv_status.current_treatment == 'false' }}"> False</span>
@@ -96,12 +99,13 @@
             <p><label>BLOOD TRANSFUSION:</label> <br />
             	<div class = "offset">
 	            	<label ng-show="{{ctrl.patient.health.blood_transfusion.any == 'false' }}">No</label>
-	            	<label ng-show="{{ctrl.patient.health.blood_transfusion.any == 'true' }}">Yes
-								</label>		<br />
-								<label>
+	            	<label ng-show="{{ctrl.patient.health.blood_transfusion.any == 'true' }}">Yes</label>
+								<label ng-show="{{ctrl.patient.health.blood_transfusion.any == 'true' }}">
+									<br />
 									Last time: {{ctrl.patient.health.blood_transfusion.last_time}}
-								</label><br />
-								<label>
+								</label>
+								<label ng-show="{{ctrl.patient.health.blood_transfusion.any == 'true' }}">
+									<br />
 									Amount: {{ctrl.patient.health.blood_transfusion.amount}} ml
 	            	</label>		       
 	            </div>     	
@@ -150,14 +154,14 @@
 	            	<span ng-show="ctrl.patient.health.regular_doctor.any == 'false'" class="glyphicon glyphicon-remove-circle" style="color:red"></span>
 								<span ng-show="ctrl.patient.health.regular_doctor.any == 'true'" class="glyphicon glyphicon-check" style="color:green"></span>
 								<div class = "row">										
-		            		<div class="col-md-12"><label>Last visit: {{ctrl.patient.health.regular_doctor.last_visit}} </label></div>
+		            		<div class="col-md-12"><label>Last visit: {{ctrl.patient.health.regular_doctor.last_visit | date}} </label></div>
 		            		<div class="col-md-12"><label>Visits a year: {{ctrl.patient.health.regular_doctor.visits_a_year}}</label></div>
 		            	</label>
 	            	</div>
 	            </div>
             </p>
             <p>
-            	<label>DISTANCE TO THE NEAREST DOCTOR OR CLINIC: {{ctrl.patient.health.distance_to_clinic}}<span ng show="ctrl.patient.health.distance_to_clinic != 'null'">km </span>
+            	<label>DISTANCE TO THE NEAREST DOCTOR OR CLINIC (km): {{ctrl.patient.health.distance_to_clinic}}
             	</label>
             </p>
         </div>

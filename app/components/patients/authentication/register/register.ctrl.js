@@ -13,7 +13,8 @@
             registerCtrl.dataLoading = true;
             PatientUserService.Create(registerCtrl.user)
                 .then(function (response) {
-                    if (response.data) {
+                    //  if (response.data) {
+                    if (response.success) {
                         console.log("Registration successful")
                         FlashService.Success('Registration successful', true);
                         registerCtrl.login();

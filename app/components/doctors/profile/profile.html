@@ -3,7 +3,7 @@
 	   <div class="row">
             <div class="col-xs-12 col-sm-8">
             <h2>{{ctrl.doctor.name+' '+ctrl.doctor.surname}}</h2>	            
-            <p><label>DATE OF BIRTH:  {{ctrl.doctor.date_of_birth }}</label> </p>
+            <p><label>DATE OF BIRTH:  {{ctrl.doctor.date_of_birth | date}}</label> </p>
             <p><label>COUNTRY:  {{ctrl.doctor.country_name}} 
             	<span ng-show="ctrl.doctor.town != null || ctrl.doctor.town != ''">({{ctrl.doctor.town}})</span>
             	</label>
