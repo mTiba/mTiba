@@ -7,7 +7,7 @@
 	    <ul class="chat">
 	        <li class="left clearfix">
 	            <span class="chat-img pull-left">
-	                <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+	                <md-icon md-svg-icon="{{dashboardCtrl.selectedPatient._avatar_selected_id}}" class="avatar_picture" alt="" class="center-block img-responsive"></md-icon>
 	            </span>
 	            <div class="chat-body clearfix">
 	                <div class="header">
@@ -23,7 +23,7 @@
 	        </li>
 	        <li class="right clearfix">
 	            <span class="chat-img pull-right">
-	                <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
+	                <md-icon md-svg-icon="{{dashboardCtrl.doctor._avatar_selected_id}}" class="avatar_picture" alt="" class="center-block img-responsive"></md-icon>
 	            </span>
 	            <div class="chat-body clearfix">
 	                <div class="header">
@@ -38,7 +38,7 @@
 	        </li>
 	        <li class="left clearfix">
 	            <span class="chat-img pull-left">
-	                <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+        					<md-icon md-svg-icon="{{dashboardCtrl.selectedPatient._avatar_selected_id}}" class="avatar_picture" alt="" class="center-block img-responsive"></md-icon>
 	            </span>
 	            <div class="chat-body clearfix">
 	                <div class="header">
@@ -53,12 +53,12 @@
 	        </li>
 	        <li class="right clearfix">
 	            <span class="chat-img pull-right">
-	                <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
+	            <md-icon md-svg-icon="{{dashboardCtrl.doctor._avatar_selected_id}}" class="avatar_picture" alt="" class="center-block img-responsive"></md-icon>
 	            </span>
 	            <div class="chat-body clearfix">
 	                <div class="header">
 	                    <small class=" text-muted">
-	                        <i class="fa fa-clock-o fa-fw"></i> 11 days ago</small>
+	                        <i class="fa fa-clock-o fa-fw"></i>11 days ago</small>
 	                    <strong class="pull-right primary-font">{{ dashboardCtrl.doctor.name+' '+dashboardCtrl.doctor.surname }}</strong>
 	                </div>
 	                <p>
@@ -73,7 +73,7 @@
 	    <div class="input-group">
 	        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
 	        <span class="input-group-btn">
-	            <button class="btn btn-warning btn-sm" id="btn-chat">
+	            <button class="btn btn-primary btn-sm" id="btn-chat">
 	                Send
 	            </button>
 	        </span>

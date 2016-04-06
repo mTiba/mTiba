@@ -1,8 +1,6 @@
 <div class="panel-body">
-    <ul class="timeline" ng-repeat="log in dashboardCtrl.selectedPatient.logs track by $index">
-    <!--{{ $index % 2 }}-->
-        <li ng-class="{ 'timeline-inverted': ( 3-1 == 2 ) }">
-        <li>
+    <ul class="timeline">
+        <li ng-repeat="log in dashboardCtrl.selectedPatient.logs track by $index" ng-class="{ 'timeline-inverted': $index%2==1  }">
             <div class="timeline-badge info"><i class="fa fa-credit-card"></i>
             </div>
             <div class="timeline-panel">

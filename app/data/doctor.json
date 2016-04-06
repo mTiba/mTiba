@@ -40,5 +40,7 @@
         "patient_age_groups": ["1", "2"],
         "patient_gender": "m",
         "patient_countries": ["1", "2"]
-    }
+    },
+    "_avatar_selected_id": "avatars:svg-13",
+    "_avatar_uploaded_id": null
 }

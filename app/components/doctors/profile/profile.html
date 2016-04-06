@@ -17,6 +17,11 @@
             <p><label>SPECIALTY: {{ctrl.doctor.specialty_name }}</label></p>
             <p><label>LICENSE NUMBER: {{ctrl.doctor.license_number }}</label></p>
             </div><!--/col-->  
+            
+            <div class="col-xs-6 col-sm-4 col-md-4 text-center">
+                <md-icon md-svg-icon="{{ctrl.doctor._avatar_selected_id}}" class="avatar_picture" alt="" class="center-block img-responsive"></md-icon>
+            </div><!--/col-->
+
             <div class="col-xs-12 col-sm-12 bordered">
             <h4>Background</h4>
     					<p><label>AFFILIATED HOSPITALS: {{ctrl.doctor.background.affiliated_hospitals }}</label></p>

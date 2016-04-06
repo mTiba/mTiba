@@ -2,12 +2,11 @@
 	<custom-header user="usersCtrl.user"></custom-header>
 </div>
 <div class="row" ng-controller="PatientViewController as ctrl">
-	<div class="col-sm-12 col-md-12 text-center">
-    <h2>{{ctrl.patient.name+' '+ctrl.patient.surname}}</h2>		
-	</div>
 	<div class="col-md-6 col-md-offset-1" ng-include="'app/components/patients/profile/patient-profile/patient-profile.html'"></div>
 	<div class="col-md-5">
-		<h4>Medical milestones</h4>
+		<div class="div-with-padding">
+			<h4>Medical milestones</h4>
+		</div>
 		<milestones milestones="ctrl.milestones"></milestones>
 		<milestone-add ng-show="ctrl.user.type = 'doctor'" milestones="ctrl.milestones"></milestone-add>
 	</div>
