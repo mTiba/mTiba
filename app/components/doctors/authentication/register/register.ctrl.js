@@ -33,8 +33,7 @@
             DoctorAuthenticationService.Login(registerCtrl.user.username, registerCtrl.user.password, function (response) {
                 if (response.success) {
                     DoctorAuthenticationService.SetCredentials(registerCtrl.user.username, registerCtrl.user.password);
-                    //$state.go('patientDashboard.home({ id: contact.id })');
-                    $state.go('doctorDashboard.home');
+                    $state.go('newDoctor.basic');
                 } else {
                     console.log(response.message);
                     FlashService.Error(response.message);

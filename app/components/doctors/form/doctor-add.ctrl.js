@@ -21,7 +21,7 @@ angular.module('mtiba.doctors')
 	  // formCtrl.pictureFile = {};
 	  formCtrl.addDoctor = function() { //create a new doctor. Issues a POST to /api/doctors
 	    formCtrl.doctor.$save(function() {
-	      $state.go('doctorLogin'); // on success go back to home i.e. doctors state.
+	      $state.go('doctorDashboard.home'); // on success go back to home i.e. doctors state.
 	    });
 	  };
 

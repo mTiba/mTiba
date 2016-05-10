@@ -1,6 +1,9 @@
-<div class="text-center">
+<div ng-show="formCtrl.uiRouterState.current.name == 'newDoctor.background'" class="text-center">
   <h4>Great. Now that we've got your basic info, let's find out a little about your background. </h4>
   <h5>Remember, you can fill out as much as you feel comfortable showing to your patients.</h5>
+</div>
+<div ng-show="formCtrl.uiRouterState.current.name == 'editDoctor.background'">
+  <h3>BACKGROUND</h3>
 </div>
 
 <div class="form-group">
@@ -109,7 +112,7 @@
     </div>
   </div>
 </div>
-<div class="form-group row">
+<div ng-show="formCtrl.uiRouterState.current.name == 'newDoctor.background'"  class="form-group row">
   <div class="col-md-3 col-xs-6">
       <a ui-sref="newDoctor.basic" class="btn btn-block btn-info">
       <span class="glyphicon glyphicon-circle-arrow-left"></span> Back 
@@ -120,4 +123,10 @@
       Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
       </a>
   </div>
+</div>
+
+<div class="col-md-3 col-md-offset-9 col-xs-6">
+  <button ng-show="formCtrl.uiRouterState.current.name == 'editDoctor.background'" type="submit" class="btn btn-success btn-lg btn-block">
+  Submit changes
+  </button>
 </div>

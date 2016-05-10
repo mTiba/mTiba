@@ -1,6 +1,9 @@
-<div class="text-center">
+<div ng-show="formCtrl.uiRouterState.current.name == 'newDoctor.basic'" class="text-center">
   <h4>Welcome to mTiba!</h4>
   <h5>We just need to know a few things about you. Fill out as much as you feel confortable. </h5>
+</div>
+<div ng-show="formCtrl.uiRouterState.current.name == 'editDoctor.basic'">
+  <h3>BASIC INFORMATION</h3>
 </div>
 
 <div class="form-group" ng-class="{ 'has-error': doctorForm.name.$touched && doctorForm.name.$invalid }">
@@ -135,10 +138,16 @@
   <br />
 </div>
 
-<div class="form-group row">
+<div ng-show="formCtrl.uiRouterState.current.name == 'newDoctor.basic'"  class="form-group row" class="form-group row">
   <div class="col-md-3 col-md-offset-9 col-xs-6 col-xs-offset-6">
       <a ui-sref="newDoctor.background" class="btn btn-block btn-info">
       Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
       </a>
   </div>
+</div>
+
+<div class="col-md-3 col-md-offset-9 col-xs-6">
+  <button ng-show="formCtrl.uiRouterState.current.name == 'editDoctor.basic'" type="submit" class="btn btn-success btn-lg btn-block">
+  Submit changes
+  </button>
 </div>

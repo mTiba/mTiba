@@ -1,6 +1,9 @@
-<div class="text-center">
+<div ng-show="formCtrl.uiRouterState.current.name == 'newDoctor.commitment'" class="text-center">
   <h4>Almost done.</h4>
   <h5>Let us know your commitment level and preferences.</h5>
+</div>
+<div ng-show="formCtrl.uiRouterState.current.name == 'editDoctor.commitment'">
+  <h3>COMMITMENT</h3>
 </div>
 
 <div class="form-group row">
@@ -44,7 +47,7 @@
     <input type="checkbox" checklist-model="formCtrl.doctor.commitment.patient_countries" checklist-value="country.id"><label> {{country.name}} </label>
   </div>
 </div>
-<div class="form-group row">
+<div ng-show="formCtrl.uiRouterState.current.name == 'newDoctor.commitment'" class="form-group row">
   <div class="col-md-3 col-xs-6">
       <a ui-sref="newDoctor.background" class="btn btn-block btn-info">
       <span class="glyphicon glyphicon-circle-arrow-left"></span> Back 
@@ -57,4 +60,9 @@
   </div>
 </div>
 
+<div class="col-md-3 col-md-offset-9 col-xs-6">
+  <button ng-show="formCtrl.uiRouterState.current.name == 'editDoctor.commitment'" type="submit" class="btn btn-success btn-lg btn-block">
+  Submit changes
+  </button>
+</div>
 

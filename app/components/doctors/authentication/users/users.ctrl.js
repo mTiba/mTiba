@@ -5,9 +5,11 @@
         .module('mtiba.authentication')
         .controller('DoctorUsersController', DoctorUsersController);
 
-    DoctorUsersController.$inject = ['DoctorUserService', '$rootScope'];
-    function DoctorUsersController(DoctorUserService, $rootScope) {
+    DoctorUsersController.$inject = ['DoctorUserService', '$rootScope', 'config'];
+    function DoctorUsersController(DoctorUserService, $rootScope, config) {
         var usersCtrl = this;
+
+        usersCtrl.config = config;
 
         usersCtrl.user = null;
         usersCtrl.allUsers = [];

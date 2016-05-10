@@ -1,8 +1,10 @@
 angular.module('mtiba.doctors.dashboard')
 
-	.controller('DashboardController', function($scope, $state, $stateParams, Doctor, PatientsOfDoctor, DoctorLogs, doctorMetadataFactory, patientMetadataFactory) {
+	.controller('DashboardController', function($scope, $state, $stateParams, config, Doctor, PatientsOfDoctor, DoctorLogs, doctorMetadataFactory, patientMetadataFactory) {
 
 	  var dashboardCtrl = this;
+
+	  dashboardCtrl.config=config;
 
 	  dashboardCtrl.doctor = Doctor.get({id: $stateParams.id}, function(p, getResponseHeaders){
 	    //Call factory to get metadata and manipulate it there, accessing scope from there 

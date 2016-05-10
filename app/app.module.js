@@ -19,6 +19,12 @@ var mtibaApp =  angular.module('mtiba', [
   'mtiba.doctors'
   ]);
 
+mtibaApp.constant('config', {
+    appName: 'mTiba',
+    appVersion: 0.1,
+    apiUrl: 'http://mTiba.me'
+});
+
 mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$mdIconProvider', function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider, $mdIconProvider) {
    
   $ocLazyLoadProvider.config({
@@ -479,6 +485,9 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
                 })
             }
         }
+      }).state('doctorDashboard.intro',{
+        url:'/intro',
+        templateUrl:'app/components/doctors/dashboard/dashboard-intro.html'
       }).state('doctorDashboard.home',{
         url:'/home',
         templateUrl:'app/components/doctors/dashboard/dashboard-home.html'
