@@ -1,4 +1,4 @@
-# mTiba
+# yapili
 This is a web application for doctors and patients.
 
 Frontend technologies:
@@ -8,7 +8,7 @@ Frontend technologies:
 Backend technologies:
 
 
-More info: http://mtiba.me/
+More info: http://www.yapili.com
 
 Setup instructions:
 - pull master
