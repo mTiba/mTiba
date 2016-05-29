@@ -1,5 +1,5 @@
 {
-  "name": "mtiba",
+  "name": "yapili",
   "version": "1.0.0",
   "description": "application to link doctors with patients",
   "main": "Gruntfile.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mTiba/mTiba.git"
+    "url": "git+https://github.com/yapili/yapili.git"
   },
   "keywords": [
     "patients",
@@ -19,17 +19,19 @@
   "author": "Igne Degutyte (ridike@gmail.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mTiba/mTiba/issues"
+    "url": "https://github.com/yapili/yapili/issues"
   },
-  "homepage": "https://github.com/mTiba/mTiba#readme",
+  "homepage": "https://github.com/yapili/yapili#readme",
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-bower-install": "^1.6.0",
     "grunt-bower-task": "~0.3.4",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-compress": "~0.9.1",
     "grunt-contrib-concat": "~0.4.0",
     "grunt-contrib-connect": "~0.8.0",
     "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-less": "^1.3.0",
     "grunt-contrib-nodeunit": "~0.4.1",
     "grunt-contrib-uglify": "~0.5.0",
     "grunt-contrib-watch": "~0.6.1",

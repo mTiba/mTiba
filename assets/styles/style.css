@@ -49,8 +49,9 @@ pre { margin-bottom:20px; }
 
 
 /* form styling */
-#form-container                { background:#fff; margin-bottom:20px;
-    border-radius:5px; margin-top:20px; }
+#form-container                { 
+  background:#fff; margin-bottom:20px;
+  border-radius:5px; margin-top:20px; }
 
 
 .form-horizontal .form-group {
@@ -179,12 +180,6 @@ form .progress {
     width: 80% !important;
 }
 
-/*#profile_view_container{
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-}*/
 
 #profile_view_container .offset{
     margin-left: 15px;
