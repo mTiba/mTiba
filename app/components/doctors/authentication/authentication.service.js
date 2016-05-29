@@ -12,7 +12,6 @@
         service.Login = Login;
         service.SetCredentials = SetCredentials;
         service.ClearCredentials = ClearCredentials;
-        service.test = test;
 
         return service;
 
@@ -54,10 +53,6 @@
 
             $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
             $cookieStore.put('globals', $rootScope.globals);
-        }
-
-        function test(){
-            console.log("let's try");
         }
 
         function ClearCredentials() {

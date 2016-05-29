@@ -27,8 +27,6 @@ angular.module('mtiba.doctors')
 
 	  avatarCtrl.selectAvatar = function(){
 
-	    console.log(avatarCtrl.doctor._avatar_selected_id);
-
 	    avatarCtrl.doctor.$update(function() {
 	    //  $state.go('doctors'); // on success go back to home i.e. doctors state.
 	      console.log(avatarCtrl.doctor.avatar_selected);

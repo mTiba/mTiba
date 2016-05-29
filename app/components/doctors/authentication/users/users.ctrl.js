@@ -18,7 +18,6 @@
         function initController() {
             loadCurrentUser();
             loadAllUsers();
-            console.log("Loading all doctors's users");
         }
 
         function loadCurrentUser() {
@@ -26,7 +25,6 @@
                 .then(function (user) {
                     usersCtrl.user = user;
                     usersCtrl.user.type = "doctor";
-                    console.log(usersCtrl.user);
                 });
         }
 

@@ -1,16 +1,9 @@
 <div ng-controller="PatientEditController as formCtrl" class="row">
   <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
     <div id="form-container">        
-        <!-- use ng-submit to catch the form submission and use our Angular function -->
         <form id="signup-form" name="patientForm" ng-submit="formCtrl.updatePatient()">
-            <!-- our nested state views will be injected here -->
             <div id="form-views" ui-view></div>
         </form>    
     </div>    
-    <!-- show our formData as it is being typed -->
-    <!--<pre>
-      {{ formCtrl.patient }}
-    </pre>-->
   </div>
 </div>
-

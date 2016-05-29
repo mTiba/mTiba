@@ -19,9 +19,9 @@
     "motivation": "3",
     "lifestyle": {
         "smokes": "true",
-        "cigarettes_a_week": "20",
+        "cigarettes_a_week": 20,
         "drinks": "true",
-        "drinks_a_week": "3",
+        "drinks_a_week": 3,
         "drugs": "false",
         "drug_times_a_week": null,
         "drug_types": null,

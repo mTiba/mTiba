@@ -7,7 +7,7 @@
  * # adminPosHeader
  */
 angular.module('mtiba.patients.dashboard')
-	.directive('chat',function(){
+	.directive('patientChat',function(){
 
 		var chatController = ['$scope', function ($scope) {
 			//todo

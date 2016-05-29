@@ -37,7 +37,6 @@
 
         //http://sandbox.mtiba.me:8001/Patient/authenticateUser
         function GetByUsernameAndPassword(data) {
-            console.log(JSON.stringify(data));
             var req = {
              method: 'POST',
              url: api_address + 'authenticateUser',
