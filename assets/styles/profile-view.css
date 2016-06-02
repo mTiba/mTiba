@@ -1,0 +1,35 @@
+
+#profile_view_container .offset{
+    margin-left: 15px;
+}
+
+#profile_view_container h4 {
+    font-weight: 400;
+}
+
+#profile_view_container .bordered{
+    border-top: 1px solid #dddddd;
+}
+
+
+#profile_view_container md-icon {
+  margin: 20px;
+  width: 120px;
+  height: 120px; 
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+  #profile_view_container {
+    max-width: 730px; 
+  }
+}
+
+/* PATIENT VIEW*/
+.div-with-padding{
+  padding-top: 20px;
+}
+
+.label-info {
+  background-color: #00BC8C;
+}

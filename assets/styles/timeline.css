@@ -178,3 +178,13 @@
         border-left-width: 0;
     }
 }
+
+
+.log-date{
+  color: #00BC8C;
+}
+
+.log-text span{
+  color: #00BC8C;
+  font-style: italic;
+}

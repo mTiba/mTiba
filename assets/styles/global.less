@@ -1,0 +1,81 @@
+/* BASIC STYLINGS */
+@green: #00BC8C;
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  padding-bottom: 20px;
+  background-color: #fff;
+  margin-bottom: 60px;
+}
+
+pre {
+  margin-bottom:20px; 
+}
+
+a {
+ color: gray;
+}
+
+a:hover, a:active {
+  color: @green;
+}
+
+.active > a {
+  color: @green;
+}
+
+label {
+  font-size: 13px;
+  font-weight: 400;
+  text-align: left;
+}
+
+p, li{
+/*  color: @green;*/
+  font-size: 13px;
+  font-weight: 400;
+}
+
+h3 {
+  color: @green;
+}
+
+.btn-info, .btn-info:hover, .btn-primary, .btn-primary:hover, .btn-success, .btn-success:hover {
+	background: @green;
+  border-color: @green;
+  border:0px;
+}
+
+
+.jumbotron {
+  text-align: center;
+  background-color: transparent;
+  border: 0;
+}
+
+.jumbotron .btn {
+  padding: 14px 24px;
+}
+
+
+/* NG-DIALOG */
+.ngdialog.ngdialog-theme-plain .ngdialog-content {
+    width: 80% !important;
+}
+
+
+/* custom DASHBOARD styles */
+/* sidebar */
+@media(min-width:768px) {
+    .sidebar {
+        margin-top: 0px;
+    }
+}
+li.side-menu-list-title {
+  padding: 15px;
+  border-bottom: 0px;
+}

@@ -1,0 +1,30 @@
+/* identical to boostrap's .img-circle, but in this cse should be applied to the svg elment, which is dynamically generated-*/
+.avatar_picture svg {
+  border-radius: 50%;
+}
+
+
+/*avatar selection*/
+
+.avatarSelection body {
+  padding: 20px; }
+.avatarSelection hr {
+  margin-left: -20px;
+  opacity: 0.3; }
+.avatarSelection md-radio-group {
+  width: 150px; }
+.avatarSelection p:last-child {
+  padding-bottom: 50px; }
+.avatarSelection [ng-controller] {
+  padding-left: 20px; }
+.avatarSelection .radioValue {
+  margin-left: 5px;
+  color: #0f9d58;
+  font-weight: bold;
+  padding: 5px; }
+
+.avatarSelection md-icon {
+  margin: 20px;
+  margin-top: 0;
+  width: 128px;
+  height: 128px; }

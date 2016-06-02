@@ -1,0 +1,16 @@
+/* header */
+.navbar {
+  border-width: 0 0 1px 0; 
+}
+
+.navbar-brand {
+  line-height: 30px;
+  padding: 12px 15px;
+}
+
+.navbar-default .navbar-brand, 
+.navbar-default .navbar-brand:visited, 
+.navbar-default .navbar-brand:hover, 
+.navbar-default .navbar-brand:focus {
+  color: gray;
+}

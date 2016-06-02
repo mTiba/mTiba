@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     watch: {
       styles: {
-        files: ['less/**/*.less'], // which files to watch
+        files: ['assets/styles/*.less'], // which files to watch
         tasks: ['less'],
         options: {
           nospawn: true
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
           paths: ['assets/styles']
         },
         files: {
-          "style.css": "style.less" // destination file and source file
+          "assets/styles/main.css": "assets/styles/main.less" // destination file and source file
         }
       },
 /*      production: {

@@ -73,7 +73,7 @@
         <label>When was the last time?</label>
 
 
-        <input type="date" class="form-control" ng-model="formCtrl.patient.health.blood_transfusion.last_time" >
+        <input type="date" class="form-control -bordered-focus" ng-model="formCtrl.patient.health.blood_transfusion.last_time" >
 
     </div>
     <div class="col-md-8">
@@ -81,7 +81,7 @@
       <label>How much blood? (In ml) </label>
 
 
-      <input type="text" class="form-control" ng-model="formCtrl.patient.health.blood_transfusion.amount" >  
+      <input type="text" class="form-control -bordered-focus" ng-model="formCtrl.patient.health.blood_transfusion.amount" >  
 
   </div>
   </div>
@@ -89,7 +89,7 @@
 
 <div class="form-group">
   <label for="name">LIST ANY OTHER HEALTH ISSUES YOU THINK MIGHT BE IMPORTANT</label>
-  <input type="text" class="form-control" name="name" ng-model="formCtrl.patient.health.otherIssues">
+  <input type="text" class="form-control -bordered-focus" name="name" ng-model="formCtrl.patient.health.otherIssues">
 </div>
 
 <div class="form-group">
@@ -109,11 +109,11 @@
         <div ng-repeat="time in formCtrl.patient.health.hospitalized_data">   
           <div class = "col-md-3">
             <label>Year</label>
-            <input type="text" class="form-control" ng-model="time.year" >
+            <input type="text" class="form-control -bordered-focus" ng-model="time.year" >
           </div>
           <div class = "col-md-9">
             <label>Reason</label>
-            <input type="text" class="form-control" ng-model="time.reason" >
+            <input type="text" class="form-control -bordered-focus" ng-model="time.reason" >
           </div>
         </div>
       </div>
@@ -123,12 +123,12 @@
 
 <div class="form-group">
   <label for="name">DO YOU HAVE ANY ALLERGIES? (List any foods, medications or conditions) </label>
-  <input type="text" class="form-control" name="name" ng-model="formCtrl.patient.health.allergies">
+  <input type="text" class="form-control -bordered-focus" name="name" ng-model="formCtrl.patient.health.allergies">
 </div>
 
 <div class="form-group">
   <label for="name">ARE YOU ON ANY MEDICATIONS? (Include vitamins you may be taking) </label>
-  <input type="text" class="form-control" name="name" ng-model="formCtrl.patient.health.medications">
+  <input type="text" class="form-control -bordered-focus" name="name" ng-model="formCtrl.patient.health.medications">
 </div>
 
 <div class="form-group">
@@ -171,7 +171,7 @@
         <label>When was the last visit?</label>
       </div>
       <div class="col-md-12">
-        <input type="text" class="form-control" ng-model="formCtrl.patient.health.regular_doctor.last_visit" >
+        <input type="text" class="form-control -bordered-focus" ng-model="formCtrl.patient.health.regular_doctor.last_visit" >
       </div>
     </div>
   </div>
@@ -181,7 +181,7 @@
         <label>How often do you see your doctor? (Per year)</label>
       </div>
       <div class="col-md-12">
-        <input type="text" class="form-control" ng-model="formCtrl.patient.health.regular_doctor.visits_a_year" >
+        <input type="text" class="form-control -bordered-focus" ng-model="formCtrl.patient.health.regular_doctor.visits_a_year" >
       </div>
     </div>
   </div>
@@ -189,7 +189,7 @@
 
 <div class="form-group">
   <label for="distance_to_clinic">WHAT IS THE ESTIMATED DISTANCE TO YOUR NEAREST DOCTOR OR CLINIC? (In km)</label>
-  <input type="text" class="form-control" name="distance_to_clinic" ng-model="formCtrl.patient.health.distance_to_clinic">
+  <input type="text" class="form-control -bordered-focus" name="distance_to_clinic" ng-model="formCtrl.patient.health.distance_to_clinic">
 </div>
 
 <div class="form-group row">

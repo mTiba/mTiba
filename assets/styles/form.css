@@ -1,0 +1,80 @@
+
+/* form styling */
+#form-container                { 
+  background:#fff; margin-bottom:20px;
+  border-radius:5px; margin-top:20px; }
+
+
+.form-horizontal .form-group {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+select.form-control{
+  border-radius: 0px;
+  -webkit-appearance: none;
+}
+
+textarea.form-control {
+  resize: none;
+  border-radius: 0px;
+}
+
+
+.-bordered-focus:focus {
+  border-color: #4FD7BD;
+}
+
+.thumb {
+    width: 127px;
+    height: 127px;
+    float: none;
+    position: relative;
+    top: 7px;
+}
+
+#form_navigation>li>a {
+  padding: 10px 25px;
+}
+
+.msg-error {
+  color: #ff4136;
+}
+
+/*FORM NAVIGATION*/
+.nav a {
+  cursor: pointer;
+}
+
+.nav>li.active>a {
+  text-decoration: none;
+  background-color: #eee;
+}
+
+.nav-pills>li>a{
+  pointer-events:none;
+  background-color: transparent;
+}
+
+.radio label, .checkbox label{
+  font-weight: 300;
+}
+
+/* http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-centered-columns */
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.glyphicon.glyphicon-asterisk{
+  color: #4FD7BD;
+  font-size: 8px;
+}

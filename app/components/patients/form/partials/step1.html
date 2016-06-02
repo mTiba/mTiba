@@ -16,7 +16,7 @@
   <div class="col-md-5">
     <div class="form-group" ng-class="{ 'has-error': patientForm.name.$touched && patientForm.name.$invalid }">
   <label for="name">FIRST NAME<sup><span class="glyphicon glyphicon-asterisk"></span></sup> (private, only you can see this.)</label>
-  <input type="text" class="form-control" name="name" ng-model="formCtrl.patient.name" ng-minlength="3" required>
+  <input type="text" class="form-control -bordered-focus" name="name" ng-model="formCtrl.patient.name" ng-minlength="3" required>
   <div class="help-block" ng-messages="patientForm.name.$error" ng-if="patientForm.name.$touched">
     <!--<div ng-messages-include="components/form/messages.html"></div>-->
     <p ng-message="required">This field is required</p>
@@ -27,7 +27,7 @@
   <div class="col-md-4">
     <div class="form-group" ng-class="{ 'has-error': patientForm.surname.$touched && patientForm.surname.$invalid }">
       <label for="surname">LAST NAME<sup><span class="glyphicon glyphicon-asterisk"></span></sup> (private)</label>
-      <input type="text" class="form-control" name="surname" ng-model="formCtrl.patient.surname" ng-minlength="3" required>
+      <input type="text" class="form-control -bordered-focus" name="surname" ng-model="formCtrl.patient.surname" ng-minlength="3" required>
       <div class="help-block" ng-messages="patientForm.surname.$error" ng-if="patientForm.surname.$touched">
         <div ng-messages-include="form/messages.html"></div>
       </div>
@@ -36,7 +36,7 @@
   <div class="col-md-3">
     <div class="form-group">
       <label for="date_of_birth">DATE OF BIRTH</label>
-      <input type="date" format="yyyy-mm-dd" class="form-control" ng-model="formCtrl.patient.date_of_birth" name="date_of_birth" >
+      <input type="date" format="yyyy-mm-dd" class="form-control -bordered-focus" ng-model="formCtrl.patient.date_of_birth" name="date_of_birth" >
     </div>
   </div>
 </div>
@@ -44,7 +44,7 @@
   <div class="col-md-4">
     <div class="form-group" ng-class="{ 'has-error': patientForm.phone.$touched && patientForm.phone.$invalid }">
       <label for="phone">PHONE NUMBER<sup><span class="glyphicon glyphicon-asterisk"></span></sup> (private)</label>
-      <input type="text" class="form-control" name="phone" ng-model="formCtrl.patient.phone" required >
+      <input type="text" class="form-control -bordered-focus" name="phone" ng-model="formCtrl.patient.phone" required >
       <div class="help-block" ng-messages="patientForm.phone.$error" ng-if="patientForm.phone.$touched">
         <div ng-messages-include="form/messages.html"></div>
       </div>
@@ -53,7 +53,7 @@
   <div class="col-md-3">
     <div class="form-group">
       <label for="country">COUNTRY<sup><span class="glyphicon glyphicon-asterisk"></span></sup></label>
-      <select name="country" value="{{country.id}}"class="form-control">
+      <select name="country" value="{{country.id}}"class="form-control -bordered-focus">
         <option>Kenya</option>
         <option>Nigeria</option>
         <option>Rwanda</option>
@@ -70,7 +70,7 @@
   <div class="col-md-3">
     <div class="form-group">
       <label for="town">CITY/TOWN</label>
-      <input type="text" class="form-control" name="town" ng-model="formCtrl.patient.town">
+      <input type="text" class="form-control -bordered-focus" name="town" ng-model="formCtrl.patient.town">
     </div>
   </div>
   <div class="col-md-2">
@@ -108,7 +108,7 @@
           <input type="radio" name="occupationGroup" ng-model="formCtrl.patient.occupation" ng-value="occupation.id"/> <label> {{occupation.name}} </label>
         </div>
         <div class="col-md-8">
-          <input type="text" class="form-control" name="occupation_other" ng-model="formCtrl.patient.occupation_other" placeholder="What's your occupation?" ng-show= "formCtrl.patient.occupation == 4" >
+          <input type="text" class="form-control -bordered-focus" name="occupation_other" ng-model="formCtrl.patient.occupation_other" placeholder="What's your occupation?" ng-show= "formCtrl.patient.occupation == 4" >
         </div>
       </div>
     </div>
@@ -131,7 +131,7 @@
               <label>Yes</label>
             </div>
             <div class="col-md-8">
-              <input type="text" class="form-control" name="healthInsuranceName" ng-model="formCtrl.patient.health_insurance.company" placeholder="Please specify your insurance company" ng-show = "formCtrl.patient.health_insurance.any =='true'">
+              <input type="text" class="form-control -bordered-focus" name="healthInsuranceName" ng-model="formCtrl.patient.health_insurance.company" placeholder="Please specify your insurance company" ng-show = "formCtrl.patient.health_insurance.any =='true'">
             </div>
           </div>
         </div>

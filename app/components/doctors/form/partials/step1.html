@@ -5,7 +5,7 @@
 
 <div class="form-group" ng-class="{ 'has-error': doctorForm.name.$touched && doctorForm.name.$invalid }">
   <label for="name">FIRST NAME:* (private, only you can see this.)</label>
-  <input type="text" class="form-control" id="name" name="name" ng-model="formCtrl.doctor.name" ng-minlength="3" required>
+  <input type="text" class="form-control -bordered-focus" id="name" name="name" ng-model="formCtrl.doctor.name" ng-minlength="3" required>
   <div class="help-block" ng-messages="doctorForm.name.$error" ng-if="doctorForm.name.$touched">
     <div ng-message="required">This field is required</div>
   </div>
@@ -13,7 +13,7 @@
 
 <div class="form-group" ng-class="{ 'has-error': doctorForm.surname.$touched && doctorForm.surname.$invalid }">
   <label for="surname">LAST NAME:* (private)</label>
-  <input type="text" class="form-control" name="surname" input-name="surname_input" ng-model="formCtrl.doctor.surname" ng-minlength="3" required>
+  <input type="text" class="form-control -bordered-focus" name="surname" input-name="surname_input" ng-model="formCtrl.doctor.surname" ng-minlength="3" required>
   <div class="help-block" ng-messages="doctorForm.surname.$error" ng-if="doctorForm.surname.$touched">
     <div ng-message="required">This field is required</div>
   </div>
@@ -21,7 +21,7 @@
 
 <div class="form-group">
   <label for="date_of_birth">DATE OF BIRTH:</label>
-  <input type="date" class="form-control" ng-model="formCtrl.doctor.date_of_birth" name="date_of_birth" >
+  <input type="date" class="form-control -bordered-focus" ng-model="formCtrl.doctor.date_of_birth" name="date_of_birth" >
 </div>
 
 <div class="form-group">
@@ -34,7 +34,7 @@
 
 <div class="form-group" ng-class="{ 'has-error': doctorForm.phone.$touched && doctorForm.phone.$invalid }">
   <label for="phone">PHONE NUMBER:* (private)</label>
-  <input type="text" class="form-control" id="phone" name="phone" ng-model="formCtrl.doctor.phone" ng-required="true" >
+  <input type="text" class="form-control -bordered-focus" id="phone" name="phone" ng-model="formCtrl.doctor.phone" ng-required="true" >
   <div class="help-block has-error" ng-messages="doctorForm.phone.$error" ng-if="doctorForm.phone.$touched" class="col-lg-3">
     <div ng-messages-include="form/messages.html"></div>
     <div ng-message="required">This field is required</div>
@@ -59,7 +59,7 @@
 
 <div class="form-group">
   <label for="town">CITY/TOWN:</label>
-  <input type="text" class="form-control" name="town" ng-model="formCtrl.doctor.town">
+  <input type="text" class="form-control -bordered-focus" name="town" ng-model="formCtrl.doctor.town">
 </div>
 
 <div class="form-group">
@@ -77,7 +77,7 @@
       <input type="radio" name="occupationGroup" ng-model="formCtrl.doctor.occupation" ng-required="true" ng-value="occupation.id"/> <label> {{occupation.name}} </label>
     </div>
     <div class="col-xs-8">
-      <input type="text" class="form-control" name="occupation_other" ng-model="formCtrl.doctor.occupation_other" placeholder="What's your occupation?" ng-show= "formCtrl.doctor.occupation == 5" >
+      <input type="text" class="form-control -bordered-focus" name="occupation_other" ng-model="formCtrl.doctor.occupation_other" placeholder="What's your occupation?" ng-show= "formCtrl.doctor.occupation == 5" >
     </div>
   </div>
   <div class="help-block has-error" ng-messages="doctorForm.occupation.$error" ng-if="doctorForm.occupation.$touched" class="col-lg-3">
@@ -105,7 +105,7 @@
     Don't feel comfortable sharing this online? 
     <a href="http://www.yapili.com/contactus" target="_blank">Call us. </a>
   </label>
-  <input type="text" class="form-control" name="license_number" ng-model="formCtrl.doctor.license_number" ng-minlength="3" required >
+  <input type="text" class="form-control -bordered-focus" name="license_number" ng-model="formCtrl.doctor.license_number" ng-minlength="3" required >
   <div class="help-block" ng-messages="doctorForm.license_number.$error" ng-if="doctorForm.license_number.$touched && !formCtrl.doctor.license_number_confidential">
     <div ng-message="required">This field is required. But you can tick the chekbox above to omit it.</div>
   </div>
