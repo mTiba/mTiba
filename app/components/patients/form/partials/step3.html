@@ -88,7 +88,7 @@
 </div>
 
 <div class="form-group">
-  <label for="name">LIST ANY OTHER HEALTH ISSUES YOU THINK MIGHT BE IMPORTANT</label>
+  <label class="label-for" for="name">LIST ANY OTHER HEALTH ISSUES YOU THINK MIGHT BE IMPORTANT</label>
   <input type="text" class="form-control -bordered-focus" name="name" ng-model="formCtrl.patient.health.otherIssues">
 </div>
 
@@ -122,17 +122,17 @@
 </div>
 
 <div class="form-group">
-  <label for="name">DO YOU HAVE ANY ALLERGIES? (List any foods, medications or conditions) </label>
+  <label class="label-for" for="name">DO YOU HAVE ANY ALLERGIES? (List any foods, medications or conditions) </label>
   <input type="text" class="form-control -bordered-focus" name="name" ng-model="formCtrl.patient.health.allergies">
 </div>
 
 <div class="form-group">
-  <label for="name">ARE YOU ON ANY MEDICATIONS? (Include vitamins you may be taking) </label>
+  <label class="label-for" for="name">ARE YOU ON ANY MEDICATIONS? (Include vitamins you may be taking) </label>
   <input type="text" class="form-control -bordered-focus" name="name" ng-model="formCtrl.patient.health.medications">
 </div>
 
 <div class="form-group">
-	<label for="name">OVER THE PAST THO WEEKS HOW OFTEN HAVE YOU HAD LITTLE INTEREST IN DOING THINGS? </label>
+	<label class="label-for" for="name">OVER THE PAST THO WEEKS HOW OFTEN HAVE YOU HAD LITTLE INTEREST IN DOING THINGS? </label>
   <div class="row">
     <div class="col-md-6" ng-repeat="frequency in formCtrl.metadata.frequencies">
         <input type="radio" name="frequencyGroup" ng-model="formCtrl.patient.health.little_interest" ng-required="true" ng-value="frequency.id"/> <label> {{frequency.name}} </label>
@@ -141,7 +141,7 @@
 </div>
 
 <div class="form-group">
-	<label for="name">OVER THE PAST THO WEEKS HOW OFTEN HAVE YOU BEEN DOWN, DEPRESSED OR FELT HOPELESS? </label>
+	<label class="label-for" for="name">OVER THE PAST THO WEEKS HOW OFTEN HAVE YOU BEEN DOWN, DEPRESSED OR FELT HOPELESS? </label>
   <div class="row">
     <div class="col-md-6" ng-repeat="frequency in formCtrl.metadata.frequencies">
         <input type="radio" name="frequencyGroup2" ng-model="formCtrl.patient.health.moral_situation" ng-required="true" ng-value="frequency.id"/> <label> {{frequency.name}} </label>
@@ -188,7 +188,7 @@
 </div>
 
 <div class="form-group">
-  <label for="distance_to_clinic">WHAT IS THE ESTIMATED DISTANCE TO YOUR NEAREST DOCTOR OR CLINIC? (In km)</label>
+  <label class="label-for" for="distance_to_clinic">WHAT IS THE ESTIMATED DISTANCE TO YOUR NEAREST DOCTOR OR CLINIC? (In km)</label>
   <input type="text" class="form-control -bordered-focus" name="distance_to_clinic" ng-model="formCtrl.patient.health.distance_to_clinic">
 </div>
 

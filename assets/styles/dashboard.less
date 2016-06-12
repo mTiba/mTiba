@@ -1,3 +1,78 @@
+/* CHAT */
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+  
+}
+
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.chat-panel {
+  border: 0px;
+  .chat-img {
+    width: 50px;
+    height: 50px; 
+  }
+  .panel-body {
+      max-height: 700px;
+  }
+} 
+
+.chat li {
+  border: 0px;
+  margin-bottom: 40px;
+  .chat-body {
+    p {
+      padding: 10px;
+      background-color: @lighter-green;
+      margin-bottom: 5px;
+      .border-radius
+    }
+  }
+}
+
+.panel-default {
+  .panel-heading{
+    background-color: #fff;
+  }
+  .panel-footer{
+    background-color: #fff;
+  }
+}
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+
+
+/* TIMELINE */
+.panel-heading h4{
+  vertical-align: middle;
+  margin: 0px 0px 0px 60px;
+  line-height: 50px;
+}
+
 .timeline {
     position: relative;
     padding: 0 0 20px;
@@ -12,12 +87,19 @@
     left: 50%;
     width: 3px;
     margin-left: -1.5px;
-    background-color: #eeeeee;
+    background-color: @gray;
 }
 
-.timeline > li {
+.timeline{
+  > li {
     position: relative;
     margin-bottom: 20px;
+  }
+}
+
+.timeline-img {
+  width: 50px;
+  height: 50px;
 }
 
 .timeline > li:before,
@@ -109,25 +191,24 @@
     border-left-width: 0;
 }
 
-.timeline-badge.primary {
+.timeline-badge {
+  &.primary {
     background-color: #2e6da4 !important;
-}
-
-.timeline-badge.success {
+  }
+  &.success {
     background-color: #3f903f !important;
-}
-
-.timeline-badge.warning {
+  }
+  &.warning {
     background-color: #f0ad4e !important;
-}
-
-.timeline-badge.danger {
+  }
+  &.danger {
     background-color: #d9534f !important;
+  }
+  &.info {
+    background-color: @green !important;
+  }
 }
 
-.timeline-badge.info {
-    background-color: #5bc0de !important;
-}
 
 .timeline-title {
     margin-top: 0;

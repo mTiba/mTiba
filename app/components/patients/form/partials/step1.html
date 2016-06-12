@@ -3,7 +3,7 @@
 <h5 align="center">We just need to know a few things about you. Fill out as much as you feel comfortable.</h5><br>
 -->
 <div class="form-group">
-  <p align="center"><label for="motivation">WHAT WOULD YOU LIKE TO USE yapili FOR?</label></p>
+  <p align="center"><label class="label-for" for="motivation">WHAT WOULD YOU LIKE TO USE yapili FOR?</label></p>
   <div class="row">
       <!--TODO: pass an motivation id -->
     <div class="col-xs-4" ng-repeat="motivation in formCtrl.metadata.motivation">
@@ -15,7 +15,7 @@
 <div class="row">
   <div class="col-md-5">
     <div class="form-group" ng-class="{ 'has-error': patientForm.name.$touched && patientForm.name.$invalid }">
-  <label for="name">FIRST NAME<sup><span class="glyphicon glyphicon-asterisk"></span></sup> (private, only you can see this.)</label>
+  <label class="label-for" for="name">FIRST NAME<sup><span class="glyphicon glyphicon-asterisk"></span></sup> (private, only you can see this.)</label>
   <input type="text" class="form-control -bordered-focus" name="name" ng-model="formCtrl.patient.name" ng-minlength="3" required>
   <div class="help-block" ng-messages="patientForm.name.$error" ng-if="patientForm.name.$touched">
     <!--<div ng-messages-include="components/form/messages.html"></div>-->
@@ -26,7 +26,7 @@
   </div>
   <div class="col-md-4">
     <div class="form-group" ng-class="{ 'has-error': patientForm.surname.$touched && patientForm.surname.$invalid }">
-      <label for="surname">LAST NAME<sup><span class="glyphicon glyphicon-asterisk"></span></sup> (private)</label>
+      <label class="label-for" for="surname">LAST NAME<sup><span class="glyphicon glyphicon-asterisk"></span></sup> (private)</label>
       <input type="text" class="form-control -bordered-focus" name="surname" ng-model="formCtrl.patient.surname" ng-minlength="3" required>
       <div class="help-block" ng-messages="patientForm.surname.$error" ng-if="patientForm.surname.$touched">
         <div ng-messages-include="form/messages.html"></div>
@@ -35,7 +35,7 @@
   </div>
   <div class="col-md-3">
     <div class="form-group">
-      <label for="date_of_birth">DATE OF BIRTH</label>
+      <label class="label-for" for="date_of_birth">DATE OF BIRTH</label>
       <input type="date" format="yyyy-mm-dd" class="form-control -bordered-focus" ng-model="formCtrl.patient.date_of_birth" name="date_of_birth" >
     </div>
   </div>
@@ -43,7 +43,7 @@
 <div class="row">
   <div class="col-md-4">
     <div class="form-group" ng-class="{ 'has-error': patientForm.phone.$touched && patientForm.phone.$invalid }">
-      <label for="phone">PHONE NUMBER<sup><span class="glyphicon glyphicon-asterisk"></span></sup> (private)</label>
+      <label class="label-for" for="phone">PHONE NUMBER<sup><span class="glyphicon glyphicon-asterisk"></span></sup> (private)</label>
       <input type="text" class="form-control -bordered-focus" name="phone" ng-model="formCtrl.patient.phone" required >
       <div class="help-block" ng-messages="patientForm.phone.$error" ng-if="patientForm.phone.$touched">
         <div ng-messages-include="form/messages.html"></div>
@@ -52,7 +52,7 @@
   </div>
   <div class="col-md-3">
     <div class="form-group">
-      <label for="country">COUNTRY<sup><span class="glyphicon glyphicon-asterisk"></span></sup></label>
+      <label class="label-for" for="country">COUNTRY<sup><span class="glyphicon glyphicon-asterisk"></span></sup></label>
       <select name="country" value="{{country.id}}"class="form-control -bordered-focus">
         <option>Kenya</option>
         <option>Nigeria</option>
@@ -69,13 +69,13 @@
   </div>
   <div class="col-md-3">
     <div class="form-group">
-      <label for="town">CITY/TOWN</label>
+      <label class="label-for" for="town">CITY/TOWN</label>
       <input type="text" class="form-control -bordered-focus" name="town" ng-model="formCtrl.patient.town">
     </div>
   </div>
   <div class="col-md-2">
     <div class="form-group">
-      <label for="gender">GENDER</label>
+      <label class="label-for" for="gender">GENDER</label>
       <div class="row">
         <div class="col-md-6">
           <input type="radio" ng-model="formCtrl.patient.gender" value="m" /><label>&nbspM</label>
@@ -100,7 +100,7 @@
   </div>
   <div class="col-md-6">
     <div class="form-group">
-      <label for="occupation">OCCUPATION</label>
+      <label class="label-for" for="occupation">OCCUPATION</label>
       <p><label> (what do you do for work?)</label></p>
       <div class="row">
         <!--TODO: pass an occupation type id -->
@@ -118,7 +118,7 @@
 <div class="row">
   <div class="col-md-6">
     <div class="form-group">
-      <label for="insurance">DO YOU HAVE HEALTH INSURANCE?</label>
+      <label class="label-for" for="insurance">DO YOU HAVE HEALTH INSURANCE?</label>
       <div class="row">
         <div class="col-md-12">
           <input type="radio" ng-model="formCtrl.patient.health_insurance.any" value="false" />

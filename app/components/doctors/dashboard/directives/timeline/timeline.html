@@ -1,26 +1,42 @@
-<div class="panel-body">
+<div class="timeline panel-default">
+  <div class="panel-heading">
+<!--     <i class="fa fa-clock-o fa-fw"></i> Doctor's log -->
+    <a ui-sref='viewPatient({ id: dashboardCtrl.selectedPatient.id })'>
+      <span class="timeline-img pull-left">
+        <md-icon md-svg-icon="{{dashboardCtrl.selectedPatient._avatar_selected_id}}" class="avatar_picture" alt="" class="center-block img-responsive"></md-icon>
+      </span>
+      <h4 class="username -green-">
+        {{ dashboardCtrl.selectedPatient.name+' '+dashboardCtrl.selectedPatient.surname }}
+        <small>{{ dashboardCtrl.selectedPatient.country_name }}</small>
+      </h4>
+    </a>      
+  </div>
+  <!-- /.panel-heading -->
+  <div class="panel-body">
     <ul class="timeline">
-        <li ng-repeat="log in dashboardCtrl.selectedPatient.logs track by $index" ng-class="{ 'timeline-inverted': $index%2==1  }">
-            <div class="timeline-badge info"><i class="fa fa-credit-card"></i>
-            </div>
-            <div class="timeline-panel">
-                <div class="timeline-heading">
-                    <p><small class="text-muted"><i class="fa fa-clock-o"></i> {{log.date | date:'mediumDate'}}</small>
-                    </p>
-                </div>
-                <div class="timeline-body">
-                    <p>{{log.text}}</p>
-                </div>
-            </div>
-        </li>
+      <li ng-repeat="log in dashboardCtrl.selectedPatient.logs track by $index" ng-class="{ 'timeline-inverted': $index%2==1  }">
+        <div class="timeline-badge info"><i class="fa fa-credit-card"></i>
+        </div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+              <p><small class="text-muted"><i class="fa fa-clock-o"></i> {{log.date | date:'mediumDate'}}</small>
+              </p>
+          </div>
+          <div class="timeline-body">
+              <p>{{log.text}}</p>
+          </div>
+        </div>
+      </li>
     </ul>
-    <div class="panel-footer"> 
-        <div class="input-group"> 
-           <!-- <input value="" type="text" placeholder="Name of Item" ng-model="itemName">-->
-            <input id="btn-input" type="text" class="form-control -bordered-focus input-sm"  placeholder="Type your text here..." ng-model="dashboardCtrl.logText"> 
-            <span class="input-group-btn"> 
-                <button class="btn btn-primary btn-sm" id="btn-chat" ng-click="dashboardCtrl.addLog()"> Add </button> 
-            </span> 
-        </div> 
-    </div>
+  </div>
+  <!-- /.panel-body -->
+  <div class="panel-footer"> 
+    <div class="input-group"> 
+     <!-- <input value="" type="text" placeholder="Name of Item" ng-model="itemName">-->
+      <input id="btn-input" type="text" class="form-control -bordered-focus input"  placeholder="Type your text here..." ng-model="dashboardCtrl.logText"> 
+      <span class="input-group-btn"> 
+          <button class="btn btn-primary btn" id="btn-chat" ng-click="dashboardCtrl.addLog()"> Add </button> 
+      </span> 
+    </div> 
+  </div>
 </div>

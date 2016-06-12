@@ -9,7 +9,14 @@ module.exports = function(grunt) {
         files: ['assets/styles/*.less'], // which files to watch
         tasks: ['less'],
         options: {
-          nospawn: true
+          nospawn: true,
+          livereload: true
+        }
+      },
+      html: {
+        files: ['index.html', 'app/**/*.html'],
+        options: {
+          livereload: true
         }
       }
     },

@@ -1,5 +1,16 @@
 /* BASIC STYLINGS */
-@green: #00BC8C;
+@green: #27ccc0;
+@dark-green: #0C7F77; 
+@lighter-green: #E2FDFB;
+@light-green: #A9F4EF;
+@gray: #eeeeee;
+@gray: #CFD8C8;
+@pink: #b98a77;
+@orange: #CC5E27;
+@brown: #7F2A00;
+@violett: #6f606c;
+@blue: #415275;
+
 
 html {
   position: relative;
@@ -17,11 +28,11 @@ pre {
 }
 
 a {
- color: gray;
-}
-
-a:hover, a:active {
-  color: @green;
+  color: @gray;
+  &:hover, &:active {
+    color: @green;
+    text-decoration: none;
+  }
 }
 
 .active > a {
@@ -34,6 +45,10 @@ label {
   text-align: left;
 }
 
+label.label-for {
+  color: @green;
+}
+
 p, li{
 /*  color: @green;*/
   font-size: 13px;
@@ -44,12 +59,42 @@ h3 {
   color: @green;
 }
 
-.btn-info, .btn-info:hover, .btn-primary, .btn-primary:hover, .btn-success, .btn-success:hover {
-	background: @green;
+.btn-primary{
+  background: @green;
   border-color: @green;
-  border:0px;
+  &:hover {
+    background: @dark-green;
+    border-color: @dark-green;
+  }
 }
+.btn-success{
+  background: @blue;
+  border-color: @blue;
+  &:hover {
 
+  }
+}
+.btn-info{
+  background: @light-green;
+  border-color: @light-green;
+  &:hover {
+
+  }
+}
+.btn-warning{
+  background: @pink;
+  border-color: @pink;
+  &:hover {
+
+  }
+}
+.btn-danger{
+  background: @orange;
+  border-color: @orange;;
+  &:hover {
+
+  }
+}
 
 .jumbotron {
   text-align: center;
