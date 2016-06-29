@@ -1,9 +1,7 @@
 <div ng-controller="PatientEditController as formCtrl" class="row">
-  <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
-    <div id="form-container">        
-        <form id="signup-form" name="patientForm" ng-submit="formCtrl.updatePatient()">
-            <div id="form-views" ui-view></div>
-        </form>    
-    </div>    
+  <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">      
+    <form class="user-form" name="patientForm" ng-submit="formCtrl.updatePatient()">
+        <div id="form-views" ui-view></div>
+    </form>        
   </div>
 </div>

@@ -2,30 +2,31 @@
 <h4 align="center">Great, now that we’ve got your basic info, let’s find out a little about your lifestyle choices.</h4>
 <h5 align="center">Remember, you can fill out as much as you feel comfortable, but all your selections are confidential.</h5>
 -->
-
-<div class="form-group">
-  <label>DO YOU SMOKE CIGARETTES?</label>
-    <div class="radio">
-      <label>
-         <input type="radio" ng-model="formCtrl.patient.lifestyle.smokes" value="false" >
-         No
-      </label>
+<div class="row">
+    <div class="col-md-12"><label class="-green-">DO YOU SMOKE CIGARETTES?</label></div>
+    <div class="col-md-6">
+      <div class="radio">
+        <label>
+           <input type="radio" ng-model="formCtrl.patient.lifestyle.smokes" value="false" >
+           No
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+            <input type="radio" ng-model="formCtrl.patient.lifestyle.smokes" value="true" >
+            Yes
+        </label>
+      </div>
     </div>
-    <div class="radio">
-      <label>
-          <input type="radio" ng-model="formCtrl.patient.lifestyle.smokes" value="true" >
-          Yes
-      </label>
+    <div class="col-md-6" ng-show="formCtrl.patient.lifestyle.smokes == 'true'">
+      <label>How many cigarettes a week? </label>
+      <input type="number" string-to-number class="form-control -bordered-focus" ng-model="formCtrl.patient.lifestyle.cigarettes_a_week" >
     </div>
 </div>
-<div class="form-group" ng-show="formCtrl.patient.lifestyle.smokes == 'true'">
-  <label>How many cigarettes a week? </label>
-  <input type="number" string-to-number class="form-control -bordered-focus" ng-model="formCtrl.patient.lifestyle.cigarettes_a_week" >
-</div>
 
-
-<div class="form-group">
-  <label>DO YOU DRINK ALCOHOL?</label>
+<div class="row">
+  <div class="col-md-12"><label class="-green-">DO YOU DRINK ALCOHOL?</label></div>
+  <div class="col-md-6">
     <div class="radio">
       <label>
          <input type="radio" ng-model="formCtrl.patient.lifestyle.drinks" value="false">
@@ -38,15 +39,15 @@
           Yes
       </label>
     </div>
+  </div>
+  <div class="col-md-6" ng-show="formCtrl.patient.lifestyle.drinks == 'true'">
+    <label>How many drinks a week? </label>
+    <input type="number" string-to-number class="form-control -bordered-focus" ng-model="formCtrl.patient.lifestyle.drinks_a_week" >
+  </div>
 </div>
-<div class="form-group" ng-show="formCtrl.patient.lifestyle.drinks == 'true'">
-  <label>How many drinks a week? </label>
-  <input type="number" string-to-number class="form-control -bordered-focus" ng-model="formCtrl.patient.lifestyle.drinks_a_week" >
-</div>
-
 
 <div class="form-group">
-  <label>DO YOU USE RECREATIONAL DRUGS?</label>
+  <label class="-green-">DO YOU USE RECREATIONAL DRUGS?</label>
     <div class="radio">
       <label>
          <input type="radio" ng-model="formCtrl.patient.lifestyle.drugs" value="false" >
@@ -70,7 +71,7 @@
 
 
 <div class="form-group">
-  <label>DO YOU EXERCISE?</label>
+  <label class="-green-">DO YOU EXERCISE?</label>
     <div class="radio">
       <label>
          <input type="radio" ng-model="formCtrl.patient.lifestyle.exercises" value="false" >
@@ -94,7 +95,7 @@
 </div>
 
 <div class="form-group">
-  <label>ARE YOU SEXUALLY ACTIVE?</label>
+  <label class="-green-">ARE YOU SEXUALLY ACTIVE?</label>
   <div class="radio">
     <label>
        <input type="radio" ng-model="formCtrl.patient.lifestyle.sexually_active" value="false" >

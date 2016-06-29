@@ -70,14 +70,25 @@ module.exports = function(grunt) {
         ignorePath: '',
         overrides: {}
       }
+    },
+    connect: {
+      server: {
+        options: {
+          port: 9000,
+          hostname: '*',
+          livereload: true//,
+          //base: '_site/'
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-bower-install');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   grunt.registerTask('default', ['less', 'watch']);
-
+  grunt.registerTask('serve', [ 'connect:server', 'less', 'watch' ]);
 };
 

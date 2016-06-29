@@ -2,20 +2,20 @@
 <h3 align="center">Welcome to yapili! </h4>
 <h5 align="center">We just need to know a few things about you. Fill out as much as you feel comfortable.</h5><br>
 -->
-<div class="form-group">
-  <p align="center"><label class="label-for" for="motivation">WHAT WOULD YOU LIKE TO USE yapili FOR?</label></p>
-  <div class="row">
-      <!--TODO: pass an motivation id -->
-    <div class="col-xs-4" ng-repeat="motivation in formCtrl.metadata.motivation">
-      <input type="radio" name="motivation" ng-model="formCtrl.patient.motivation" ng-required="true" ng-value="motivation.id"/> <label> &nbsp{{motivation.name}} </label>
-    </div>
+
+
+<div class="form-group row">
+  <div class="col-md-12 text-center">
+    <label class="-green-" for="motivation">WHAT WOULD YOU LIKE TO USE YAPILI FOR?</label>
+      <!--TODO: pass a motivation id -->
+  </div>
+  <div class="col-md-4" ng-repeat="motivation in formCtrl.metadata.motivation">
+      <input type="radio" name="motivation" ng-model="formCtrl.patient.motivation" ng-required="true" ng-value="motivation.id"/> <label> <br \>{{motivation.name}} </label>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-5">
-    <div class="form-group" ng-class="{ 'has-error': patientForm.name.$touched && patientForm.name.$invalid }">
-  <label class="label-for" for="name">FIRST NAME<sup><span class="glyphicon glyphicon-asterisk"></span></sup> (private, only you can see this.)</label>
+<div class="form-group" ng-class="{ 'has-error': patientForm.name.$touched && patientForm.name.$invalid }">
+  <label class="-green-" for="name">FIRST NAME<sup><span class="glyphicon glyphicon-asterisk"></span></sup> (private, only you can see this.)</label>
   <input type="text" class="form-control -bordered-focus" name="name" ng-model="formCtrl.patient.name" ng-minlength="3" required>
   <div class="help-block" ng-messages="patientForm.name.$error" ng-if="patientForm.name.$touched">
     <!--<div ng-messages-include="components/form/messages.html"></div>-->
@@ -23,37 +23,47 @@
     <p ng-message="minlength">This field is too short</p>
   </div>
 </div>
+
+
+<div class="form-group" ng-class="{ 'has-error': patientForm.surname.$touched && patientForm.surname.$invalid }">
+  <label class="-green-" for="surname">LAST NAME<sup><span class="glyphicon glyphicon-asterisk"></sup><span></label><label>(private)</label>
+  <input type="text" class="form-control -bordered-focus" name="surname" ng-model="formCtrl.patient.surname" ng-minlength="3" required>
+  <div class="help-block" ng-messages="patientForm.surname.$error" ng-if="patientForm.surname.$touched">
+    <div ng-messages-include="form/messages.html"></div>
   </div>
-  <div class="col-md-4">
-    <div class="form-group" ng-class="{ 'has-error': patientForm.surname.$touched && patientForm.surname.$invalid }">
-      <label class="label-for" for="surname">LAST NAME<sup><span class="glyphicon glyphicon-asterisk"></span></sup> (private)</label>
-      <input type="text" class="form-control -bordered-focus" name="surname" ng-model="formCtrl.patient.surname" ng-minlength="3" required>
-      <div class="help-block" ng-messages="patientForm.surname.$error" ng-if="patientForm.surname.$touched">
-        <div ng-messages-include="form/messages.html"></div>
-      </div>
+</div>
+
+<div class="form-group">
+  <label class="-green-" for="date_of_birth">DATE OF BIRTH</label>
+  <input type="date" format="yyyy-mm-dd" class="form-control -bordered-focus" ng-model="formCtrl.patient.date_of_birth" name="date_of_birth" >
+</div>
+
+<div class="row">
+  <div class="form-group col-md-6" ng-class="{ 'has-error': patientForm.phone.$touched && patientForm.phone.$invalid }">
+    <label class="-green-" for="phone">PHONE NUMBER<sup><span class="glyphicon glyphicon-asterisk"></span></sup> (private)</label>
+    <input type="text" class="form-control -bordered-focus" name="phone" ng-model="formCtrl.patient.phone" required >
+    <div class="help-block" ng-messages="patientForm.phone.$error" ng-if="patientForm.phone.$touched">
+      <div ng-messages-include="form/messages.html"></div>
     </div>
   </div>
-  <div class="col-md-3">
-    <div class="form-group">
-      <label class="label-for" for="date_of_birth">DATE OF BIRTH</label>
-      <input type="date" format="yyyy-mm-dd" class="form-control -bordered-focus" ng-model="formCtrl.patient.date_of_birth" name="date_of_birth" >
+  <div class="form-group col-md-6">
+    <label class="-green-" for="gender">GENDER</label>
+    <div class="row">
+      <div class="col-md-6">
+        <input type="radio" ng-model="formCtrl.patient.gender" value="m" /><label>M</label>
+      </div>
+      <div class="col-md-6">
+        <input type="radio" ng-model="formCtrl.patient.gender" value="f" /><label>F</label><br />
+      </div>
     </div>
   </div>
 </div>
+
 <div class="row">
-  <div class="col-md-4">
-    <div class="form-group" ng-class="{ 'has-error': patientForm.phone.$touched && patientForm.phone.$invalid }">
-      <label class="label-for" for="phone">PHONE NUMBER<sup><span class="glyphicon glyphicon-asterisk"></span></sup> (private)</label>
-      <input type="text" class="form-control -bordered-focus" name="phone" ng-model="formCtrl.patient.phone" required >
-      <div class="help-block" ng-messages="patientForm.phone.$error" ng-if="patientForm.phone.$touched">
-        <div ng-messages-include="form/messages.html"></div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
+  <div class="col-md-6">
     <div class="form-group">
-      <label class="label-for" for="country">COUNTRY<sup><span class="glyphicon glyphicon-asterisk"></span></sup></label>
-      <select name="country" value="{{country.id}}"class="form-control -bordered-focus">
+      <label class="-green-" for="country">COUNTRY<sup><span class="glyphicon glyphicon-asterisk"></span></sup></label>
+      <select name="country" value="{{country.id}}" class="form-control -bordered-focus">
         <option>Kenya</option>
         <option>Nigeria</option>
         <option>Rwanda</option>
@@ -67,23 +77,10 @@
       </div> -->
     </div>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-6">
     <div class="form-group">
-      <label class="label-for" for="town">CITY/TOWN</label>
+      <label class="-green-" for="town">CITY/TOWN</label>
       <input type="text" class="form-control -bordered-focus" name="town" ng-model="formCtrl.patient.town">
-    </div>
-  </div>
-  <div class="col-md-2">
-    <div class="form-group">
-      <label class="label-for" for="gender">GENDER</label>
-      <div class="row">
-        <div class="col-md-6">
-          <input type="radio" ng-model="formCtrl.patient.gender" value="m" /><label>&nbspM</label>
-        </div>
-        <div class="col-md-6">
-          <input type="radio" ng-model="formCtrl.patient.gender" value="f" /><label>&nbspF</label><br />
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -91,17 +88,17 @@
 <div class="row">
   <div class="col-md-6">
     <div class="form-group">
-      <label>LANGUAGE(S)</label>
+      <label class="-green-" for="languages">LANGUAGE(S)</label>
       <p><label>(In which of the following languages can you communicate?)</label></p>
       <div ng-repeat="language in formCtrl.metadata.languages">
-        <input type="checkbox" checklist-model="formCtrl.patient.languages" checklist-value="language.id"><label> &nbsp{{language.name}} </label>
+        <input type="checkbox" checklist-model="formCtrl.patient.languages" checklist-value="language.id"><label> {{language.name}} </label>
       </div>
     </div>
   </div>
   <div class="col-md-6">
     <div class="form-group">
-      <label class="label-for" for="occupation">OCCUPATION</label>
-      <p><label> (what do you do for work?)</label></p>
+      <label class="-green-" for="occupation">OCCUPATION</label>
+      <label> (Type of your work)</label>
       <div class="row">
         <!--TODO: pass an occupation type id -->
         <div class="col-md-4" ng-repeat="occupation in formCtrl.metadata.occupation">
@@ -118,7 +115,7 @@
 <div class="row">
   <div class="col-md-6">
     <div class="form-group">
-      <label class="label-for" for="insurance">DO YOU HAVE HEALTH INSURANCE?</label>
+      <label class="-green-" for="insurance">DO YOU HAVE HEALTH INSURANCE?</label>
       <div class="row">
         <div class="col-md-12">
           <input type="radio" ng-model="formCtrl.patient.health_insurance.any" value="false" />
@@ -143,7 +140,7 @@
 <div class="form-group row">
   <div class="col-md-3 col-md-offset-9 col-xs-6 col-xs-offset-6">
       <a ui-sref="patientDashboard.form.lifestyle" class="btn btn-block btn-info">
-      Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
+      Next
       </a>
       <!-- <md-button class="md-raised md-warn md-button md-ink-ripple"> Raised Button </md-button> -->
   </div>
