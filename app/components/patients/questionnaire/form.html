@@ -1,0 +1,179 @@
+<div class="container" style="position: relative; margin-top: -20%; background-color: #fff;">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+      <div class="page-header text-center">
+          <h2>WELCOME TO <a href="http://yapili.com" target="_blank"><span class="-green-">YAPILI</span></a></h2>  
+          <p>
+          Looking to get medical advice without the wait times, cost, or travel expense? We’re taking pre-registrations now!
+          Yapili is an online platform that will connect you to healthcare professionals around the world.
+          We would appreciate 5 minutes of your time to complete a quick survey to help make our service most useful for you!
+          Also, to reward you for your contribution, you can opt into participation in the yapili launch project free of charge (number of places are limited).
+          Make sure you leave us your correct e-mail address at the end of this questionnaire! 
+          </p>       
+      </div>            
+      <form class="user-form" name="formCtrl.questionnaireForm" ng-submit="formCtrl.submitResult()">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label  for="consultation_frequency">How often do you go to the doctor for a consultation?</label>
+              <select name="consultation_frequency" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.consultation_frequency">
+                <option value="at least once a month">at least once a month</option>
+                <option value="at least once every three months">at least once every three months</option>
+                <option value="at least once every six months">at least once every six months</option>
+                <option value="at least once a year">at least once a year</option>
+                <option value="never">never</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="form-group">
+            <label  for="insurance">Do you have a medical insurance plan (either public or private insurance)?</label>
+            <div class="row">
+              <div class="col-md-12">
+                <input type="radio" ng-model="formCtrl.questionnaire.health_insurance.any" value="false" />
+                <label>No</label>
+              </div>    
+              <div class="col-md-12">
+                <input type="radio" ng-model="formCtrl.questionnaire.health_insurance.any" value="true" />
+                <label>Yes</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>          
+          <div class="form-group">
+            <label  for="reasons_no_doctor">Which of these factors have prevented you from seeking advice from a doctor in the past?</label><label>(mark all that apply)</label>
+              <p ng-repeat="reason in formCtrl.reasons_no_doctor_list">
+                <label>
+                  <input type="checkbox" checklist-model="formCtrl.questionnaire.reasons_no_doctor" checklist-value="reason"> {{reason}}
+                </label>
+              </p>
+          </div>
+        </div>
+
+        <div>
+          <div class="form-group">
+            <label  for="usage_likeliness">On a scale of 1 to 5, how likely would you be willing to use an online application (e.g. a web app) to get health advice directly from a doctor (i.e. chat with doctor online about your health needs and exchange images and videos)?</label>
+            <select name="usage_likeliness" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.usage_likeliness">
+              <option value="1 least likely">1 least likely</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5 most likely">5 most likely</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <div class="form-group">
+            <label  for="payment_preference">Would you prefer paying a subscription fee (e.g. per year) for unlimited online access to a doctor when you need it, or would you prefer to pay each time you speak to a doctor? </label>
+            <select name="payment_preference" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.payment_preference">
+              <option value="Subscription fee for unlimited access">Subscription fee for unlimited access</option>
+              <option value="Pay for each consultation">Pay for each consultation</option>
+            </select>
+          </div>
+        </div>
+ 
+
+        <div>
+          <div class="form-group">
+            <label  for="store_medical_likeliness">On a scale of 1 to 5, how likely would you be willing to use an online platform to store your medical history electronically in a confidential and secure way? </label>
+            <select name="store_medical_likeliness" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.store_medical_likeliness">
+              <option value="1 least likely">1 least likely</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5 most likely">5 most likely</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <div class="form-group">
+            <label  for="data_share_likeliness">On a scale of 1 to 5, how likely would you be willing to share your data in an anonymous, non-identifiable way to research and global health organisations (e.g. medical research organisations, non-governmental organisations)? </label>
+            <select name="data_share_likeliness" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.data_share_likeliness">
+              <option value="1 least likely">1 least likely</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5 most likely">5 most likely</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <div class="form-group">
+            <label  for="age_group">What is your age group? </label>
+            <select name="age_group" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.age_group">
+              <option value="18 - 25">18 - 25</option>
+              <option value="26 - 35">26 - 35</option>
+              <option value="36 - 45">36 - 45</option>
+              <option value="46 +">46 +</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <div class="form-group">
+            <label  for="monthly_income">What is your monthly income?</label>
+            <select name="monthly_income" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.monthly_income">
+              <option value="Less than 100USD">Less than 100USD</option>
+              <option value="100USD - 300USD">100USD - 300USD</option>
+              <option value="300USD - 500USD">300USD - 500USD</option>
+              <option value="500USD - 1000USD">500USD - 1000USD</option>
+              <option value="More than 1000USD">More than 1000USD</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label  for="gender">Gender</label>
+          <div class="row">
+            <div class="col-md-12">
+              <input type="radio" ng-model="formCtrl.questionnaire.gender" value="m" />
+              <label>M</label>
+            </div>
+            <div class="col-md-12">
+              <input type="radio" ng-model="formCtrl.questionnaire.gender" value="f" />
+              <label>F</label><br />
+            </div>
+          </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': (formCtrl.questionnaireForm.country.$touched &&  formCtrl.questionnaireForm.country.$error.required) }">
+          <label for="country">Country<sup><span class="glyphicon glyphicon-asterisk"></span></sup></label>
+          <select name="country" class="form-control -bordered-focus" id="country" ng-model="formCtrl.questionnaire.country" required>
+            <option value="Kenya">Kenya</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="Rwanda">Rwanda</option>
+            <option value="Tanzania">Tanzania</option>
+            <option value="South Africa">South Africa</option>
+            <option value="Zambia">Zambia</option>
+            <option value="Zimbabwe">Zimbabwe</option>
+            <option value="Botswana">Botswana</option>
+          </select>
+          <div class="help-block" ng-messages="formCtrl.questionnaireForm.country.$error" ng-if="formCtrl.questionnaireForm.country.$touched">
+            <div ng-message="required">Country is required</div>
+          </div>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error': formCtrl.questionnaireForm.email.$touched && formCtrl.questionnaireForm.email.$error }">
+            <label for="email">E-mail<sup><span class="glyphicon glyphicon-asterisk"></span></sup></label>
+            <input type="email" name="email" id="email" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.email" required ng-focus="formCtrl.resetServerValidity()" />
+            <div class="help-block" ng-messages="formCtrl.questionnaireForm.email.$error" ng-if="formCtrl.questionnaireForm.email.$touched">
+                <div ng-message="required">E-mail is required</div>
+                <div ng-message="email">This field must be a valid email address.</div>
+                <div ng-message="server">{{formCtrl.serverErrors.email}}</div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block" ng-disabled="formCtrl.questionnaireForm.$invalid"> Submit </button>
+      </form>
+    </div>
+    <div class="col-md-12">
+      <pre>{{formCtrl.questionnaire}}</pre>
+    </div>
+
+  </div>
+</div>

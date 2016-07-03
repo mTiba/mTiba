@@ -43,7 +43,7 @@
     <label class="-green-" for="phone">PHONE NUMBER<sup><span class="glyphicon glyphicon-asterisk"></span></sup> (private)</label>
     <input type="text" class="form-control -bordered-focus" name="phone" ng-model="formCtrl.patient.phone" required >
     <div class="help-block" ng-messages="patientForm.phone.$error" ng-if="patientForm.phone.$touched">
-      <div ng-messages-include="form/messages.html"></div>
+      <p ng-message="required">This field is required</p>
     </div>
   </div>
   <div class="form-group col-md-6">

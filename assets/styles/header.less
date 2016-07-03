@@ -1,0 +1,24 @@
+/* header */
+@header-height: 70px;
+
+.main-header{
+  .navbar{
+    min-height: @header-height;
+  }
+}
+.navbar{
+  border-width: 0 0 1px 0;
+  .navbar-header{
+    @media screen {
+      @media (max-width: 767px) {
+        margin-left: 25px;
+      }
+      @media (min-width: 768px) {
+        margin-left: 75px;
+      }
+    }
+  }
+  .navbar-brand {
+    height: @header-height;
+  }  
+}

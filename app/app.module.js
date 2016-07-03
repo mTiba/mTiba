@@ -163,6 +163,26 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
                 })
             }
           } 
+      }).state('patientQuestionnaire', { //questionnaire
+          url: '/patients/questionnaire',
+          templateUrl: 'app/components/patients/questionnaire/questionnaire.html',
+          resolve: {
+            loadMyDirectives:function($ocLazyLoad){
+                return $ocLazyLoad.load(
+                {
+                    name:'mtiba.patients',
+                    files:[
+                      'app/components/patients/questionnaire/questionnaire.ctrl.js'
+                    ]
+                })
+            }
+          } 
+      }).state('patientQuestionnaire.form', { //questionnaire success
+          url: '/form',
+          templateUrl: 'app/components/patients/questionnaire/form.html'
+      }).state('patientQuestionnaire.success', { //questionnaire success
+          url: '/success',
+          templateUrl: 'app/components/patients/questionnaire/success.html'
       }).state('patientDashboard', {
         url:'/patients/:id/dashboard',
         templateUrl: 'app/components/patients/dashboard/dashboard.html',
@@ -217,13 +237,13 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
                 })
             }
         }
-      }).state('patientDashboard.intro',{
+      }).state('patientDashboard.intro', {
         url:'/intro',
         templateUrl:'app/components/patients/dashboard/dashboard-intro.html'
-      }).state('patientDashboard.home',{
+      }).state('patientDashboard.home', {
         url:'/home',
         templateUrl:'app/components/patients/dashboard/dashboard-home.html'
-      }).state('patientDashboard.profile',{
+      }).state('patientDashboard.profile', {
         url:'/profile',
         templateUrl:'app/components/patients/dashboard/dashboard-profile.html',
         resolve: {

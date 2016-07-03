@@ -33,6 +33,9 @@ a {
     color: @green;
     text-decoration: none;
   }
+  &:visited {
+    text-decoration: none;
+  }
 }
 
 .active > a {
@@ -61,6 +64,14 @@ p, li{
 
 h3 {
   color: @green;
+}
+
+.container{
+  @media screen {
+    @media (min-width: 768px) {
+      min-height: 400px;
+    }
+  }
 }
 
 .btn-primary{

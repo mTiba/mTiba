@@ -262,4 +262,4 @@ angular.module('mtiba.patients')
     this.showPopup=function(message){
         return $window.confirm(message);
     }
-});
+  });
