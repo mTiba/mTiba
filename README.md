@@ -19,4 +19,3 @@ Bower: Adding new dependencies
 Grunt: main tasks: 
 - default running "grunt": less & watch
 - "grunt serve": grunt connect:server & less & watch
-- (if new dependencies added with bower): "grunt bowerInstall"
