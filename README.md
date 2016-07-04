@@ -10,14 +10,13 @@ More info: http://yapili.com
 Setup instructions:
 - pull master
 - go to project's directory
-- start any server, such as "python -m SimpleHTTPServer" 
-- go to localhost:8000 in your browser
+- start any server
+- go to localhost:xxxx in your browser
 
 Bower: Adding new dependencies
 "bower install dependency_name --save"
 
 Grunt: main tasks: 
 - default running "grunt": less & watch
+- "grunt serve": grunt connect:server & less & watch
 - (if new dependencies added with bower): "grunt bowerInstall"
-
-
