@@ -14,12 +14,14 @@ var mtibaApp =  angular.module('mtiba', [
   'oc.lazyLoad',
   'angular-loading-bar',
   'ngCookies',
+  'reCAPTCHA',
   'mtiba.authentication',
   'mtiba.patients',
   'mtiba.doctors'
   ]);
 
-mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$mdIconProvider', '$mdThemingProvider', function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider, $mdIconProvider, $mdThemingProvider) {
+mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$mdIconProvider', '$mdThemingProvider', 'reCAPTCHAProvider', 
+        function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider, $mdIconProvider, $mdThemingProvider, reCAPTCHAProvider) {
    
 /*  $mdThemingProvider.theme('docs-dark', 'default')
     .primaryPalette('yellow')
@@ -513,7 +515,13 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
 
   $mdIconProvider
       .defaultIconSet("./assets/svg/avatars.svg", 128)
-      .iconSet("avatars", './assets/svg/avatars.svg',128);   
+      .iconSet("avatars", './assets/svg/avatars.svg',128);  
+
+  reCAPTCHAProvider.setPublicKey('6Lf3QCQTAAAAAJdmVsA9Shi-wh2WFEVOnzviw5vX');
+  reCAPTCHAProvider.setOptions({
+    theme: 'clean'
+  });
+
 }]);
 
 mtibaApp.run(['$state', '$rootScope', '$location', '$cookieStore', '$http', function($state, $rootScope, $location, $cookieStore, $http) {

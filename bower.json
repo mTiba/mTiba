@@ -55,7 +55,8 @@
     "ng-file-upload": "^11.2.3",
     "bootswatch-dist": "lumen",
     "startbootstrap-sb-admin-2": "^1.0.8",
-    "jquery": "^2.2.0"
+    "jquery": "^2.2.0",
+    "angular-re-captcha": "^0.2.0"
   },
   "resolutions": {
     "angular": "^1.4.9",

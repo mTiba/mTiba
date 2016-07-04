@@ -1,6 +1,6 @@
 angular.module('mtiba.patients')
 
-  .controller('PatientQuestionnaireController', function($scope, $http, $state, ngDialog, $stateParams, Questionnaire) {
+  .controller('PatientQuestionnaireController', function($scope, $http, $state, ngDialog, $stateParams, Questionnaire, reCAPTCHA) {
 
     var formCtrl = this;
 
