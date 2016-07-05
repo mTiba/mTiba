@@ -7,7 +7,7 @@
           Looking to get medical advice without the wait times, cost, or travel expense? We’re taking pre-registrations now!
           Yapili is an online platform that will connect you to healthcare professionals around the world.
           We would appreciate 5 minutes of your time to complete a quick survey to help make our service most useful for you!
-          Also, to reward you for your contribution, you can opt into participation in the yapili launch project free of charge (number of places are limited).
+          Completion of this survey gives you the opportunity to be notified upon yapili’s launch and participate in the yapili pilot project free of charge (number of places are limited).
           Make sure you leave us your correct e-mail address at the end of this questionnaire! 
           </p>       
       </div>            
@@ -169,7 +169,10 @@
         </div>
 
         <div class="form-group">
-          <div re-captcha ng-model="formCtrl.questionnaire.captcha"></div>
+          <div
+              vc-recaptcha
+              key="'6Lf3QCQTAAAAAJdmVsA9Shi-wh2WFEVOnzviw5vX'"
+          ></div>
         </div>
 
         <button type="submit" class="btn btn-primary btn-lg btn-block" ng-disabled="formCtrl.questionnaireForm.$invalid"> Submit </button>

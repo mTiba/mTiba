@@ -50,7 +50,7 @@
     <script src="bower_components/ng-file-upload-shim/ng-file-upload-shim.min.js"></script> 
     <script src="bower_components/ng-file-upload-shim/ng-file-upload.min.js"></script> 
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-re-captcha/angular-re-captcha.js"></script>
+    <script src="bower_components/angular-recaptcha/release/angular-recaptcha.js"></script>
     <!-- endbower -->
 
     <!--CUSTOM-->
@@ -92,6 +92,10 @@
        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
-    </script>    
+    </script> 
+    <script
+      src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit"
+      async defer
+    ></script>   
 </body>
 </html>

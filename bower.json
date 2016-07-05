@@ -56,7 +56,8 @@
     "bootswatch-dist": "lumen",
     "startbootstrap-sb-admin-2": "^1.0.8",
     "jquery": "^2.2.0",
-    "angular-re-captcha": "^0.2.0"
+    "angular-re-captcha": "^0.2.0",
+    "angular-recaptcha": "^3.0.3"
   },
   "resolutions": {
     "angular": "^1.4.9",
