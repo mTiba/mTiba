@@ -1,4 +1,4 @@
-angular.module('mtiba.patients')
+angular.module('mtiba.questionnaire')
 
   .controller('PatientQuestionnaireController', function($scope, $http, $state, ngDialog, $stateParams, Questionnaire) {
 

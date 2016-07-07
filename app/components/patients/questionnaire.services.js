@@ -1,4 +1,5 @@
-angular.module('mtiba.patients')
+angular.module('mtiba.questionnaire')
+
   //"http://bgs-johnlindquist.rhcloud.com"
   .constant("BASE_URL", "http://localhost:8000")
   .factory('Questionnaire', ['$resource', function ($resource) {

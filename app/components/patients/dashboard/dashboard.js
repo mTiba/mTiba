@@ -1,1 +1,0 @@
-angular.module('mtiba.patients.dashboard', []);
