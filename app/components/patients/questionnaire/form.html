@@ -44,12 +44,13 @@
         </div>
         <div>          
           <div class="form-group">
-            <label  for="reasons_no_doctor">Which of these factors have prevented you from seeking advice from a doctor in the past?</label><label>(mark all that apply)</label>
+            <label for="reasons_no_doctor">Which of these factors have prevented you from seeking advice from a doctor in the past?</label><label>(mark all that apply)</label>
               <p ng-repeat="reason in formCtrl.reasons_no_doctor_list">
                 <label>
                   <input type="checkbox" checklist-model="formCtrl.questionnaire.reasons_no_doctor" checklist-value="reason"> {{reason}}
                 </label>
               </p>
+              <input type="text" name="reasons_no_doctor_other" id="reasons_no_doctor_other" class="form-control -bordered-focus" placeholder="Name your reason" ng-model="formCtrl.questionnaire.reasons_no_doctor_other" />
           </div>
         </div>
 
@@ -158,7 +159,7 @@
           </div>
         </div>
 
-        <div class="form-group" ng-class="{ 'has-error': formCtrl.questionnaireForm.email.$touched && formCtrl.questionnaireForm.email.$error }">
+        <div class="form-group" ng-class="{ 'has-error': formCtrl.questionnaireForm.email.$touched && (formCtrl.questionnaireForm.email.$error.required || formCtrl.questionnaireForm.email.$error.email) }">
             <label for="email">E-mail<sup><span class="glyphicon glyphicon-asterisk"></span></sup></label>
             <input type="email" name="email" id="email" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.email" required ng-focus="formCtrl.resetServerValidity()" />
             <div class="help-block" ng-messages="formCtrl.questionnaireForm.email.$error" ng-if="formCtrl.questionnaireForm.email.$touched">

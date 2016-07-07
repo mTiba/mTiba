@@ -17,6 +17,7 @@ angular.module('mtiba.patients')
     'The clinic is too far from my home', 
     'The waiting times are too long', 
     'I dont trust the advice of the doctor',
+    'None of these - i have not had issue to visit a doctor in the past',
     'Other'
   ];
 
