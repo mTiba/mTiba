@@ -27,29 +27,29 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
     events:true,
   });
 
-  $urlRouterProvider.otherwise('/patients/questionnaire/form');
+  $urlRouterProvider.otherwise('/form');
   
   $stateProvider
       .state('patientQuestionnaire', { //questionnaire
-          url: '/patients/questionnaire',
-          templateUrl: 'app/components/patients/questionnaire/questionnaire.html',
+          url: '',
+          templateUrl: 'app/questionnaire/questionnaire.html',
           resolve: {
             loadMyDirectives:function($ocLazyLoad){
                 return $ocLazyLoad.load(
                 {
                     name:'mtiba.questionnaire',
                     files:[
-                      'app/components/patients/questionnaire/questionnaire.ctrl.js'
+                      'app/questionnaire/questionnaire.ctrl.js'
                     ]
                 })
             }
           } 
       }).state('patientQuestionnaire.form', { //questionnaire success
           url: '/form',
-          templateUrl: 'app/components/patients/questionnaire/form.html'
+          templateUrl: 'app/questionnaire/form.html'
       }).state('patientQuestionnaire.success', { //questionnaire success
           url: '/success',
-          templateUrl: 'app/components/patients/questionnaire/success.html'
+          templateUrl: 'app/questionnaire/success.html'
       });
 }]);
 

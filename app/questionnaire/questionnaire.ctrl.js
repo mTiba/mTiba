@@ -13,14 +13,12 @@ angular.module('mtiba.questionnaire')
     formCtrl.questionnaire = new Questionnaire();
 
     formCtrl.reasons_no_doctor_list = [
-    'It is too expensive', 
-    'The clinic is too far from my home', 
-    'The waiting times are too long', 
-    'I dont trust the advice of the doctor',
-    'None of these - i have not had issue to visit a doctor in the past',
-    'Other'
-  ];
-
+      'It is too expensive', 
+      'The clinic is too far from my home', 
+      'The waiting times are too long', 
+      'I dont trust the advice of the doctor',
+      'Other'
+    ];
 
     formCtrl.submitResult = function() { //create a new questionnaire result. Issues a POST to /api/questionnaire
       formCtrl.formSubmitted=true;
@@ -36,5 +34,7 @@ angular.module('mtiba.questionnaire')
       formCtrl.serverErrors.email = "";
       formCtrl.questionnaireForm.email.$setValidity('server', true);
     }
+
+    
 
   })

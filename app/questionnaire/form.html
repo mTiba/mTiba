@@ -47,10 +47,16 @@
             <label for="reasons_no_doctor">Which of these factors have prevented you from seeking advice from a doctor in the past?</label><label>(mark all that apply)</label>
               <p ng-repeat="reason in formCtrl.reasons_no_doctor_list">
                 <label>
-                  <input type="checkbox" checklist-model="formCtrl.questionnaire.reasons_no_doctor" checklist-value="reason"> {{reason}}
+                  <input type="checkbox" checklist-model="formCtrl.questionnaire.reasons_no_doctor" checklist-value="reason" ng-disabled="formCtrl.questionnaire.reasons_no_doctor == 'None'" ng-change="formCtrl.questionnaire.reasons_no_doctor_other = null"> {{reason}}
                 </label>
               </p>
-              <input type="text" name="reasons_no_doctor_other" id="reasons_no_doctor_other" class="form-control -bordered-focus" placeholder="Name your reason" ng-model="formCtrl.questionnaire.reasons_no_doctor_other" />
+              <input type="text" name="reasons_no_doctor_other" id="reasons_no_doctor_other" class="reasons_no_doctor_other form-control -bordered-focus" placeholder="Name your reason" ng-model="formCtrl.questionnaire.reasons_no_doctor_other" value="formCtrl.questionnaire.reasons_no_doctor_other" ng-disabled="formCtrl.questionnaire.reasons_no_doctor.indexOf('Other') == -1" />
+              <p>or</p>
+              <p>
+                <label>
+                  <input type="checkbox" checklist-model="formCtrl.questionnaire.reasons_no_doctor" value="None" ng-disabled="formCtrl.questionnaire.reasons_no_doctor.length && formCtrl.questionnaire.reasons_no_doctor.indexOf('None') == -1">None of these - I have not had issue to visit a doctor in the past
+                </label>
+              </p>
           </div>
         </div>
 
