@@ -165,26 +165,6 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
                 })
             }
           } 
-      }).state('patientQuestionnaire', { //questionnaire
-          url: '/patients/questionnaire',
-          templateUrl: 'app/components/patients/questionnaire/questionnaire.html',
-          resolve: {
-            loadMyDirectives:function($ocLazyLoad){
-                return $ocLazyLoad.load(
-                {
-                    name:'mtiba.patients',
-                    files:[
-                      'app/components/patients/questionnaire/questionnaire.ctrl.js'
-                    ]
-                })
-            }
-          } 
-      }).state('patientQuestionnaire.form', { //questionnaire success
-          url: '/form',
-          templateUrl: 'app/components/patients/questionnaire/form.html'
-      }).state('patientQuestionnaire.success', { //questionnaire success
-          url: '/success',
-          templateUrl: 'app/components/patients/questionnaire/success.html'
       }).state('patientDashboard', {
         url:'/patients/:id/dashboard',
         templateUrl: 'app/components/patients/dashboard/dashboard.html',

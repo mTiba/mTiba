@@ -3,13 +3,22 @@
 @dark-green: #0C7F77; 
 @lighter-green: #E2FDFB;
 @light-green: #A9F4EF;
-@gray: #eeeeee;
 @gray: #CFD8C8;
+@light-gray: #E9EDE7;
+@dark-gray: #5D6756;
+
+@gray-darker:  lighten(#000, 13.5%); // #222
+@gray-dark:    lighten(#000, 20%);   // #333
+@gray:         lighten(#000, 33.5%); // #555
+@gray-light:   lighten(#000, 46.7%); // #777
+@gray-lighter: lighten(#000, 93.5%); // #eee
+
 @pink: #b98a77;
 @orange: #CC5E27;
 @brown: #7F2A00;
 @violett: #6f606c;
 @blue: #415275;
+@dark-blue: #2B3C5F;
 
 
 html {
@@ -28,7 +37,7 @@ pre {
 }
 
 a {
-  color: @gray;
+  color: @dark-gray;
   &:hover, &:active {
     color: @green;
     text-decoration: none;
@@ -48,13 +57,7 @@ label {
   text-align: left;
 }
 
-.-green- {
-  color: @green;
-}
 
-.-gray- {
-  color: @gray;
-}
 
 p, li{
 /*  color: @green;*/
@@ -74,6 +77,24 @@ h3 {
   }
 }
 
+.btn{
+  border: none;
+  &:hover {
+    border: none;
+    margin-top: 0px;
+  }  
+}
+
+.btn-default{
+  background: @light-gray;
+  border-color: @light-gray;
+  color: @green;
+  &:hover {
+    background: @gray;
+    border-color: @gray;
+    color: white;
+  }
+}
 .btn-primary{
   background: @green;
   border-color: @green;
@@ -86,14 +107,16 @@ h3 {
   background: @blue;
   border-color: @blue;
   &:hover {
-
+    background: @dark-blue;
+    border-color: @dark-blue;    
   }
 }
 .btn-info{
   background: @light-green;
   border-color: @light-green;
   &:hover {
-
+    background: @green;
+    border-color: @green;
   }
 }
 .btn-warning{

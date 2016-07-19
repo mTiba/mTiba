@@ -69,24 +69,25 @@
 
 /* TIMELINE */
 
-.timeline {
+.timeline, .timeline-simple  {
     position: relative;
     padding: 0 0 20px;
     list-style: none;
 }
 
+
 .timeline:before {
     content: " ";
     position: absolute;
-    top: 0;
+    top: 10px;
     bottom: 0;
-    left: 50%;
+    left: 0%;
     width: 3px;
     margin-left: -1.5px;
-    background-color: @gray;
+    background-color: @gray-lighter;
 }
 
-.timeline{
+.timeline, .timeline-simple{
   > li {
     position: relative;
     margin-bottom: 20px;
@@ -154,7 +155,7 @@
 }
 
 .timeline > li > .timeline-badge {
-    z-index: 100;
+    z-index: 1;
     position: absolute;
     top: 16px;
     left: 50%;

@@ -9,7 +9,12 @@
                 <a ui-sref="dashboard.home"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
             </li> -->
             <li ui-sref-active="active" ng-repeat="patient in patients">
-                <a href="" ng-click="setPatient(patient);"><i class="fa fa-user fa-fw"></i> {{patient.name + '  ' + patient.surname}} </a>
+                <a href="" class="username-avatar" ng-click="setPatient(patient);">            
+                    <span class="avatar small pull-left">
+                        <md-icon md-svg-icon="{{patient._avatar_selected_id}}" class="avatar_picture" alt="" class="center-block img-responsive"></md-icon> 
+                    </span>
+                    <span class="username"> {{patient.name + '  ' + patient.surname | uppercase }} </span>
+                </a>
             </li>
         </ul>
     </div>
