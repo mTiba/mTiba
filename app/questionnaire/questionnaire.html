@@ -1,13 +1,9 @@
 <custom-header-no-user></custom-header-no-user>
-
 <div class="container-fluid">
-   <div class="row">
-  <img src="assets/img/questionnaire-banner.jpg" class="img-responsive">
-   </div>
+  <div class="row">
+    <img src="assets/img/questionnaire-banner.jpg" class="img-responsive">
+  </div>
 </div>
-<div ng-controller="PatientQuestionnaireController as formCtrl" >
+<div ng-controller="PatientQuestionnaireController as formCtrl" class="container">
   <div ui-view></div>
-<!--   <div class="col-md-12">
-    <pre>{{formCtrl.questionnaire | json}}</pre>
-  </div> --> 
 </div>

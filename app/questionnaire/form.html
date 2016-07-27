@@ -1,6 +1,6 @@
-<div class="container" style="position: relative; margin-top: -20%; background-color: #fff;">
+<div style="position: relative; margin-top: -20%; background-color: #fff;">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+    <div class="col-md-8 col-md-offset-2">
       <div class="page-header text-center">
           <h2>WELCOME TO <a href="http://yapili.com" target="_blank"><span class="-green-">YAPILI</span></a></h2>  
           <p>
@@ -12,129 +12,110 @@ free medical consultations and possibility to be part of an exciting journey tow
           <br />
           So make sure you use this chance and leave us your correct e-mail address at the end of the questionnaire. 
           </p>       
-      </div>            
+      </div>          
       <form class="user-form" name="formCtrl.questionnaireForm" ng-submit="formCtrl.submitResult()">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label  for="consultation_frequency">How often do you go to the doctor for a consultation?</label>
-              <select name="consultation_frequency" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.consultation_frequency">
-                <option value="at least once a month">at least once a month</option>
-                <option value="at least once every three months">at least once every three months</option>
-                <option value="at least once every six months">at least once every six months</option>
-                <option value="at least once a year">at least once a year</option>
-                <option value="never">never</option>
-              </select>
+
+        <div class="form-group">
+          <label  for="consultation_frequency">How often do you go to the doctor for a consultation?</label>
+          <select name="consultation_frequency" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.consultation_frequency">
+            <option value="at least once a month">at least once a month</option>
+            <option value="at least once every three months">at least once every three months</option>
+            <option value="at least once every six months">at least once every six months</option>
+            <option value="at least once a year">at least once a year</option>
+            <option value="never">never</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label  for="insurance">Do you have a medical insurance plan (either public or private insurance)?</label>
+          <div class="row">
+            <div class="col-md-12">
+              <input type="radio" ng-model="formCtrl.questionnaire.health_insurance.any" value="false" />
+              <label>No</label>
+            </div>    
+            <div class="col-md-12">
+              <input type="radio" ng-model="formCtrl.questionnaire.health_insurance.any" value="true" />
+              <label>Yes</label>
             </div>
           </div>
         </div>
-
-        <div>
-          <div class="form-group">
-            <label  for="insurance">Do you have a medical insurance plan (either public or private insurance)?</label>
-            <div class="row">
-              <div class="col-md-12">
-                <input type="radio" ng-model="formCtrl.questionnaire.health_insurance.any" value="false" />
-                <label>No</label>
-              </div>    
-              <div class="col-md-12">
-                <input type="radio" ng-model="formCtrl.questionnaire.health_insurance.any" value="true" />
-                <label>Yes</label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div>          
-          <div class="form-group">
-            <label for="reasons_no_doctor">Which of these factors have prevented you from seeking advice from a doctor in the past?</label><label>(mark all that apply)</label>
-              <p ng-repeat="reason in formCtrl.reasons_no_doctor_list">
-                <label>
-                  <input type="checkbox" checklist-model="formCtrl.questionnaire.reasons_no_doctor" checklist-value="reason" ng-disabled="formCtrl.questionnaire.reasons_no_doctor == 'None'" ng-change="formCtrl.questionnaire.reasons_no_doctor_other = null"> {{reason}}
-                </label>
-              </p>
-              <input type="text" name="reasons_no_doctor_other" id="reasons_no_doctor_other" class="reasons_no_doctor_other form-control -bordered-focus" placeholder="Name your reason" ng-model="formCtrl.questionnaire.reasons_no_doctor_other" value="formCtrl.questionnaire.reasons_no_doctor_other" ng-disabled="formCtrl.questionnaire.reasons_no_doctor.indexOf('Other') == -1" />
-              <p>or</p>
-              <p>
-                <label>
-                  <input type="checkbox" checklist-model="formCtrl.questionnaire.reasons_no_doctor" value="None" ng-disabled="formCtrl.questionnaire.reasons_no_doctor.length && formCtrl.questionnaire.reasons_no_doctor.indexOf('None') == -1">None of these - I have not had issue to visit a doctor in the past
-                </label>
-              </p>
-          </div>
+     
+        <div class="form-group">
+          <label for="reasons_no_doctor">Which of these factors have prevented you from seeking advice from a doctor in the past?</label><label>(mark all that apply)</label>
+            <p ng-repeat="reason in formCtrl.reasons_no_doctor_list">
+              <label>
+                <input type="checkbox" checklist-model="formCtrl.questionnaire.reasons_no_doctor" checklist-value="reason" ng-disabled="formCtrl.questionnaire.reasons_no_doctor == 'None'" ng-change="formCtrl.questionnaire.reasons_no_doctor_other = null"> {{reason}}
+              </label>
+            </p>
+            <input type="text" name="reasons_no_doctor_other" id="reasons_no_doctor_other" class="reasons_no_doctor_other form-control -bordered-focus" placeholder="Name your reason" ng-model="formCtrl.questionnaire.reasons_no_doctor_other" value="formCtrl.questionnaire.reasons_no_doctor_other" ng-disabled="formCtrl.questionnaire.reasons_no_doctor.indexOf('Other') == -1" />
+            <p>or</p>
+            <p>
+              <label>
+                <input type="checkbox" checklist-model="formCtrl.questionnaire.reasons_no_doctor" value="None" ng-disabled="formCtrl.questionnaire.reasons_no_doctor.length && formCtrl.questionnaire.reasons_no_doctor.indexOf('None') == -1">None of these - I have not had issue to visit a doctor in the past
+              </label>
+            </p>
         </div>
 
-        <div>
-          <div class="form-group">
-            <label  for="usage_likeliness">On a scale of 1 to 5, how likely would you be willing to use an online application (e.g. a web app) to get health advice directly from a doctor (i.e. chat with doctor online about your health needs and exchange images and videos)?</label>
-            <select name="usage_likeliness" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.usage_likeliness">
-              <option value="1 least likely">1 least likely</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5 most likely">5 most likely</option>
-            </select>
-          </div>
+        <div class="form-group">
+          <label  for="usage_likeliness">On a scale of 1 to 5, how likely would you be willing to use an online application (e.g. a web app) to get health advice directly from a doctor (i.e. chat with doctor online about your health needs and exchange images and videos)?</label>
+          <select name="usage_likeliness" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.usage_likeliness">
+            <option value="1 least likely">1 least likely</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5 most likely">5 most likely</option>
+          </select>
         </div>
 
-        <div>
-          <div class="form-group">
-            <label  for="payment_preference">Would you prefer paying a subscription fee (e.g. per year) for unlimited online access to a doctor when you need it, or would you prefer to pay each time you speak to a doctor? </label>
-            <select name="payment_preference" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.payment_preference">
-              <option value="Subscription fee for unlimited access">Subscription fee for unlimited access</option>
-              <option value="Pay for each consultation">Pay for each consultation</option>
-            </select>
-          </div>
-        </div>
- 
-
-        <div>
-          <div class="form-group">
-            <label  for="store_medical_likeliness">On a scale of 1 to 5, how likely would you be willing to use an online platform to store your medical history electronically in a confidential and secure way? </label>
-            <select name="store_medical_likeliness" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.store_medical_likeliness">
-              <option value="1 least likely">1 least likely</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5 most likely">5 most likely</option>
-            </select>
-          </div>
+        <div class="form-group">
+          <label  for="payment_preference">Would you prefer paying a subscription fee (e.g. per year) for unlimited online access to a doctor when you need it, or would you prefer to pay each time you speak to a doctor? </label>
+          <select name="payment_preference" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.payment_preference">
+            <option value="Subscription fee for unlimited access">Subscription fee for unlimited access</option>
+            <option value="Pay for each consultation">Pay for each consultation</option>
+          </select>
         </div>
 
-        <div>
-          <div class="form-group">
-            <label  for="data_share_likeliness">On a scale of 1 to 5, how likely would you be willing to share your data in an anonymous, non-identifiable way to research and global health organisations (e.g. medical research organisations, non-governmental organisations)? </label>
-            <select name="data_share_likeliness" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.data_share_likeliness">
-              <option value="1 least likely">1 least likely</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5 most likely">5 most likely</option>
-            </select>
-          </div>
+        <div class="form-group">
+          <label  for="store_medical_likeliness">On a scale of 1 to 5, how likely would you be willing to use an online platform to store your medical history electronically in a confidential and secure way? </label>
+          <select name="store_medical_likeliness" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.store_medical_likeliness">
+            <option value="1 least likely">1 least likely</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5 most likely">5 most likely</option>
+          </select>
         </div>
 
-        <div>
-          <div class="form-group">
-            <label  for="age_group">What is your age group? </label>
-            <select name="age_group" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.age_group">
-              <option value="18 - 25">18 - 25</option>
-              <option value="26 - 35">26 - 35</option>
-              <option value="36 - 45">36 - 45</option>
-              <option value="46 +">46 +</option>
-            </select>
-          </div>
+        <div class="form-group">
+          <label  for="data_share_likeliness">On a scale of 1 to 5, how likely would you be willing to share your data in an anonymous, non-identifiable way to research and global health organisations (e.g. medical research organisations, non-governmental organisations)? </label>
+          <select name="data_share_likeliness" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.data_share_likeliness">
+            <option value="1 least likely">1 least likely</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5 most likely">5 most likely</option>
+          </select>
         </div>
 
-        <div>
-          <div class="form-group">
-            <label  for="monthly_income">What is your monthly income?</label>
-            <select name="monthly_income" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.monthly_income">
-              <option value="Less than 100USD">Less than 100USD</option>
-              <option value="100USD - 300USD">100USD - 300USD</option>
-              <option value="300USD - 500USD">300USD - 500USD</option>
-              <option value="500USD - 1000USD">500USD - 1000USD</option>
-              <option value="More than 1000USD">More than 1000USD</option>
-            </select>
-          </div>
+        <div class="form-group">
+          <label  for="age_group">What is your age group? </label>
+          <select name="age_group" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.age_group">
+            <option value="18 - 25">18 - 25</option>
+            <option value="26 - 35">26 - 35</option>
+            <option value="36 - 45">36 - 45</option>
+            <option value="46 +">46 +</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label  for="monthly_income">What is your monthly income?</label>
+          <select name="monthly_income" class="form-control -bordered-focus" ng-model="formCtrl.questionnaire.monthly_income">
+            <option value="Less than 100USD">Less than 100USD</option>
+            <option value="100USD - 300USD">100USD - 300USD</option>
+            <option value="300USD - 500USD">300USD - 500USD</option>
+            <option value="500USD - 1000USD">500USD - 1000USD</option>
+            <option value="More than 1000USD">More than 1000USD</option>
+          </select>
         </div>
 
         <div class="form-group">
@@ -150,6 +131,7 @@ free medical consultations and possibility to be part of an exciting journey tow
             </div>
           </div>
         </div>
+
         <div class="form-group" ng-class="{ 'has-error': (formCtrl.questionnaireForm.country.$touched &&  formCtrl.questionnaireForm.country.$error.required) }">
           <label for="country">Country<sup><span class="glyphicon glyphicon-asterisk"></span></sup></label>
           <select name="country" class="form-control -bordered-focus" id="country" ng-model="formCtrl.questionnaire.country" required>
@@ -184,7 +166,9 @@ free medical consultations and possibility to be part of an exciting journey tow
           ></div>
         </div>
 
-        <button type="submit" class="btn btn-primary btn-lg btn-block" ng-disabled="formCtrl.questionnaireForm.$invalid"> Submit </button>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" ng-disabled="formCtrl.questionnaireForm.$invalid"> Submit 
+        </button>
+
       </form>
     </div>
   </div>

@@ -3,8 +3,12 @@
 
 .main-header{
   .container-fluid{
-    padding-right: 160px;
-    padding-left: 20px;
+    @media screen {
+      @media (min-width: 768px) {
+        padding-right: 160px;
+        padding-left: 20px;
+      }
+    }
   }
   .navbar{
     min-height: @header-height;
@@ -27,6 +31,13 @@
   }  
   .nav.navbar-nav{
     margin-top: 10px;
+  }
+  .navbar-toggle{
+    @media screen {
+      @media (max-width: 767px) {
+        margin-top: 20px;
+      }
+    }
   }
 }
 
