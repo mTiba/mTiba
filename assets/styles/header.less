@@ -2,6 +2,10 @@
 @header-height: 70px;
 
 .main-header{
+  .container-fluid{
+    padding-right: 160px;
+    padding-left: 20px;
+  }
   .navbar{
     min-height: @header-height;
   }
@@ -21,4 +25,13 @@
   .navbar-brand {
     height: @header-height;
   }  
+  .nav.navbar-nav{
+    margin-top: 10px;
+  }
+}
+
+.navbar-inverse .navbar-nav>li>a:hover, 
+.navbar-inverse .navbar-nav>li>a.active
+{
+  color: @green;
 }

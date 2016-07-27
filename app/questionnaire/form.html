@@ -4,11 +4,13 @@
       <div class="page-header text-center">
           <h2>WELCOME TO <a href="http://yapili.com" target="_blank"><span class="-green-">YAPILI</span></a></h2>  
           <p>
-          Looking to get medical advice without the wait times, cost, or travel expense? We’re taking pre-registrations now!
-          Yapili is an online platform that will connect you to healthcare professionals around the world.
-          We would appreciate 5 minutes of your time to complete a quick survey to help make our service most useful for you!
-          Completion of this survey gives you the opportunity to be notified upon yapili’s launch and participate in the yapili pilot project free of charge (number of places are limited).
-          Make sure you leave us your correct e-mail address at the end of this questionnaire! 
+          Looking to get medical advice without the wait times, travel expense and at minimum cost? We’re taking pre-registrations now!<br />
+          Yapili is an online platform that will connect you to healthcare professionals around the world. We would appreciate 5 minutes of your time to complete a quick survey to help make our service most useful for you.
+          <br />
+          Completion of this survey gives you the opportunity to be notified upon yapili’s launch and participate in the yapili launch project free of charge (number of places are limited). For you, this means
+free medical consultations and possibility to be part of an exciting journey towards more care for more people.
+          <br />
+          So make sure you use this chance and leave us your correct e-mail address at the end of the questionnaire. 
           </p>       
       </div>            
       <form class="user-form" name="formCtrl.questionnaireForm" ng-submit="formCtrl.submitResult()">
@@ -151,6 +153,7 @@
         <div class="form-group" ng-class="{ 'has-error': (formCtrl.questionnaireForm.country.$touched &&  formCtrl.questionnaireForm.country.$error.required) }">
           <label for="country">Country<sup><span class="glyphicon glyphicon-asterisk"></span></sup></label>
           <select name="country" class="form-control -bordered-focus" id="country" ng-model="formCtrl.questionnaire.country" required>
+            <option value="Botswana">Botswana</option>
             <option value="Kenya">Kenya</option>
             <option value="Nigeria">Nigeria</option>
             <option value="Rwanda">Rwanda</option>
@@ -158,7 +161,6 @@
             <option value="South Africa">South Africa</option>
             <option value="Zambia">Zambia</option>
             <option value="Zimbabwe">Zimbabwe</option>
-            <option value="Botswana">Botswana</option>
           </select>
           <div class="help-block" ng-messages="formCtrl.questionnaireForm.country.$error" ng-if="formCtrl.questionnaireForm.country.$touched">
             <div ng-message="required">Country is required</div>
