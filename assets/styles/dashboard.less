@@ -1,4 +1,5 @@
 /* Everything but the jumbotron gets side spacing for mobile first views */
+
 .footer {
   padding-left: 15px;
   padding-right: 15px;
@@ -20,28 +21,39 @@
 
 
 .panel-default {
-  .panel-heading{
+  .panel-heading {
     background-color: #fff;
-    h4{
-      vertical-align: middle;
-      margin: 0px 0px 0px 60px;
-      line-height: 50px;
-    }
+    padding: 15px;
+    margin: 0px;
+    border-bottom: 1px solid @gray-lighter;
   }
   .panel-body {
-    max-height: 700px;
+    max-height: 450px;
+    height: 450px;
     overflow-y: auto;
+    padding-bottom: 0px;
   }
   .panel-footer{
     background-color: #fff;
+    padding-top: 0px;
+    margin-top: 40px;
     bottom: 0px;
-    position: fixed;
+    position: relative;
     display: block;
-    width: 400px;
   }
 }
 
+/* SIDEBAR */
 
+@media(min-width:768px) {
+    .sidebar {
+        margin-top: 0px;
+    }
+}
+li.side-menu-list-title {
+  padding: 15px;
+  border-bottom: 0px;
+}
 
 
 /* CHAT */
@@ -56,7 +68,7 @@
 
 .chat li {
   border: 0px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   .chat-body {
     p {
       padding: 10px;
@@ -67,7 +79,27 @@
   }
 }
 
+.chat-container {
+  .timeline-toggle {
+    position: absolute;
+    top: 10px;
+    right: -1px;
+    width: 30px;
+    height: 30px;
+    padding: 5px 11px;
+    border: 1px solid @gray-lighter;
+    cursor: pointer;
+  }
+}
+
 /* TIMELINE */
+
+.timeline-container {
+  border-left: 1px solid @gray-lighter;
+  -webkit-transition: width 2s; /* Safari */
+  transition: width 2s;
+  transition: 1s linear all;
+}
 
 .timeline, .timeline-simple  {
     position: relative;
@@ -76,21 +108,10 @@
 }
 
 
-.timeline:before {
-    content: " ";
-    position: absolute;
-    top: 10px;
-    bottom: 0;
-    left: 0%;
-    width: 3px;
-    margin-left: -1.5px;
-    background-color: @gray-lighter;
-}
-
 .timeline, .timeline-simple{
   > li {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 }
 

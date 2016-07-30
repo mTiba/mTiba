@@ -1,6 +1,6 @@
 angular.module('mtiba.doctors.dashboard')
 
-	.controller('DashboardController', function($scope, $state, $stateParams, Doctor, PatientsOfDoctor, DoctorLogs, doctorMetadataFactory, patientMetadataFactory) {
+	.controller('DashboardController', function($scope, $state, $timeout, $window, $stateParams, Doctor, PatientsOfDoctor, DoctorLogs, doctorMetadataFactory, patientMetadataFactory) {
 
 	  var dashboardCtrl = this;
 
@@ -37,6 +37,15 @@ angular.module('mtiba.doctors.dashboard')
       });
       // Clear input fields after push
       dashboardCtrl.logText = "";
+    };
+
+
+    dashboardCtrl.windowWidth = $window.innerWidth;
+
+    $window.onresize = function(event) {
+      $timeout(function() {
+        dashboardCtrl.windowWidth = $window.innerWidth;
+      });
     };
 
 	});

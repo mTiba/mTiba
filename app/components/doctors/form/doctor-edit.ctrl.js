@@ -9,11 +9,10 @@ angular.module('mtiba.doctors')
 	  formCtrl.steps = doctorFormStepsFactory.getSteps();
 
 	  formCtrl.metadata = doctorMetadataFactory.getData();
-
-
+	  
 	  formCtrl.updateDoctor = function() { //Update the edited doctors. Issues a PUT to /api/doctors/:id
 	    formCtrl.doctor.$update(function() {
-	      $state.go('doctors'); // on success go back to home i.e. doctors state.
+	      $state.go('doctorDashboard.profile'); // on success go back to home i.e. doctors state.
 	    });
 	  };
 

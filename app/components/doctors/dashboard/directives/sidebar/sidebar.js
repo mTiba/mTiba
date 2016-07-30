@@ -19,6 +19,7 @@ angular.module('mtiba.doctors.dashboard')
         $scope.selectedMenu = 'doctorDashboard';
         $scope.collapseVar = 0;
         $scope.multiCollapseVar = 0;
+        $scope.uiRouterState = $state;
 
         $scope.setPatient = function(patient){
           $state.go('doctorDashboard.home');

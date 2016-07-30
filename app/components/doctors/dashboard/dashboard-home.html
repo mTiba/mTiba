@@ -1,8 +1,12 @@
-<div class="row">
-  <div class="col-lg-6">
+<div class="row" ng-init="showTimeline = true">
+  <div ng-class="{'col-md-6': showTimeline, 'col-md-12': !showTimeline}" class="chat-container nopadding">
     <doctor-chat></doctor-chat>
+    <div class="timeline-toggle hidden-xs hidden-sm" ng-click="showTimeline =! showTimeline">
+      <span ng-if="showTimeline">></span>
+      <span ng-if="!showTimeline"><</span>
+    </div>
   </div><!-- /.col-lg-6 -->
-  <div class="col-lg-6">
+  <div class="col-md-6 timeline-container nopadding" ng-show="showTimeline || dashboardCtrl.windowWidth <= 992">
     <timeline></timeline>
   </div><!-- /.col-lg-6 -->
 </div>
