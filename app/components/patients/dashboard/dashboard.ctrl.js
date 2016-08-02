@@ -1,6 +1,6 @@
 angular.module('mtiba.patients.dashboard')
 
-	.controller('DashboardController', function($scope, $state, $stateParams, Patient, patientMetadataFactory, patientsDoctorFactory, patientMilestonesFactory) {
+	.controller('PatientDashboardController', function($scope, $state, $stateParams, Patient, patientMetadataFactory, patientsDoctorFactory, patientMilestonesFactory) {
 
 	  var dashboardCtrl = this;
 

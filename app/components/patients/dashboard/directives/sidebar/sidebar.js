@@ -8,12 +8,13 @@
  */
 
 angular.module('mtiba.patients.dashboard')
-  .directive('sidebar',['$location',function() {
+  .directive('patientSidebar',['$location',function() {
     return {
       templateUrl:'app/components/patients/dashboard/directives/sidebar/sidebar.html',
       restrict: 'E',
       replace: true,
       scope: {  },
+      //TODO: controller name
       controller:function($scope){
 
         $scope.selectedMenu = 'patientDashboard';

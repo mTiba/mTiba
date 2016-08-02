@@ -7,7 +7,7 @@
  * # adminPosHeader
  */
 angular.module('mtiba.patients.dashboard')
-	.directive('timeline',function() {
+	.directive('patientTimeline',function() {
     return {
         templateUrl:'app/components/patients/dashboard/directives/timeline/timeline.html',
         restrict: 'E',
