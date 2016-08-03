@@ -25,10 +25,6 @@ var mtibaApp =  angular.module('mtiba', [
 
 mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$mdIconProvider', '$mdThemingProvider', 
         function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider, $mdIconProvider, $mdThemingProvider) {
-   
-/*  $mdThemingProvider.theme('docs-dark', 'default')
-    .primaryPalette('yellow')
-    .dark();*/
 
   $ocLazyLoadProvider.config({
     debug:false,
@@ -38,106 +34,9 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
   $urlRouterProvider.otherwise('/login');
   
   $stateProvider
-      /*.state('doctors', { // state for showing all doctors
-          url: '/doctors',
-          templateUrl: 'app/components/doctors/list/doctors-list.html',
-          controller: 'DoctorListController',
-          resolve: {
-            loadMyDirectives:function($ocLazyLoad){
-                return $ocLazyLoad.load(
-                {
-                    name:'mtiba.doctors',
-                    files:[
-                      'app/components/doctors/list/doctors-list.ctrl.js'
-                    ]
-                })
-            }
-          } 
-      })*/.state('viewDoctor', { //state for showing single doctor
-          url: '/doctors/:id/view',
-          templateUrl: 'app/components/doctors/profile/doctor-view.html',
-          controller: 'DoctorViewController',
-          resolve: {
-            loadMyDirectives:function($ocLazyLoad){
-                return $ocLazyLoad.load(
-                {
-                    name:'mtiba.doctors',
-                    files:[
-                      'app/components/doctors/profile/doctor-view.ctrl.js'
-                    ]
-                })
-            }
-          }  
-      }).state('newDoctor', { //state for adding a new doctor
-          url: '/doctors/new',
-          templateUrl: 'app/components/doctors/form/doctor-add.html',
-          resolve: {
-            loadMyDirectives:function($ocLazyLoad){
-                return $ocLazyLoad.load(
-                {
-                    name:'mtiba.doctors',
-                    files:[
-                      'app/components/doctors/form/doctor-add.ctrl.js',
-                    ]
-                })
-            }
-          }  
-      }).state('newDoctor.basic', {
-            url: '/basic',
-            templateUrl: 'app/components/doctors/form/partials/step1.html'
-      }).state('newDoctor.background', {
-            url: '/background',
-            templateUrl: 'app/components/doctors/form/partials/step2.html'
-      }).state('newDoctor.commitment', {
-          url: '/commitment',
-          templateUrl: 'app/components/doctors/form/partials/step3.html'
-      }).state('newDoctor.submit', {
-          url: '/submit',
-          templateUrl: 'app/components/doctors/form/partials/submit.html'
-      }).state('editDoctor', { //state for updating a doctor
-          url: '/doctors/:id/edit',
-          templateUrl: 'app/components/doctors/form/doctor-edit.html',
-          resolve: {
-            loadMyDirectives:function($ocLazyLoad){
-              return $ocLazyLoad.load(
-              {
-                  name:'mtiba.doctors',
-                  files:[
-                    'app/components/doctors/form/doctor-edit.ctrl.js',
-                  ]
-              })
-            }
-          }
-      }).state('editDoctor.basic', {
-            url: '/basic',
-            templateUrl: 'app/components/doctors/form/partials/step1.html'
-      }).state('editDoctor.background', {
-            url: '/background',
-            templateUrl: 'app/components/doctors/form/partials/step2.html'
-      }).state('editDoctor.commitment', {
-          url: '/commitment',
-          templateUrl: 'app/components/doctors/form/partials/step3.html'
-      }).state('editDoctor.submit', {
-          url: '/submit',
-          templateUrl: 'app/components/doctors/form/partials/submit.html'
-      }).state('doctorAvatar', { //state for selecting a doctor avatar
-          url: '/doctors/:id/avatar',
-          templateUrl: 'app/components/doctors/form/avatar-selector/avatar-selector.html',
-          resolve: {
-            loadMyDirectives:function($ocLazyLoad){
-                return $ocLazyLoad.load(
-                {
-                    name:'mtiba.doctors',
-                    files:[
-                      'app/components/doctors/form/avatar-selector/avatar-selector.ctrl.js'
-                    ]
-                })
-            }
-          } 
-      }).state('termsAndConditions', { //state for selecting a doctor avatar
+      .state('termsAndConditions', {
           url: '/doctors/terms',
-          templateUrl: 'app/components/doctors/form/partials/_terms_and_conditions.html',
-          // controller: 'DoctorAvatarController'
+          templateUrl: 'app/components/doctors/form/partials/_terms_and_conditions.html'
       });
 
   $mdIconProvider

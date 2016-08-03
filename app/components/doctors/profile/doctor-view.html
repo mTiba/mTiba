@@ -1,3 +1,50 @@
-<div class="container">
-	<div ng-include="'app/components/doctors/profile/profile.html'"></div>
+<div class="container" id="profile_view_container" >
+  <div class="row">
+    <div class="col-xs-12 col-sm-8">
+      <h2>{{viewCtrl.doctor.name+' '+viewCtrl.doctor.surname}}</h2>             
+      <p><label>DATE OF BIRTH:  {{viewCtrl.doctor.date_of_birth | date}}</label> </p>
+      <p><label>COUNTRY:  {{viewCtrl.doctor.country_name}} 
+        <span ng-show="viewCtrl.doctor.town != null || viewCtrl.doctor.town != ''">({{viewCtrl.doctor.town}})</span>
+        </label>
+      </p>
+      <p><label>LANGUAGES: </label>
+          <span ng-repeat="language in viewCtrl.doctor.languages_names" class="label label-info tags">{{language}}</span>                   
+      </p>
+      <p><label>PHONE NUMBER: {{viewCtrl.doctor.phone }}</label></p>
+      <p><label>GENDER: {{viewCtrl.doctor.gender_name}}</label></p>
+      <p><label>OCCUPATION: {{viewCtrl.doctor.occupation_name }}</label></p>
+      <p><label>SPECIALTY: {{viewCtrl.doctor.specialty_name }}</label></p>
+      <p><label>LICENSE NUMBER: {{viewCtrl.doctor.license_number }}</label></p>
+      </div><!--/col-->  
+      
+      <div class="col-xs-6 col-sm-4 col-md-4 text-center">
+          <md-icon md-svg-icon="{{viewCtrl.doctor._avatar_selected_id}}" class="avatar_picture" alt="" class="center-block img-responsive"></md-icon>
+      </div><!--/col-->
+
+      <div class="col-xs-12 col-sm-12 bordered">
+      <h4>Background</h4>
+        <p><label>AFFILIATED HOSPITALS: {{viewCtrl.doctor.background.affiliated_hospitals }}</label></p>
+        <p><label>BOARD CERTIFICATIONS: {{viewCtrl.doctor.background.board_certifications }}</label></p>
+        <p><label>PROFESSIONAL MEMBERSHIPS: {{viewCtrl.doctor.background.professional_memberships }}</label></p>
+        <p><label>MEDICAL DEGREE: {{viewCtrl.doctor.background.place_of_medical_degree.country_name }} - {{viewCtrl.doctor.background.place_of_medical_degree.affiliation}}</label></p>
+        <p><label>PLACE OF RESIDENCY: {{viewCtrl.doctor.background.place_of_residency.country_name }} - {{viewCtrl.doctor.background.place_of_residency.affiliation}}</label></p>
+        <p><label>PLACE OF FELLOWSHIP: {{viewCtrl.doctor.background.place_of_fellowship.country_name }} - {{viewCtrl.doctor.background.place_of_fellowship.affiliation}}</label></p>
+      </div><!--/col-->
+      <div class="col-xs-12 col-sm-12 bordered">
+      <h4>Commitment</h4>
+        <p><label>TIMES A WEEK: {{viewCtrl.doctor.commitment.times }}</label></p>
+        <p><label>PATIENT COUNT TO FOLLOW: {{viewCtrl.doctor.commitment.patient_count }}</label></p>
+      <p><label>PREFFERED PATIENT AGE GROUPS: </label>
+          <div ng-repeat="group in viewCtrl.doctor.commitment.patient_age_groups_names">
+            <label>{{group}} </label>
+          </div>                    
+      </p>
+        <p><label>PREFFERED PATIENT GENDER: {{viewCtrl.doctor.commitment.patient_gender_name }}</label></p>
+        <p><label>PREFFERED PATIENT COUNTRIES: </label>
+          <div ng-repeat="country in viewCtrl.doctor.commitment.patient_countries_names">
+            <label>{{country}} </label>
+          </div>                    
+      </p>
+    </div><!--/col-->
+  </div>
 </div>

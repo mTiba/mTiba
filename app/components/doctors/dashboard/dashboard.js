@@ -14,7 +14,7 @@ angular.module('mtiba.doctors.dashboard', [])
                 'app/components/doctors/dashboard/directives/sidebar/sidebar.js',
                 'app/components/doctors/dashboard/directives/sidebar/sidebar-search/sidebar-search.js',
                 'app/components/doctors/dashboard/directives/timeline/timeline.js',
-                /*'app/components/doctors/dashboard/directives/chat/chat.js'*/
+                'app/components/doctors/dashboard/directives/chat/chat.js'
               ]
             }),
             $ocLazyLoad.load(

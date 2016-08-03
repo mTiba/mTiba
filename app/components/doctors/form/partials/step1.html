@@ -137,8 +137,7 @@
 
 <div class="form-group row">
   <div class="col-md-3 col-md-offset-9 col-xs-6 col-xs-offset-6">
-      <a ui-sref="newDoctor.background" class="btn btn-block btn-info">
-      Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
-      </a>
+    <a ng-show="formCtrl.uiRouterState.current.name == 'newDoctor.basic'" ui-sref="newDoctor.background" class="btn btn-block btn-info">Next</a>
+    <a ng-show="formCtrl.uiRouterState.current.name == 'editDoctor.basic'" ui-sref="editDoctor.background" class="btn btn-block btn-info">Next</a>
   </div>
 </div>

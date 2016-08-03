@@ -1,22 +1,24 @@
-<div ng-controller="DoctorCreateController as formCtrl" class="row" ng-init="showWelcomeText = true">
-  <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-    <div id="form-container">    
-      <div class="page-header text-center">
-        <h2>Doctor registration</h2>            
-        <div class="row row-centered">
-          <div class="col-md-7 col-sm-10 col-centered">
-            <ul class="nav nav-pills" id="form_navigation">
-              <li ui-sref-active="active" ui-sref=".basic"><a>Basic Info</a></li>
-              <li ui-sref-active="active" ui-sref=".background"><a>Background</a></li>
-              <li ui-sref-active="active" ui-sref=".commitment"><a>Commitment</a></li>
-              <li ui-sref-active="active" ui-sref=".submit"><a>Submit</a></li>
-            </ul>
+<div class="container">
+  <div class="row" ng-init="showWelcomeText = true">
+    <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+      <div id="form-container">    
+        <div class="page-header text-center">
+          <h2>Doctor registration</h2>            
+          <div class="row row-centered">
+            <div class="col-md-7 col-sm-10 col-centered">
+              <ul class="nav nav-pills" id="form_navigation">
+                <li ui-sref-active="active" ui-sref=".basic"><a>Basic Info</a></li>
+                <li ui-sref-active="active" ui-sref=".background"><a>Background</a></li>
+                <li ui-sref-active="active" ui-sref=".commitment"><a>Commitment</a></li>
+                <li ui-sref-active="active" ui-sref=".submit"><a>Submit</a></li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </div>        
-      <form class="user-form" name="doctorForm" ng-submit="formCtrl.addDoctor()">
-        <div id="form-views" ui-view></div>
-      </form>
+        </div>        
+        <form class="user-form" name="doctorForm" ng-submit="formCtrl.addDoctor()">
+          <div id="form-views" ui-view></div>
+        </form>
+      </div>
     </div>
   </div>
 </div>

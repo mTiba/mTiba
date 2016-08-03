@@ -46,14 +46,12 @@
 </div>
 <div class="form-group row">
   <div class="col-md-3 col-xs-6">
-      <a ui-sref="newDoctor.background" class="btn btn-block btn-info">
-      <span class="glyphicon glyphicon-circle-arrow-left"></span> Back 
-      </a>
+    <a ng-show="formCtrl.uiRouterState.current.name == 'newDoctor.commitment'" ui-sref="newDoctor.background" class="btn btn-block btn-info">Back</a>
+    <a ng-show="formCtrl.uiRouterState.current.name == 'editDoctor.commitment'" ui-sref="editDoctor.background" class="btn btn-block btn-info">Back</a>
   </div>
   <div class="col-md-3 col-md-offset-6 col-xs-6">
-      <a ui-sref="newDoctor.submit" class="btn btn-block btn-info">
-      Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
-      </a>
+    <a ng-show="formCtrl.uiRouterState.current.name == 'newDoctor.commitment'" ui-sref="newDoctor.submit" class="btn btn-block btn-info">Next</a>
+    <a ng-show="formCtrl.uiRouterState.current.name == 'editDoctor.commitment'" ui-sref="editDoctor.submit" class="btn btn-block btn-info">Next</a>
   </div>
 </div>
 

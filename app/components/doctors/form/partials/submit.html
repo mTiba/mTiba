@@ -3,16 +3,21 @@
 	<h5 ng-show="formCtrl.uiRouterState.current.name == 'newDoctor.submit'">You need to agree on our terms and conditions.</h5>
 </div>
 
-<div ng-show="formCtrl.uiRouterState.current.name == 'newDoctor.submit'">
+<div class="text-center" ng-show="formCtrl.uiRouterState.current.name == 'newDoctor.submit'">
 	<input type="checkbox" ng-model="formCtrl.termsAndConditions">
 	I HAVE READ AND I ACKNOWLEDGED
 		<a href ng-click="formCtrl.openTermsConditions()">TERMS AND CONDITIONS</a>
-	<button ng-disabled="!formCtrl.termsAndConditions" type="submit" class="btn btn-success btn-lg btn-block">
-  Submit
-	</button>
 </div>
-<button ng-show="formCtrl.uiRouterState.current.name == 'editDoctor.submit'" type="submit" class="btn btn-primary btn-lg btn-block">
-  Submit changes
-</button>
 
+
+<div class="form-group row">
+  <div class="col-md-3 col-xs-6">
+    <a ng-show="formCtrl.uiRouterState.current.name == 'newDoctor.submit'" ui-sref="newDoctor.commitment" class="btn btn-block btn-info">Back</a>
+    <a ng-show="formCtrl.uiRouterState.current.name == 'editDoctor.submit'" ui-sref="editDoctor.commitment" class="btn btn-block btn-info">Back</a>
+  </div>
+  <div class="col-md-3 col-md-offset-6 col-xs-6">
+    <a ng-show="formCtrl.uiRouterState.current.name == 'newDoctor.submit'" ng-disabled="!formCtrl.termsAndConditions" type="submit" class="btn btn-primary btn-block">Submit</a>
+    <a ng-show="formCtrl.uiRouterState.current.name == 'editDoctor.submit'" type="submit" class="btn btn-primary btn-block">Submit</a>
+  </div>
+</div>
 

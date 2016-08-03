@@ -111,13 +111,11 @@
 </div>
 <div class="form-group row">
   <div class="col-md-3 col-xs-6">
-      <a ui-sref="newDoctor.basic" class="btn btn-block btn-info">
-      <span class="glyphicon glyphicon-circle-arrow-left"></span> Back 
-      </a>
+    <a ng-show="formCtrl.uiRouterState.current.name == 'newDoctor.background'" ui-sref="newDoctor.basic" class="btn btn-block btn-info">Back</a>
+    <a ng-show="formCtrl.uiRouterState.current.name == 'editDoctor.background'" ui-sref="editDoctor.basic" class="btn btn-block btn-info">Back</a>
   </div>
   <div class="col-md-3 col-md-offset-6 col-xs-6">
-      <a ui-sref="newDoctor.commitment" class="btn btn-block btn-info">
-      Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
-      </a>
+    <a ng-show="formCtrl.uiRouterState.current.name == 'newDoctor.background'" ui-sref="newDoctor.commitment" class="btn btn-block btn-info">Next</a>
+    <a ng-show="formCtrl.uiRouterState.current.name == 'editDoctor.background'" ui-sref="editDoctor.commitment" class="btn btn-block btn-info">Next</a>
   </div>
 </div>

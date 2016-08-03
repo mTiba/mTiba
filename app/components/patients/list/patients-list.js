@@ -6,17 +6,6 @@ angular.module('mtiba.patients')
       url: '/patients',
       controller: 'PatientListController',
       templateUrl: 'app/components/patients/list/patients-list.html',
-/*      resolve: {
-        loadMyDirectives:function($ocLazyLoad){
-            return $ocLazyLoad.load(
-            {
-                name:'mtiba.patients',
-                files:[
-                  'app/components/patients/list/patients-list.ctrl.js'
-                ]
-            })
-        }
-      } */ 
     });
 })
 .controller('PatientListController', function($scope, $state, popupService, $window, Patient, patientMetadataFactory) {
