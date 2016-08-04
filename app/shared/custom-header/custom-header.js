@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc directive
- * @name mtiba.directive:customHeader
+ * @name yapili.directive:customHeader
  * @description
  * # customHeader
  */
-angular.module('mtiba')
+angular.module('yapili')
 	.directive('customHeader',function(){
 		return {
         templateUrl:'app/shared/custom-header/custom-header.html',

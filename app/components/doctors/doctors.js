@@ -1,1 +1,1 @@
-angular.module('mtiba.doctors', []);
+angular.module('yapili.doctors', []);

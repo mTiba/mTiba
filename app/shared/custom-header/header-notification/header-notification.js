@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc directive
- * @name mtiba.directive:headerNotification
+ * @name yapili.directive:headerNotification
  * @description
  * # headerNotification
  */
-angular.module('mtiba')
+angular.module('yapili')
 	.directive('headerNotification',function(){
 		return {
         templateUrl:'app/components/doctors/dashboard/directives/header/header-notification/header-notification.html',

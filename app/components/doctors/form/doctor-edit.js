@@ -1,4 +1,4 @@
-angular.module('mtiba.doctors')
+angular.module('yapili.doctors')
 .config(function($stateProvider) {
   $stateProvider
 		.state('editDoctor', { //state for updating a doctor
@@ -26,7 +26,7 @@ angular.module('mtiba.doctors')
           loadMyDirectives:function($ocLazyLoad){
               return $ocLazyLoad.load(
               {
-                  name:'mtiba.doctors',
+                  name:'yapili.doctors',
                   files:[
                     'app/components/doctors/form/avatar-selector/avatar-selector.ctrl.js'
                   ]

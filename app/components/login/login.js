@@ -1,4 +1,4 @@
-angular.module('mtiba.login', [
+angular.module('yapili.login', [
   'ui.router'
 ])
 .config(function($stateProvider) {

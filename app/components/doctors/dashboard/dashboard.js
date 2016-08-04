@@ -1,4 +1,4 @@
-angular.module('mtiba.doctors.dashboard', [])
+angular.module('yapili.doctors.dashboard', [])
 .config(function($stateProvider) {
   $stateProvider
     .state('doctorDashboard', {
@@ -9,7 +9,7 @@ angular.module('mtiba.doctors.dashboard', [])
         loadMyDirectives:function($ocLazyLoad){
           return $ocLazyLoad.load(
             {
-              name:'mtiba.doctors.dashboard',
+              name:'yapili.doctors.dashboard',
               files:[
                 'app/components/doctors/dashboard/directives/sidebar/sidebar.js',
                 'app/components/doctors/dashboard/directives/sidebar/sidebar-search/sidebar-search.js',

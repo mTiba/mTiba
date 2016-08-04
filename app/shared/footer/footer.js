@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc directive
- * @name mtiba.directive:footer
+ * @name yapili.directive:footer
  * @description
  * # footer
  */
-angular.module('mtiba')
+angular.module('yapili')
 .directive('footer', function () {
     return {
         restrict: 'E', //This menas that it will be used as an element

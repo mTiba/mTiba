@@ -1,4 +1,4 @@
-angular.module('mtiba.patients')
+angular.module('yapili.patients')
 
   .controller('PatientEditController', function($scope, $state, $stateParams, Patient, patientMetadataFactory, editPatientFormStepsFactory) {
 

@@ -7,7 +7,7 @@
  * # adminPosHeader
  */
 
-angular.module('mtiba.patients.dashboard')
+angular.module('yapili.patients.dashboard')
   .directive('sidebarSearch',function() {
     return {
       templateUrl:'app/components/patients/dashboard/directives/sidebar/sidebar-search/sidebar-search.html',

@@ -1,4 +1,4 @@
-var mtibaApp =  angular.module('mtiba', [
+var yapiliApp =  angular.module('yapili', [
   'ngAnimate', 
   'ui.router', 
   'ct.ui.router.extras.dsr',// for deep state routing
@@ -16,14 +16,14 @@ var mtibaApp =  angular.module('mtiba', [
   'angular-loading-bar',
   'ngCookies',
   'vcRecaptcha',
-  'mtiba.login',
-  'mtiba.doctors',
-  'mtiba.doctors.dashboard',
-  'mtiba.patients',
-  'mtiba.patients.dashboard'
+  'yapili.login',
+  'yapili.doctors',
+  'yapili.doctors.dashboard',
+  'yapili.patients',
+  'yapili.patients.dashboard'
   ]);
 
-mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$mdIconProvider', '$mdThemingProvider', 
+yapiliApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$mdIconProvider', '$mdThemingProvider', 
         function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider, $mdIconProvider, $mdThemingProvider) {
 
   $ocLazyLoadProvider.config({
@@ -47,7 +47,7 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
 
 }]);
 
-mtibaApp.run(['$state', '$rootScope', '$location', '$cookieStore', '$http', function($state, $rootScope, $location, $cookieStore, $http) {
+yapiliApp.run(['$state', '$rootScope', '$location', '$cookieStore', '$http', function($state, $rootScope, $location, $cookieStore, $http) {
   $state.go('login'); //make a transition to form state when app starts
 
   // keep user logged in after page refresh

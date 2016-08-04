@@ -7,7 +7,7 @@
  * # adminPosHeader
  */
 
-angular.module('mtiba.patients.dashboard')
+angular.module('yapili.patients.dashboard')
   .directive('patientSidebar',['$location',function() {
     return {
       templateUrl:'app/components/patients/dashboard/directives/sidebar/sidebar.html',

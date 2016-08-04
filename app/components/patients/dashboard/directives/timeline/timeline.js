@@ -6,7 +6,7 @@
  * @description
  * # adminPosHeader
  */
-angular.module('mtiba.patients.dashboard')
+angular.module('yapili.patients.dashboard')
 	.directive('patientTimeline',function() {
     return {
         templateUrl:'app/components/patients/dashboard/directives/timeline/timeline.html',

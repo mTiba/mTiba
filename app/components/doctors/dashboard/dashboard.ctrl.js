@@ -1,4 +1,4 @@
-angular.module('mtiba.doctors.dashboard')
+angular.module('yapili.doctors.dashboard')
 
 	.controller('DoctorDashboardController', function($scope, $state, $timeout, $window, $stateParams, Doctor, PatientsOfDoctor, DoctorLogs, doctorMetadataFactory, patientMetadataFactory) {
 

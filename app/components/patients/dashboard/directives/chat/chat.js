@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc directive
- * @name izzyposWebApp.directive:adminPosHeader
+ * @name 
  * @description
  * # adminPosHeader
  */
-angular.module('mtiba.patients.dashboard')
+angular.module('yapili.patients.dashboard')
 	.directive('patientChat',function(){
 
 /*		var chatController = ['$scope', function ($scope) {

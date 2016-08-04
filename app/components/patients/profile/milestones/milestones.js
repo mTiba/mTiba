@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc directive
- * @name mtiba.dashboard.directive:milestones
+ * @name
  * @description
  * # milestones
  */
-angular.module('mtiba.patients')
+angular.module('yapili.patients')
 	.directive('milestones',function() {
     return {
         templateUrl:'app/components/patients/profile/milestones/milestones.html',

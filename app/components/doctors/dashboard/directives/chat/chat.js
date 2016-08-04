@@ -6,7 +6,7 @@
  * @description
  * # 
  */
-angular.module('mtiba.doctors.dashboard')
+angular.module('yapili.doctors.dashboard')
 	.directive('doctorChat',function(){
 
 /*		var chatController = ['$scope', function ($scope) {

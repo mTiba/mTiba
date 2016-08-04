@@ -1,4 +1,4 @@
-angular.module('mtiba.patients')
+angular.module('yapili.patients')
 
 .config(function($stateProvider) {
   $stateProvider
@@ -10,7 +10,7 @@ angular.module('mtiba.patients')
           loadMyDirectives:function($ocLazyLoad){
               return $ocLazyLoad.load(
               {
-                  name:'mtiba.patients',
+                  name:'yapili.patients',
                   files:[
                     'app/components/patients/profile/milestones/milestones.js',
                     'app/components/patients/profile/milestone-add/milestone-add.js'

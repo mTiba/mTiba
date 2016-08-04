@@ -1,4 +1,4 @@
-angular.module('mtiba.patients')
+angular.module('yapili.patients')
   //"http://bgs-johnlindquist.rhcloud.com"
   .constant("BASE_URL", "http://localhost:8000")
   .factory('Patient', ['$resource', function ($resource) {

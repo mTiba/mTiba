@@ -1,4 +1,4 @@
-angular.module('mtiba.patients')
+angular.module('yapili.patients')
 
   .controller('PatientAvatarController', function($scope, $http, $state, $stateParams, Patient, Upload, $timeout){
 

@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc directive
- * @name mtiba.directive:pwCheck
+ * @name yapili.directive:pwCheck
  * @description
  * # pwCheck
  */
 
-angular.module('mtiba')
+angular.module('yapili')
   .directive('pwCheck', [function () {
     return {
       require: 'ngModel',

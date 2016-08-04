@@ -1,4 +1,4 @@
-angular.module('mtiba.patients.dashboard', [])
+angular.module('yapili.patients.dashboard', [])
 .config(function($stateProvider) {
   $stateProvider
     .state('patientDashboard', {
@@ -9,7 +9,7 @@ angular.module('mtiba.patients.dashboard', [])
         loadMyDirectives:function($ocLazyLoad){
             return $ocLazyLoad.load(
             {
-                name:'mtiba.patients.dashboard',
+                name:'yapili.patients.dashboard',
                 files:[
                 'app/components/patients/dashboard/directives/sidebar/sidebar.js',
                 'app/components/patients/dashboard/directives/sidebar/sidebar-search/sidebar-search.js',
@@ -65,7 +65,7 @@ angular.module('mtiba.patients.dashboard', [])
           loadMyDirectives:function($ocLazyLoad){
               return $ocLazyLoad.load(
               {
-                  name:'mtiba.patients',
+                  name:'yapili.patients',
                   files:[
                     'app/components/patients/profile/patient-profile/patient-profile.js',
                     'app/components/patients/profile/milestones/milestones.js',
@@ -82,7 +82,7 @@ angular.module('mtiba.patients.dashboard', [])
           loadMyDirectives:function($ocLazyLoad){
               return $ocLazyLoad.load(
               {
-                  name:'mtiba.patients',
+                  name:'yapili.patients',
                   files:[
                     'app/components/patients/form/patient-edit.ctrl.js'
                   ]

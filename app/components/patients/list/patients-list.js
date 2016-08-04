@@ -1,4 +1,4 @@
-angular.module('mtiba.patients')
+angular.module('yapili.patients')
 
 .config(function($stateProvider) {
   $stateProvider
