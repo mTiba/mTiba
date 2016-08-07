@@ -1,6 +1,7 @@
 var mtibaApp =  angular.module('mtiba', [
   'ngAnimate', 
   'ui.router', 
+  'ct.ui.router.extras.dsr',// for deep state routing
   'checklist-model', 
   'ngResource',
   'ngFileUpload', 
@@ -33,6 +34,7 @@ mtibaApp.config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$
       .state('patientQuestionnaire', { //questionnaire
           url: '',
           templateUrl: 'app/questionnaire/questionnaire.html',
+          deepStateRedirect: { default: { state: 'patientQuestionnaire.form' } },
           resolve: {
             loadMyDirectives:function($ocLazyLoad){
                 return $ocLazyLoad.load(
